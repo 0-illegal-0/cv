@@ -1,48 +1,30 @@
 import logo from "./logo.svg";
 import "./App.css";
-import about from "./images/about-2.png";
-import resume from "./images/resume.png";
-import portfolio from "./images/portfolio.png";
-import service from "./images/service.png";
-import contact from "./images/contact.png";
+import about from "./assets/images/icons/about-2.png";
+import resume from "./assets/images/icons/resume.png";
+import portfolio from "./assets/images/icons/portfolio.png";
+import service from "./assets/images/icons/service.png";
+import contact from "./assets/images/icons/contact.png";
+import About from "./about.js";
+import NavBar from "./nav-bar.js";
+import Avatar from "./avatar.js";
 
 function App() {
-  return <NavBar />;
+  return <Main />;
 }
 
-function NavBar() {
+function Main() {
   return (
     <div className="main">
-      <div className="about-container"></div>
-      <div className="content-body"></div>
-      <div className="nav-bar">
-        <ul className="nav-list">
-          <li>
-            <img src={about} />
-            <span>About</span>
-          </li>
-          <li>
-            <img src={resume} />
-
-            <span>Resume</span>
-          </li>
-          <li>
-            <img src={portfolio} />
-
-            <span>Portfolio</span>
-          </li>
-          <li>
-            <img src={service} />
-
-            <span>Services</span>
-          </li>
-          <li>
-            <img src={contact} />
-
-            <span>Contact</span>
-          </li>
-        </ul>
-      </div>
+      <Avatar />
+      <About />
+      <NavBar
+        about={about}
+        resume={resume}
+        portfolio={portfolio}
+        service={service}
+        contact={contact}
+      />
     </div>
   );
 }

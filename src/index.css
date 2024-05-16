@@ -4,6 +4,26 @@
   --background-color: #f1f4f7;
 }
 
+@font-face {
+  font-family: "Radio_Canada";
+  src: url("./assets/fonts/Radio_Canada/RadioCanada-VariableFont_wdth,wght.ttf");
+}
+
+@font-face {
+  font-family: "Radio_Canada_italic";
+  src: url("./assets/fonts/Radio_Canada/RadioCanada-Italic-VariableFont_wdth,wght.ttf");
+}
+
+@font-face {
+  font-family: "SedanSC";
+  src: url("./assets/fonts/Sedan_SC/SedanSC-Regular.ttf");
+}
+
+.content-body h1 {
+  /* font-family: "Radio_Canada";*/
+  color: #1e90ff;
+}
+
 * {
   font-family: Calibri, sans-serif;
   margin: 0px;
@@ -67,8 +87,9 @@ code {
   font-weight: bold;
   border-radius: 3px;
   box-shadow: 0 0 3px 1px #80b7ef;
-  margin: 10px 0;
+  margin: 10px auto;
   text-align: center;
+  width: 80%;
 }
 
 .nav-list li > span {
@@ -91,7 +112,80 @@ code {
 }
 
 .content-body {
+  display: flex;
+  flex-wrap: wrap;
   width: 60%;
   background-color: var(--background-color-secondary);
   border-radius: 10px;
+}
+
+.job-description-text {
+  white-space: nowrap;
+}
+
+.about-container-avatar {
+  box-shadow: 0 0 10px 5px #b7d5eb75;
+  width: 80%;
+  margin: 15px auto 0;
+}
+
+.about-container-avatar > img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.personal-informations {
+  width: 57%;
+  height: 22%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: auto 0 auto 25px;
+}
+
+.personal-informations > p {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.shadow {
+  width: 100%;
+  height: 30px;
+  box-shadow: 0 0 10px 15px #fdf8f8;
+  margin-top: -5px;
+  z-index: 555;
+  position: relative;
+  background-color: white;
+}
+
+/* Bottom Section */
+
+.bottom-section {
+  display: flex;
+  align-items: end;
+  width: 2000px;
+  background-color: #fff;
+  overflow: hidden;
+  border-top: 1px dashed #1e8fffc4;
+  border-bottom: 1px dashed #1e8fffc4;
+  margin-top: auto;
+  margin-bottom: 30px;
+  padding: 10px 0;
+}
+
+.bottom-section > img {
+  width: 50px;
+  margin-right: 70px;
+  border: 1px solid #edece8;
+  border-radius: 4px;
+  padding: 5px;
+  background-color: #f3f2f2;
+  box-shadow: 2px 2px 15px 0.1px #c2d7eb;
+}
+
+.bottom-section p {
+  white-space: nowrap;
+  align-items: center;
+  font-weight: bold;
+  font-size: large;
 }
