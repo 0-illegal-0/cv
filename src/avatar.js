@@ -7,6 +7,7 @@ function Avatar() {
         <div className="about-container-avatar">
           <img src={AvatarImage} alt="" />
           <div className="shadow"></div>
+          <h3>Soliman Ramadan</h3>
         </div>
       </div>
     </>

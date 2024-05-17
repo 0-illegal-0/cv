@@ -1,4 +1,4 @@
-import React, { useReducer, useState, useRef, useEffect } from "react";
+import React, { useReducer, useState, useRef, useEffect, useMemo } from "react";
 import bigAvatar from "./assets/images/avatar/2.png";
 import html from "./assets/images/icons/html.png";
 import css from "./assets/images/icons/css3.png";
@@ -52,7 +52,6 @@ function JobNameAnimation() {
         }
       } else {
         timer = 100;
-        console.log("plo");
         switchKey = false;
         counter--;
 
@@ -74,6 +73,7 @@ function JobNameAnimation() {
     </div>
   );
 }
+
 function About(props) {
   return (
     <div className="content-body">
@@ -88,9 +88,7 @@ function About(props) {
       <div className="right-section">
         <div className="big-avatar"></div>
       </div>
-      <div className="bottom-section">
-        <Icons />
-      </div>
+      <Icons />
     </div>
   );
 }
@@ -112,11 +110,60 @@ function About(props) {
 */
 
 function Icons() {
-  const foo = iconsList.map((v) => {
+  const [firstElementState, setFirstElementState] = useState(0);
+  const [secondElementState, setSecondElementState] = useState(1320);
+
+  const firstElement = useRef();
+  const secondElement = useRef();
+
+  /*
+  const MemoGun = useMemo(() => {
+    console.log("ploa");
+    IconsAnimation();
+    return <h1 onClick={() => {}}>Farawla</h1>;
+  }, []);
+*/
+  useEffect(() => {
+    IconsAnimation();
+  });
+
+  function IconsAnimation() {
+    setTimeout(() => {
+      console.log("Memo is Here" + firstElementState);
+      setFirstElementState(firstElementState - 1);
+      setSecondElementState(secondElementState - 1);
+      firstElement.current.style.marginLeft = firstElementState + "px";
+      secondElement.current.style.marginLeft = secondElementState + "px";
+
+      if (firstElementState < -1350) {
+        setFirstElementState(secondElementState + 1320);
+      } else if (secondElementState < -1350) {
+        setSecondElementState(firstElementState + 1320);
+      }
+
+      // IconsAnimation();
+    }, 20);
+  }
+  //IconsAnimation();
+
+  const IconsImage = iconsList.map((v) => {
     return <img alt="" src={v} />;
   });
-  return foo;
+  return (
+    <div className="bottom-section">
+      <div className="bottom-icon-image-wrap">
+        <div ref={firstElement}>{IconsImage}</div>
+        <div ref={secondElement}>{IconsImage}</div>
+      </div>
+    </div>
+  );
 }
+/*
+    <div className="bottom-section" ref={iconsElement}>
+      {IconsImage}
+      {IconsImage}
+    </div>
+*/
 const iconsList = [
   html,
   css,
