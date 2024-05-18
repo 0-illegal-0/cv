@@ -88,6 +88,10 @@ function About(props) {
       <div className="right-section">
         <div className="big-avatar"></div>
       </div>
+      <div className="buttons-containers">
+        <div></div>
+        <div></div>
+      </div>
       <Icons />
     </div>
   );
@@ -129,7 +133,6 @@ function Icons() {
 
   function IconsAnimation() {
     setTimeout(() => {
-      console.log("Memo is Here" + firstElementState);
       setFirstElementState(firstElementState - 1);
       setSecondElementState(secondElementState - 1);
       firstElement.current.style.marginLeft = firstElementState + "px";
