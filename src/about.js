@@ -66,10 +66,8 @@ function JobNameAnimation() {
 
   return (
     <div className="job-description-text">
-      <span style={{ display: "inline", fontSize: "50px" }}>I am a </span>
-      <h1 style={{ display: "inline", fontSize: "50px" }} ref={jobNameRef}>
-        {jobName}|
-      </h1>
+      <span>I am a </span>
+      <h1 ref={jobNameRef}>{jobName}|</h1>
     </div>
   );
 }
@@ -82,36 +80,53 @@ function About(props) {
         <JobNameAnimation />
         <p>
           I am a <b>Web developer</b> use logical and mathematical solutions to
-          get a lot of work done and to solve problems.
+          get a lot of work done and to solve problems, i have experience using
+          javascript and PHP to create full stack website and integrating API
         </p>
       </div>
-      <div className="right-section">
-        <div className="big-avatar"></div>
+
+      <div className="contact-data">
+        <ul>
+          <li>
+            <b>Phone : </b>
+            <span>01061709499</span>
+          </li>
+          <li>
+            <b>Email : </b>
+            <span>solimanonline0@gmail.com</span>
+          </li>
+        </ul>
+        <div style={{ display: "none" }} className="handled-projects">
+          <div></div>
+          <h2>Handled Projects</h2>
+          <b>12</b>
+        </div>
+        <ul>
+          <li>
+            <b>Github : </b>
+            <span>https://github.com/0-illegal-0</span>
+          </li>
+          <li>
+            <b>Website : </b>
+            <span>www.soliman.com</span>
+          </li>
+        </ul>
       </div>
-      <div className="buttons-containers">
-        <div></div>
-        <div></div>
+      <div className="handled-projects">
+        <div className="linearGradient">
+          <h2>Handled Projects</h2>
+          <b>11</b>
+        </div>
       </div>
+      <div className="resume-protofolio-buttons">
+        <button>Hire Me</button>
+        <button> Portfolio</button>
+      </div>
+
       <Icons />
     </div>
   );
 }
-
-/*
-          <img style={{ width: "325px" }} alt="" src={bigAvatar} />
-
-        <img alt="" src={html} />
-        <img alt="" src={css} />
-        <img alt="" src={js} />
-        <img alt="" src={php} />
-        <img alt="" src={dart} />
-        <img alt="" src={flutter} />
-        <img alt="" src={git} />
-        <img alt="" src={github} />
-        <img alt="" src={react} />
-        <img alt="" src={mysql} />
-        <img alt="" src={firbase} />
-*/
 
 function Icons() {
   const [firstElementState, setFirstElementState] = useState(0);
@@ -120,17 +135,11 @@ function Icons() {
   const firstElement = useRef();
   const secondElement = useRef();
 
-  /*
-  const MemoGun = useMemo(() => {
-    console.log("ploa");
-    IconsAnimation();
-    return <h1 onClick={() => {}}>Farawla</h1>;
-  }, []);
-*/
   useEffect(() => {
     IconsAnimation();
   });
 
+  // (Not finished)  should make width of firstElement or width secondElement is dynamic instead of {1320}
   function IconsAnimation() {
     setTimeout(() => {
       setFirstElementState(firstElementState - 1);
@@ -143,11 +152,8 @@ function Icons() {
       } else if (secondElementState < -1350) {
         setSecondElementState(firstElementState + 1320);
       }
-
-      // IconsAnimation();
     }, 20);
   }
-  //IconsAnimation();
 
   const IconsImage = iconsList.map((v) => {
     return <img alt="" src={v} />;

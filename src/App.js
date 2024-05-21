@@ -13,7 +13,11 @@ import Avatar from "./avatar.js";
 import { screen } from "@testing-library/react";
 
 function App() {
-  return <Main />;
+  return (
+    <>
+      <Main />
+    </>
+  );
 }
 
 function Main() {
