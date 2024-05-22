@@ -132,6 +132,8 @@ function About(props) {
   );
 }
 
+function name(params) {}
+
 function Icons() {
   const [firstElementState, setFirstElementState] = useState(0);
   const [secondElementState, setSecondElementState] = useState(1320);
