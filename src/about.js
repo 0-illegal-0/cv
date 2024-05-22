@@ -11,6 +11,7 @@ import github from "./assets/images/icons/github.png";
 import react from "./assets/images/icons/react.png";
 import mysql from "./assets/images/icons/my-sql.png";
 import firbase from "./assets/images/icons/firebase.png";
+import NavBar from "./nav-bar.js";
 
 const jobNameList = [
   "W",
@@ -124,6 +125,9 @@ function About(props) {
       </div>
 
       <Icons />
+      <div className="navbar-small-screen">
+        <NavBar />
+      </div>
     </div>
   );
 }

@@ -82,6 +82,12 @@ code {
   margin: auto;
 }
 
+.nav-bar > .navbar-icon {
+  display: none;
+
+  position: absolute;
+}
+
 .nav-list li {
   display: flex;
   flex-direction: column;
@@ -396,6 +402,14 @@ code {
   .avatar-name-description {
     width: 100%;
     padding: 0 10px 5px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .avatar-name-description > img {
+    border-radius: 30%;
+    margin: auto;
+    width: 80%;
   }
 
   .bottom-icon-image-wrap img {
@@ -415,18 +429,82 @@ code {
   }
 }
 
+.navbar-small-screen {
+  display: none;
+}
+
 @media (max-width: 1000px) {
   .about-container {
     width: 28%;
   }
   .content-body {
     width: calc(72% - 1 * var(--main-gap));
+    position: relative;
   }
 
   .nav-bar {
-    position: fixed;
-    margin-left: calc(100% - 120px);
-    box-shadow: 0 0 4px var(--primary);
+    display: none;
+  }
+
+  .nav-bar > .navbar-icon {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    display: flex;
+    margin-left: -100%;
+    margin-top: 50%;
+    border-right: none;
+    padding: 5px;
+    height: 40px;
+    width: 75px;
+    background-color: #fff;
+    box-shadow: -3px 0px 4px #8e8d95;
+  }
+
+  .navbar-icon:hover {
+    cursor: pointer;
+  }
+
+  .navbar-small-screen {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    margin-left: 101%;
+  }
+
+  .navbar-small-screen > div {
+    display: flex;
+    box-shadow: 0px 0px 4px #8e8d95;
+    width: 13%;
+  }
+
+  .navbar-icon > img {
+    width: 33px;
+    object-fit: contain;
+    animation: navbar-icon-animation 1.2s linear 0s infinite normal;
+    transform: rotate(180deg);
+  }
+
+  @keyframes navbar-icon-animation {
+    0% {
+      transform: rotate(180deg);
+    }
+
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
+  .personal-informations {
+    height: 22%;
+  }
+  .personal-informations > h2 {
+    font-size: 20px;
+  }
+  .job-description-text > * {
+    font-size: 28px;
+  }
+  .personal-informations > p {
+    font-size: 13px;
   }
   /*
   .nav-list {

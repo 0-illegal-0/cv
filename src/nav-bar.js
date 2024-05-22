@@ -1,29 +1,40 @@
-function NavBar(props) {
+import navbarIcon from "./assets/images/icons/work.png";
+
+import about from "./assets/images/icons/about-2.png";
+import resume from "./assets/images/icons/resume.png";
+import portfolio from "./assets/images/icons/portfolio.png";
+import service from "./assets/images/icons/service.png";
+import contact from "./assets/images/icons/contact.png";
+
+function NavBar() {
   return (
     <>
       <div className="nav-bar">
+        <div className="navbar-icon">
+          <img src={navbarIcon} />
+        </div>
         <ul className="nav-list">
           <li>
-            <img src={props.about} />
+            <img src={about} />
             <span>About</span>
           </li>
           <li>
-            <img src={props.resume} />
+            <img src={resume} />
 
             <span>Resume</span>
           </li>
           <li>
-            <img src={props.portfolio} />
+            <img src={portfolio} />
 
             <span>Portfolio</span>
           </li>
           <li>
-            <img src={props.service} />
+            <img src={service} />
 
             <span>Services</span>
           </li>
           <li>
-            <img src={props.contact} />
+            <img src={contact} />
 
             <span>Contact</span>
           </li>
