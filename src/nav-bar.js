@@ -6,11 +6,11 @@ import portfolio from "./assets/images/icons/portfolio.png";
 import service from "./assets/images/icons/service.png";
 import contact from "./assets/images/icons/contact.png";
 
-function NavBar() {
+function NavBar({ navBarMove }) {
   return (
     <>
       <div className="nav-bar">
-        <div className="navbar-icon">
+        <div className="navbar-icon" onClick={navBarMove}>
           <img src={navbarIcon} />
         </div>
         <ul className="nav-list">

@@ -125,14 +125,58 @@ function About(props) {
       </div>
 
       <Icons />
-      <div className="navbar-small-screen">
-        <NavBar />
-      </div>
+      <NavBarAnimation />
     </div>
   );
 }
 
-function name(params) {}
+// NavBarAnimation function
+
+let navbarState = false;
+let navbarStateProccessing = false;
+
+function NavBarAnimation() {
+  const navbarId = useRef();
+  const [moveValueState, setMoveValueState] = useState(101);
+
+  /* if (moveValue) {
+    navbarId.current.style.marginLeft = moveValue + "%";
+  }*/
+  useEffect(() => {
+    navbarId.current.style.marginLeft = moveValueState + "%";
+    console.log("Here is effect");
+  }, []);
+
+  function navBarMove() {
+    if (!navbarStateProccessing && navbarState) {
+      console.log("This is OFF");
+      navbarStateProccessing = true;
+      navbarState = false;
+      navbarId.current.classList.remove("navbar-move-on");
+      navbarId.current.classList.add("navbar-move-off");
+      navbarId.current.style.marginLeft = 101 + "%";
+      navbarStateProccessing = false;
+    } else if (!navbarStateProccessing && !navbarState) {
+      console.log("This is OFF");
+      navbarStateProccessing = true;
+      navbarState = true;
+      navbarId.current.classList.remove("navbar-move-off");
+      navbarId.current.classList.add("navbar-move-on");
+      navbarId.current.style.marginLeft = 86.8 + "%";
+      navbarStateProccessing = false;
+    }
+  }
+
+  return (
+    <div ref={navbarId} className="navbar-small-screen">
+      <NavBar
+        navBarMove={() => {
+          navBarMove();
+        }}
+      />
+    </div>
+  );
+}
 
 function Icons() {
   const [firstElementState, setFirstElementState] = useState(0);

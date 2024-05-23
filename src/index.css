@@ -431,6 +431,7 @@ code {
 
 .navbar-small-screen {
   display: none;
+  padding: 5px 0;
 }
 
 @media (max-width: 1000px) {
@@ -450,7 +451,7 @@ code {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     display: flex;
-    margin-left: -100%;
+    margin-left: -105%;
     margin-top: 50%;
     border-right: none;
     padding: 5px;
@@ -468,13 +469,39 @@ code {
     display: flex;
     position: absolute;
     width: 100%;
-    margin-left: 101%;
   }
 
+  .navbar-move-on {
+    animation: navbar-move-on 0.4s linear 0s 1 alternate;
+  }
+
+  .navbar-move-off {
+    animation: navbar-move-off 0.4s linear 0s 1 alternate;
+  }
+
+  @keyframes navbar-move-on {
+    0% {
+      margin-left: 101%;
+    }
+
+    100% {
+      margin-left: 86.8%;
+    }
+  }
+
+  @keyframes navbar-move-off {
+    0% {
+      margin-left: 86.8%;
+    }
+
+    100% {
+      margin-left: 101%;
+    }
+  }
   .navbar-small-screen > div {
     display: flex;
     box-shadow: 0px 0px 4px #8e8d95;
-    width: 13%;
+    width: min-content;
   }
 
   .navbar-icon > img {
