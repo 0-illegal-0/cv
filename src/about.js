@@ -162,7 +162,7 @@ function NavBarAnimation() {
       navbarState = true;
       navbarId.current.classList.remove("navbar-move-off");
       navbarId.current.classList.add("navbar-move-on");
-      navbarId.current.style.marginLeft = 86.8 + "%";
+      navbarId.current.style.marginLeft = "calc(101% - 90px)";
       navbarStateProccessing = false;
     }
   }

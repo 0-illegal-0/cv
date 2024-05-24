@@ -447,6 +447,14 @@ code {
     display: none;
   }
 
+  .about-container-avatar .personal-data {
+    font-size: 15.5px;
+  }
+
+  .resume-protofolio-buttons button {
+    font-size: 15.5px;
+  }
+
   .nav-bar > .navbar-icon {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
@@ -485,13 +493,13 @@ code {
     }
 
     100% {
-      margin-left: 86.8%;
+      margin-left: calc(101% - 90px);
     }
   }
 
   @keyframes navbar-move-off {
     0% {
-      margin-left: 86.8%;
+      margin-left: calc(101% - 90px);
     }
 
     100% {
@@ -522,7 +530,7 @@ code {
   }
 
   .personal-informations {
-    height: 22%;
+    height: 23%;
   }
   .personal-informations > h2 {
     font-size: 20px;
@@ -531,7 +539,7 @@ code {
     font-size: 28px;
   }
   .personal-informations > p {
-    font-size: 13px;
+    font-size: 14.5px;
   }
   /*
   .nav-list {
@@ -539,4 +547,36 @@ code {
     background-color: #fff;
     border: 1px solid;
   }*/
+  .handled-projects {
+    width: max-content;
+  }
+  .handled-projects .linearGradient {
+    padding: 8px 8px;
+  }
+}
+
+@media (max-width: 900px) {
+  .about-container {
+    width: 37%;
+    min-width: 340px;
+  }
+  .main {
+    flex-direction: column;
+    align-items: center;
+    height: unset !important;
+  }
+  .main > * {
+    margin-top: 20px;
+  }
+  .about-container-avatar > div {
+    margin-top: 15px !important;
+  }
+
+  .avatar-name-description {
+    width: 90%;
+    padding: 0 40px 5px;
+  }
+  .content-body > * {
+    margin-top: 30px;
+  }
 }
