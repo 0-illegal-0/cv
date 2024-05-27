@@ -6,14 +6,24 @@ import portfolio from "./assets/images/icons/portfolio.png";
 import service from "./assets/images/icons/service.png";
 import contact from "./assets/images/icons/contact.png";
 
-function NavBar({ navBarMove }) {
+import { useEffect, useState, useRef } from "react";
+
+function NavBar({ navBarMove, screenState, navList }) {
+  const [navbarStyle, setNavbarStyle] = useState({ display: "flex" });
+  const navbarId = useRef();
+
+  useEffect(() => {
+    if (screenState) {
+      setNavbarStyle({ display: "none" });
+    }
+  }, []);
   return (
     <>
-      <div className="nav-bar">
+      <div className="nav-bar" style={navbarStyle} ref={navbarId}>
         <div className="navbar-icon" onClick={navBarMove}>
           <img src={navbarIcon} />
         </div>
-        <ul className="nav-list">
+        <ul className="nav-list" ref={navList}>
           <li>
             <img src={about} />
             <span>About</span>

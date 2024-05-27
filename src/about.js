@@ -137,27 +137,20 @@ let navbarStateProccessing = false;
 
 function NavBarAnimation() {
   const navbarId = useRef();
-  const [moveValueState, setMoveValueState] = useState(101);
 
-  /* if (moveValue) {
-    navbarId.current.style.marginLeft = moveValue + "%";
-  }*/
   useEffect(() => {
-    navbarId.current.style.marginLeft = moveValueState + "%";
-    console.log("Here is effect");
+    navbarId.current.style.marginLeft = "101%";
   }, []);
 
   function navBarMove() {
     if (!navbarStateProccessing && navbarState) {
-      console.log("This is OFF");
       navbarStateProccessing = true;
       navbarState = false;
       navbarId.current.classList.remove("navbar-move-on");
       navbarId.current.classList.add("navbar-move-off");
-      navbarId.current.style.marginLeft = 101 + "%";
+      navbarId.current.style.marginLeft = "101%";
       navbarStateProccessing = false;
     } else if (!navbarStateProccessing && !navbarState) {
-      console.log("This is OFF");
       navbarStateProccessing = true;
       navbarState = true;
       navbarId.current.classList.remove("navbar-move-off");
