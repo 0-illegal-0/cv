@@ -60,7 +60,6 @@ code {
 .main {
   display: flex;
   width: 100%;
-  padding: var(--main-gap);
   justify-content: space-between;
 }
 
@@ -554,6 +553,7 @@ code {
   .handled-projects {
     width: max-content;
   }
+
   .handled-projects .linearGradient {
     padding: 8px 8px;
   }
@@ -563,6 +563,7 @@ code {
   .about-container {
     width: 37%;
     min-width: 340px;
+    padding-bottom: 15px;
   }
   .main {
     flex-direction: column;
@@ -571,6 +572,7 @@ code {
   }
   .main > * {
     margin-top: 20px;
+    width: calc(100% - 15px);
   }
   .about-container-avatar > div {
     margin-top: 15px !important;
@@ -587,7 +589,6 @@ code {
     display: none;
   }
   .content-body {
-    width: 100%;
   }
   .nav-bar {
     display: flex;
@@ -599,12 +600,17 @@ code {
     z-index: -1;
   }
 
+  .bottom-section {
+    width: 2530px;
+  }
+
   .nav-list {
     background-color: #fff;
     width: 80px;
     padding-left: 7px;
     padding-right: 7px;
     margin-right: -100px;
+    margin-top: 50px;
   }
 
   .nav-bar > .navbar-icon {
@@ -618,6 +624,10 @@ code {
     align-items: center;
     margin-top: 0;
     margin-bottom: 20px;
+    z-index: 10;
+    position: fixed;
+    background-color: white;
+    padding: 8px 8px;
   }
   .main-head > a {
     font-size: 28px;
@@ -630,5 +640,52 @@ code {
     background-color: #fff;
     box-shadow: 0 0 5px 2px #7b68ee42;
     border-radius: 3px;
+  }
+
+  .navbar-header-on {
+    animation: navbar-header-on-animation 0.3s linear 0s 1 normal;
+    z-index: 1;
+  }
+  .navbar-header-off {
+    animation: navbar-header-off-animation 0.3s linear 0s 1 normal;
+  }
+
+  @keyframes navbar-header-on-animation {
+    0% {
+      margin-right: -100px;
+    }
+    100% {
+      margin-right: 0px;
+      z-index: 30;
+    }
+  }
+
+  @keyframes navbar-header-off-animation {
+    0% {
+      margin-right: 0px;
+    }
+    100% {
+      margin-right: -100px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .content-body .contact-data {
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    height: unset;
+  }
+  .contact-data ul > li {
+    padding: 5px 5px;
+    font-size: 16px;
+    line-height: 2;
+  }
+  .resume-protofolio-buttons button {
+    border-radius: 0;
+  }
+  .personal-informations > p {
+    font-size: 16px;
   }
 }

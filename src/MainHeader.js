@@ -6,23 +6,25 @@ let navbarState = false;
 let navbarStateProccessing = false;
 function MainHeader() {
   const navListId = useRef();
-
-  useEffect(() => {}, []);
+  const navbarId = useRef();
 
   function navBarMove() {
     if (!navbarStateProccessing && navbarState) {
       navbarStateProccessing = true;
       navbarState = false;
-      navListId.current.classList.remove("navbar-move-on");
-      navListId.current.classList.add("navbar-move-off");
-      navListId.current.style.marginLeft = "101%";
+      navListId.current.classList.remove("navbar-header-on");
+      navListId.current.classList.add("navbar-header-off");
+      navListId.current.style.marginRight = "-100px";
+      //  navbarId.current.style.zIndex = "-1";
+
       navbarStateProccessing = false;
     } else if (!navbarStateProccessing && !navbarState) {
       navbarStateProccessing = true;
       navbarState = true;
-      navListId.current.classList.remove("navbar-move-off");
-      navListId.current.classList.add("navbar-move-on");
-      navListId.current.style.marginLeft = "calc(101% - 90px)";
+      navListId.current.classList.remove("navbar-header-off");
+      navListId.current.classList.add("navbar-header-on");
+      navListId.current.style.marginRight = "0px";
+      navbarId.current.style.zIndex = "1";
       navbarStateProccessing = false;
     }
   }
@@ -31,11 +33,12 @@ function MainHeader() {
     <>
       <div className="main-head">
         <a>SOLO</a>
-        <img src={NavBarIcon} onClick={navBarMove} />
+        <img alt="" src={NavBarIcon} onClick={navBarMove} />
       </div>
       <NavBar
         navList={navListId}
         screenState={window.innerWidth < 901 ? false : true}
+        navbarId={navbarId}
       />
     </>
   );

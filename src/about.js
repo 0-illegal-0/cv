@@ -171,16 +171,33 @@ function NavBarAnimation() {
   );
 }
 
+let bottomSectionWidth = 0;
+
 function Icons() {
   const [firstElementState, setFirstElementState] = useState(0);
   const [secondElementState, setSecondElementState] = useState(1320);
 
   const firstElement = useRef();
   const secondElement = useRef();
+  const bottomSection = useRef();
 
   useEffect(() => {
     IconsAnimation();
   });
+
+  // get bottomSection width
+
+  function getBottomSection() {
+    setTimeout(() => {
+      if (bottomSection.current.offsetWidth) {
+        bottomSectionWidth = bottomSection.current.offsetWidth;
+      } else {
+        getBottomSection();
+      }
+    }, 50);
+  }
+
+  getBottomSection();
 
   // (Not finished)  should make width of firstElement or width secondElement is dynamic instead of {1320}
   function IconsAnimation() {
@@ -190,10 +207,12 @@ function Icons() {
       firstElement.current.style.marginLeft = firstElementState + "px";
       secondElement.current.style.marginLeft = secondElementState + "px";
 
+      console.log(bottomSectionWidth);
+
       if (firstElementState < -1350) {
-        setFirstElementState(secondElementState + 1320);
+        setFirstElementState(secondElementState + bottomSectionWidth / 2);
       } else if (secondElementState < -1350) {
-        setSecondElementState(firstElementState + 1320);
+        setSecondElementState(firstElementState + bottomSectionWidth / 2);
       }
     }, 20);
   }
@@ -202,7 +221,7 @@ function Icons() {
     return <img alt="" src={v} />;
   });
   return (
-    <div className="bottom-section">
+    <div className="bottom-section" ref={bottomSection}>
       <div className="bottom-icon-image-wrap">
         <div ref={firstElement}>{IconsImage}</div>
         <div ref={secondElement}>{IconsImage}</div>
@@ -210,12 +229,7 @@ function Icons() {
     </div>
   );
 }
-/*
-    <div className="bottom-section" ref={iconsElement}>
-      {IconsImage}
-      {IconsImage}
-    </div>
-*/
+
 const iconsList = [
   html,
   css,

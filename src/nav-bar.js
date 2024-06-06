@@ -8,15 +8,16 @@ import contact from "./assets/images/icons/contact.png";
 
 import { useEffect, useState, useRef } from "react";
 
-function NavBar({ navBarMove, screenState, navList }) {
+function NavBar({ navBarMove, screenState, navList, navbarId }) {
   const [navbarStyle, setNavbarStyle] = useState({ display: "flex" });
-  const navbarId = useRef();
+  //const navbarId = useRef();
 
   useEffect(() => {
     if (screenState) {
       setNavbarStyle({ display: "none" });
     }
   }, []);
+
   return (
     <>
       <div className="nav-bar" style={navbarStyle} ref={navbarId}>
