@@ -36,6 +36,8 @@ let timer = 100;
 let timerSwitch = true;
 
 function JobNameAnimation() {
+  console.log("repeat");
+
   const jobNameRef = useRef();
 
   const [jobName, setJobName] = useState("");
@@ -73,9 +75,33 @@ function JobNameAnimation() {
   );
 }
 
-function About(props) {
+// main Icon
+
+function MainIcon({ contentBody }) {
+  const [contentBodyWidth, setContentBodyWidth] = useState(0);
+
+  function getBottoContentBody() {
+    console.log("po");
+
+    setTimeout(() => {
+      if (contentBody.current.offsetWidth) {
+        //setContentBodyWidth(contentBody.current.offsetWidth);
+        setContentBodyWidth((v) => contentBody.current.offsetWidth);
+        console.log(contentBodyWidth);
+      } else {
+        getBottoContentBody();
+      }
+    }, 50);
+  }
+  getBottoContentBody();
+  return <Icons contentBodyWidth={contentBodyWidth - 15} />;
+}
+
+function About() {
+  const contentBody = useRef();
+
   return (
-    <div className="content-body">
+    <div className="content-body" ref={contentBody}>
       <div className="personal-informations">
         <h2>I'm Soliman Ramadan</h2>
         <JobNameAnimation />
@@ -123,12 +149,12 @@ function About(props) {
         <button>Hire Me</button>
         <button> Portfolio</button>
       </div>
-
-      <Icons />
+      <MainIcon contentBody={contentBody} />
       <NavBarAnimation />
     </div>
   );
 }
+//      <Icons contentBodyWidth={contentBodyWidth - 15} />
 
 // NavBarAnimation function
 
@@ -172,10 +198,11 @@ function NavBarAnimation() {
 }
 
 let bottomSectionWidth = 0;
+let bottomSectionWidthState = false;
 
-function Icons() {
+function Icons({ contentBodyWidth }) {
   const [firstElementState, setFirstElementState] = useState(0);
-  const [secondElementState, setSecondElementState] = useState(1320);
+  const [secondElementState, setSecondElementState] = useState(0);
 
   const firstElement = useRef();
   const secondElement = useRef();
@@ -183,18 +210,21 @@ function Icons() {
 
   useEffect(() => {
     IconsAnimation();
-  });
+  }, [firstElementState, secondElementState]);
 
   // get bottomSection width
-
   function getBottomSection() {
-    setTimeout(() => {
-      if (bottomSection.current.offsetWidth) {
-        bottomSectionWidth = bottomSection.current.offsetWidth;
-      } else {
-        getBottomSection();
-      }
-    }, 50);
+    if (!bottomSectionWidthState) {
+      setTimeout(() => {
+        if (bottomSection.current.offsetWidth) {
+          bottomSectionWidth = bottomSection.current.offsetWidth;
+          setSecondElementState(bottomSectionWidth / 2);
+          bottomSectionWidthState = true;
+        } else {
+          getBottomSection();
+        }
+      }, 50);
+    }
   }
 
   getBottomSection();
@@ -207,12 +237,10 @@ function Icons() {
       firstElement.current.style.marginLeft = firstElementState + "px";
       secondElement.current.style.marginLeft = secondElementState + "px";
 
-      console.log(bottomSectionWidth);
-
-      if (firstElementState < -1350) {
+      if (firstElementState < -(bottomSectionWidth / 2) + 20) {
         setFirstElementState(secondElementState + bottomSectionWidth / 2);
-      } else if (secondElementState < -1350) {
-        setSecondElementState(firstElementState + bottomSectionWidth / 2);
+      } else if (secondElementState < -(bottomSectionWidth / 2) + 20) {
+        setSecondElementState(firstElementState + bottomSectionWidth / 2); //bottomSectionWidth
       }
     }, 20);
   }
@@ -222,6 +250,10 @@ function Icons() {
   });
   return (
     <div className="bottom-section" ref={bottomSection}>
+      <div
+        className="right-section-in-bottom"
+        style={{ marginLeft: contentBodyWidth + "px" }}
+      ></div>
       <div className="bottom-icon-image-wrap">
         <div ref={firstElement}>{IconsImage}</div>
         <div ref={secondElement}>{IconsImage}</div>

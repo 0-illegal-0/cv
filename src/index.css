@@ -2,7 +2,7 @@
   --primary: #7b68ee;
   --background-color-secondary: #fff;
   --background-color: #f1f4f7;
-  --main-gap: 30px;
+  --main-gap: 25px;
 }
 /* mediumslateblue 1e90ff 7b68ee*/
 
@@ -61,6 +61,7 @@ code {
   display: flex;
   width: 100%;
   justify-content: space-between;
+  padding: 15px 15px;
 }
 
 .nav-bar {
@@ -243,7 +244,8 @@ code {
 /* {ABOUT} Bottom Section */
 
 .bottom-section {
-  position: relative;
+  position: fixed;
+  /* position: relative;*/
   align-items: end;
   width: 2640px;
   background-color: #fff;
@@ -259,6 +261,17 @@ code {
   overflow: hidden;
   width: max-content;
   height: 50px;
+  /* position: relative;
+  width: 2640px;*/
+}
+
+.right-section-in-bottom {
+  position: absolute;
+  width: 300px;
+  height: 80px;
+  margin-top: -10px;
+  background-color: rgb(241, 244, 247);
+  z-index: 5;
 }
 
 .bottom-icon-image-wrap > div {
@@ -357,21 +370,26 @@ code {
   display: none;
 }
 
+.box-size-height {
+  display: none;
+  height: 30px;
+}
+
 /* media 1100 */
 
 @media (max-width: 1300px) {
   :root {
     --main-gap: 20px;
   }
-  .about-container {
+  /* .about-container {
     width: 24%;
-  }
+  }*/
 
   .content-body {
-    width: calc(67% - 2 * var(--main-gap));
+    /* width: calc(67% - 2 * var(--main-gap));*/
   }
   .nav-bar {
-    width: 9%;
+    min-width: 80px;
     padding: 0 10px;
   }
   .nav-list li {
@@ -420,6 +438,7 @@ code {
   }
   .bottom-section {
     padding: 4px 0;
+    width: 2530px;
   }
   .bottom-icon-image-wrap {
     align-items: center;
@@ -448,6 +467,10 @@ code {
 
   .nav-bar {
     display: none;
+  }
+
+  .main {
+    padding: 10px 10px;
   }
 
   .about-container-avatar .personal-data {
@@ -560,8 +583,11 @@ code {
 }
 
 @media (max-width: 900px) {
+  .box-size-height {
+    display: block;
+  }
   .about-container {
-    width: 37%;
+    width: 40% !important;
     min-width: 340px;
     padding-bottom: 15px;
   }
@@ -569,6 +595,7 @@ code {
     flex-direction: column;
     align-items: center;
     height: unset !important;
+    padding: unset;
   }
   .main > * {
     margin-top: 20px;
@@ -627,7 +654,8 @@ code {
     z-index: 10;
     position: fixed;
     background-color: white;
-    padding: 8px 8px;
+    box-shadow: 0 0 25px 1px #c4cbfb;
+    padding: 10px 8px;
   }
   .main-head > a {
     font-size: 28px;
@@ -635,7 +663,7 @@ code {
     color: var(--primary);
   }
   .main-head > img {
-    width: 40px;
+    width: 35px;
     padding: 7px;
     background-color: #fff;
     box-shadow: 0 0 5px 2px #7b68ee42;
@@ -687,5 +715,14 @@ code {
   }
   .personal-informations > p {
     font-size: 16px;
+  }
+
+  .avatar-name-description > img {
+    width: 75%;
+  }
+
+  .resume-protofolio-buttons button {
+    width: 130px;
+    height: 35px;
   }
 }

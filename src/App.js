@@ -36,7 +36,7 @@ function Main() {
   return (
     <div ref={mainRef} className="main">
       <MainHeader />
-      <div style={{ height: "30px" }}></div>
+      <div className="box-size-height"></div>
       <Avatar />
       <About />
       <NavBar screenState={window.innerWidth > 1000 ? false : true} />
