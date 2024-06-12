@@ -36,8 +36,6 @@ let timer = 100;
 let timerSwitch = true;
 
 function JobNameAnimation() {
-  console.log("repeat");
-
   const jobNameRef = useRef();
 
   const [jobName, setJobName] = useState("");
@@ -77,27 +75,32 @@ function JobNameAnimation() {
 
 // main Icon
 
-function MainIcon({ contentBody }) {
+function MainIcon({ contentBody, innerHeight }) {
   const [contentBodyWidth, setContentBodyWidth] = useState(0);
+  const [contentBodyHeight, setContentBodyHeight] = useState(0);
 
   function getBottoContentBody() {
     console.log("po");
 
     setTimeout(() => {
       if (contentBody.current.offsetWidth) {
-        //setContentBodyWidth(contentBody.current.offsetWidth);
         setContentBodyWidth((v) => contentBody.current.offsetWidth);
-        console.log(contentBodyWidth);
+        setContentBodyHeight((v) => contentBody.current.offsetHeight);
       } else {
         getBottoContentBody();
       }
     }, 50);
   }
   getBottoContentBody();
-  return <Icons contentBodyWidth={contentBodyWidth - 15} />;
+  return (
+    <Icons
+      contentBodyWidth={contentBodyWidth - 15}
+      contentBodyHeight={innerHeight - 120}
+    />
+  );
 }
 
-function About() {
+function About({ innerHeight }) {
   const contentBody = useRef();
 
   return (
@@ -149,7 +152,7 @@ function About() {
         <button>Hire Me</button>
         <button> Portfolio</button>
       </div>
-      <MainIcon contentBody={contentBody} />
+      <MainIcon contentBody={contentBody} innerHeight={innerHeight} />
       <NavBarAnimation />
     </div>
   );
@@ -200,7 +203,7 @@ function NavBarAnimation() {
 let bottomSectionWidth = 0;
 let bottomSectionWidthState = false;
 
-function Icons({ contentBodyWidth }) {
+function Icons({ contentBodyWidth, contentBodyHeight }) {
   const [firstElementState, setFirstElementState] = useState(0);
   const [secondElementState, setSecondElementState] = useState(0);
 
@@ -249,10 +252,20 @@ function Icons({ contentBodyWidth }) {
     return <img alt="" src={v} />;
   });
   return (
-    <div className="bottom-section" ref={bottomSection}>
+    <div
+      className="bottom-section"
+      ref={bottomSection}
+      style={
+        {
+          //marginTop: contentBodyHeight + "px",
+        }
+      }
+    >
       <div
         className="right-section-in-bottom"
-        style={{ marginLeft: contentBodyWidth + "px" }}
+        style={{
+          marginLeft: contentBodyWidth + "px",
+        }}
       ></div>
       <div className="bottom-icon-image-wrap">
         <div ref={firstElement}>{IconsImage}</div>

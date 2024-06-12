@@ -72,6 +72,7 @@ code {
   border-radius: 10px;
   display: flex;
   padding: 0 13px;
+  box-shadow: 0 0 5px #9b8ee7;
 }
 
 .nav-list {
@@ -120,6 +121,7 @@ code {
   width: 22%;
   background-color: var(--background-color-secondary);
   border-radius: 10px;
+  box-shadow: 0 0 5px #9b8ee7;
 }
 
 .about-container-avatar {
@@ -210,6 +212,7 @@ code {
   border-radius: 10px;
   overflow-x: hidden;
   border: 15px solid white;
+  box-shadow: 0 0 5px #9b8ee7;
 }
 
 .job-description-text {
@@ -250,9 +253,11 @@ code {
   width: 2640px;
   background-color: #fff;
   overflow: hidden;
+  margin-top: calc(100vh - 125px);
+  /*
   border-top: 1px dashed #1e8fffc4;
   border-bottom: 1px dashed #1e8fffc4;
-
+  */
   padding: 10px 0;
 }
 
@@ -439,6 +444,7 @@ code {
   .bottom-section {
     padding: 4px 0;
     width: 2530px;
+    margin-top: calc(100vh - 110px);
   }
   .bottom-icon-image-wrap {
     align-items: center;

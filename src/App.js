@@ -25,7 +25,7 @@ function Main() {
   function setMainElementHeight() {
     setTimeout(() => {
       if (window.innerHeight) {
-        mainRef.current.style.height = 739 /*window.innerHeight*/ + "px";
+        mainRef.current.style.height = 739 + "px"; //window.innerHeight + "px";
       } else {
         setMainElementHeight();
       }
@@ -38,7 +38,7 @@ function Main() {
       <MainHeader />
       <div className="box-size-height"></div>
       <Avatar />
-      <About />
+      <About innerHeight={window.innerHeight} />
       <NavBar screenState={window.innerWidth > 1000 ? false : true} />
     </div>
   );
