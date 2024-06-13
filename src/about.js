@@ -93,67 +93,80 @@ function MainIcon({ contentBody, innerHeight }) {
   }
   getBottoContentBody();
   return (
-    <Icons
-      contentBodyWidth={contentBodyWidth - 15}
-      contentBodyHeight={innerHeight - 120}
-    />
+    <>
+      <Icons
+        contentBodyWidth={contentBodyWidth - 15}
+        contentBodyHeight={innerHeight - 120}
+      />
+    </>
   );
 }
+
+//      <div className="background-fill-main-icon"></div>
+
+//       <div className="personal-informations-section">
+//       </div>
 
 function About({ innerHeight }) {
   const contentBody = useRef();
 
   return (
-    <div className="content-body" ref={contentBody}>
-      <div className="personal-informations">
-        <h2>I'm Soliman Ramadan</h2>
-        <JobNameAnimation />
-        <p>
-          I am a <b>Web developer</b> use logical and mathematical solutions to
-          get a lot of work done and to solve problems, i have experience using
-          javascript and PHP to create full stack website and integrating API
-        </p>
+    <div className="main-content-body">
+      <div className="content-body" ref={contentBody}>
+        <div className="personal-informations">
+          <h2>I'm Soliman Ramadan</h2>
+          <JobNameAnimation />
+          <p>
+            I am a <b>Web developer</b> use logical and mathematical solutions
+            to get a lot of work done and to solve problems, i have experience
+            using javascript and PHP to create full stack website and
+            integrating API
+          </p>
+        </div>
+
+        <div className="contact-data">
+          <ul>
+            <li>
+              <b>Phone : </b>
+              <span>01061709499</span>
+            </li>
+            <li>
+              <b>Email : </b>
+              <span>solimanonline0@gmail.com</span>
+            </li>
+          </ul>
+          <div style={{ display: "none" }} className="handled-projects">
+            <div></div>
+            <h2>Handled Projects</h2>
+            <b>12</b>
+          </div>
+          <ul>
+            <li>
+              <b>Github : </b>
+              <span>https://github.com/0-illegal-0</span>
+            </li>
+            <li>
+              <b>Website : </b>
+              <span>www.soliman.com</span>
+            </li>
+          </ul>
+        </div>
+        <div className="handled-projects">
+          <div className="linearGradient">
+            <h2>Handled Projects</h2>
+            <b>11</b>
+          </div>
+        </div>
+        <div className="resume-protofolio-buttons">
+          <button>Hire Me</button>
+          <button> Portfolio</button>
+        </div>
+        <NavBarAnimation />
       </div>
 
-      <div className="contact-data">
-        <ul>
-          <li>
-            <b>Phone : </b>
-            <span>01061709499</span>
-          </li>
-          <li>
-            <b>Email : </b>
-            <span>solimanonline0@gmail.com</span>
-          </li>
-        </ul>
-        <div style={{ display: "none" }} className="handled-projects">
-          <div></div>
-          <h2>Handled Projects</h2>
-          <b>12</b>
-        </div>
-        <ul>
-          <li>
-            <b>Github : </b>
-            <span>https://github.com/0-illegal-0</span>
-          </li>
-          <li>
-            <b>Website : </b>
-            <span>www.soliman.com</span>
-          </li>
-        </ul>
+      <div className="bottom">
+        <MainIcon contentBody={contentBody} innerHeight={innerHeight} />
       </div>
-      <div className="handled-projects">
-        <div className="linearGradient">
-          <h2>Handled Projects</h2>
-          <b>11</b>
-        </div>
-      </div>
-      <div className="resume-protofolio-buttons">
-        <button>Hire Me</button>
-        <button> Portfolio</button>
-      </div>
-      <MainIcon contentBody={contentBody} innerHeight={innerHeight} />
-      <NavBarAnimation />
     </div>
   );
 }
@@ -200,7 +213,7 @@ function NavBarAnimation() {
   );
 }
 
-let bottomSectionWidth = 0;
+let listWidth = 0;
 let bottomSectionWidthState = false;
 
 function Icons({ contentBodyWidth, contentBodyHeight }) {
@@ -220,8 +233,8 @@ function Icons({ contentBodyWidth, contentBodyHeight }) {
     if (!bottomSectionWidthState) {
       setTimeout(() => {
         if (bottomSection.current.offsetWidth) {
-          bottomSectionWidth = bottomSection.current.offsetWidth;
-          setSecondElementState(bottomSectionWidth / 2);
+          listWidth = firstElement.current.offsetWidth;
+          setSecondElementState(listWidth);
           bottomSectionWidthState = true;
         } else {
           getBottomSection();
@@ -240,10 +253,10 @@ function Icons({ contentBodyWidth, contentBodyHeight }) {
       firstElement.current.style.marginLeft = firstElementState + "px";
       secondElement.current.style.marginLeft = secondElementState + "px";
 
-      if (firstElementState < -(bottomSectionWidth / 2) + 20) {
-        setFirstElementState(secondElementState + bottomSectionWidth / 2);
-      } else if (secondElementState < -(bottomSectionWidth / 2) + 20) {
-        setSecondElementState(firstElementState + bottomSectionWidth / 2); //bottomSectionWidth
+      if (firstElementState < -listWidth + 20) {
+        setFirstElementState(secondElementState + listWidth);
+      } else if (secondElementState < -listWidth + 20) {
+        setSecondElementState(firstElementState + listWidth); //bottomSectionWidth
       }
     }, 20);
   }

@@ -212,7 +212,8 @@ code {
   border-radius: 10px;
   overflow-x: hidden;
   border: 15px solid white;
-  box-shadow: 0 0 5px #9b8ee7;
+  width: 100%;
+  flex: 1;
 }
 
 .job-description-text {
@@ -247,16 +248,16 @@ code {
 /* {ABOUT} Bottom Section */
 
 .bottom-section {
-  position: fixed;
   /* position: relative;*/
   align-items: end;
   width: 2640px;
   background-color: #fff;
   overflow: hidden;
-  margin-top: calc(100vh - 125px);
   /*
   border-top: 1px dashed #1e8fffc4;
   border-bottom: 1px dashed #1e8fffc4;
+    display: none;
+
   */
   padding: 10px 0;
 }
@@ -268,15 +269,6 @@ code {
   height: 50px;
   /* position: relative;
   width: 2640px;*/
-}
-
-.right-section-in-bottom {
-  position: absolute;
-  width: 300px;
-  height: 80px;
-  margin-top: -10px;
-  background-color: rgb(241, 244, 247);
-  z-index: 5;
 }
 
 .bottom-icon-image-wrap > div {
@@ -380,6 +372,14 @@ code {
   height: 30px;
 }
 
+.background-fill-main-icon {
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  background-color: #9cc3e9;
+  margin-top: calc(100vh - 70px);
+}
+
 /* media 1100 */
 
 @media (max-width: 1300px) {
@@ -392,6 +392,10 @@ code {
 
   .content-body {
     /* width: calc(67% - 2 * var(--main-gap));*/
+  }
+
+  .main-content-body {
+    width: calc(67% - 2 * var(--main-gap));
   }
   .nav-bar {
     min-width: 80px;
@@ -444,7 +448,6 @@ code {
   .bottom-section {
     padding: 4px 0;
     width: 2530px;
-    margin-top: calc(100vh - 110px);
   }
   .bottom-icon-image-wrap {
     align-items: center;
@@ -469,6 +472,7 @@ code {
   .content-body {
     width: calc(72% - 1 * var(--main-gap));
     position: relative;
+    width: 100%;
   }
 
   .nav-bar {
@@ -683,6 +687,9 @@ code {
   .navbar-header-off {
     animation: navbar-header-off-animation 0.3s linear 0s 1 normal;
   }
+  .nav-bar {
+    box-shadow: unset;
+  }
 
   @keyframes navbar-header-on-animation {
     0% {
@@ -731,4 +738,28 @@ code {
     width: 130px;
     height: 35px;
   }
+}
+
+/* test */
+
+.main-content-body {
+  display: flex;
+  flex-direction: column;
+  width: calc(71% - 2 * var(--main-gap));
+  box-shadow: 0 0 5px #9b8ee7;
+  border-radius: 10px;
+}
+
+.bottom {
+  height: 80px;
+  width: 100%;
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-body-space {
 }
