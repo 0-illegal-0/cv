@@ -107,8 +107,8 @@ function MainIcon({ contentBody, innerHeight }) {
 //       <div className="personal-informations-section">
 //       </div>
 
-function About({ innerHeight }) {
-  const contentBody = useRef();
+function About({ innerHeight, co, contentBody }) {
+  //  const contentBody = useRef();
 
   return (
     <div className="main-content-body">
@@ -124,38 +124,11 @@ function About({ innerHeight }) {
           </p>
         </div>
 
-        <div className="contact-data">
-          <ul>
-            <li>
-              <b>Phone : </b>
-              <span>01061709499</span>
-            </li>
-            <li>
-              <b>Email : </b>
-              <span>solimanonline0@gmail.com</span>
-            </li>
-          </ul>
-          <div style={{ display: "none" }} className="handled-projects">
-            <div></div>
-            <h2>Handled Projects</h2>
-            <b>12</b>
-          </div>
-          <ul>
-            <li>
-              <b>Github : </b>
-              <span>https://github.com/0-illegal-0</span>
-            </li>
-            <li>
-              <b>Website : </b>
-              <span>www.soliman.com</span>
-            </li>
-          </ul>
-        </div>
         <div className="handled-projects">
-          <div className="linearGradient">
-            <h2>Handled Projects</h2>
-            <b>11</b>
-          </div>
+          <Achievements title={"Client Review"} number={46} />
+          <Achievements title={"Years Of Experience"} number={7} />
+          <Achievements title={"Handled Projects"} number={23} />
+          <Achievements title={"Awards Won"} number={25} />
         </div>
         <div className="resume-protofolio-buttons">
           <button>Hire Me</button>
@@ -170,7 +143,17 @@ function About({ innerHeight }) {
     </div>
   );
 }
-//      <Icons contentBodyWidth={contentBodyWidth - 15} />
+
+function Achievements({ title, number }) {
+  return (
+    <div className="linearGradient">
+      <div>
+        <h3>{title}</h3>
+        <span>{number}</span>
+      </div>
+    </div>
+  );
+}
 
 // NavBarAnimation function
 

@@ -8,7 +8,7 @@ import contact from "./assets/images/icons/contact.png";
 
 import { useEffect, useState, useRef } from "react";
 
-function NavBar({ navBarMove, screenState, navList, navbarId }) {
+function NavBar({ navBarMove, screenState, navList, navbarId, contentBody }) {
   const [navbarStyle, setNavbarStyle] = useState({ display: "flex" });
   //const navbarId = useRef();
 
@@ -17,6 +17,10 @@ function NavBar({ navBarMove, screenState, navList, navbarId }) {
       setNavbarStyle({ display: "none" });
     }
   }, []);
+
+  function moveTest() {
+    contentBody.current.style.display = "none";
+  }
 
   return (
     <>
@@ -29,7 +33,7 @@ function NavBar({ navBarMove, screenState, navList, navbarId }) {
             <img src={about} />
             <span>About</span>
           </li>
-          <li>
+          <li onClick={moveTest}>
             <img src={resume} />
 
             <span>Resume</span>

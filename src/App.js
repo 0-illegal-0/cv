@@ -21,6 +21,7 @@ function App() {
 
 function Main() {
   const mainRef = useRef();
+  const contentBody = useRef();
 
   function setMainElementHeight() {
     setTimeout(() => {
@@ -38,8 +39,11 @@ function Main() {
       <MainHeader />
       <div className="box-size-height"></div>
       <Avatar />
-      <About innerHeight={window.innerHeight} />
-      <NavBar screenState={window.innerWidth > 1000 ? false : true} />
+      <About innerHeight={window.innerHeight} contentBody={contentBody} />
+      <NavBar
+        screenState={window.innerWidth > 1000 ? false : true}
+        contentBody={contentBody}
+      />
     </div>
   );
 }
