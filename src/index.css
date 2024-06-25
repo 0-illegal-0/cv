@@ -25,7 +25,7 @@
   font-family: "Rubik";
   src: url("./assets/fonts/Rubik/Rubik-VariableFont_wght.ttf");
 }
-.content-body h1 {
+.about-content h1 {
   /* font-family: "Radio_Canada";*/
   color: var(--primary);
 }
@@ -222,7 +222,15 @@ code {
   cursor: pointer;
 }
 /* ---------------------- ABOUT -------------------- */
-.content-body {
+.about-box {
+  flex: 1;
+  position: relative;
+}
+
+.about-box > div {
+  position: absolute;
+}
+.about-content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -232,7 +240,7 @@ code {
   overflow-x: hidden;
   border: 15px solid white;
   width: 100%;
-  flex: 1;
+  height: 100%;
 }
 
 .job-description-text {
@@ -313,7 +321,7 @@ code {
 
 /* {ABOUT} contact-data */
 
-.content-body .contact-data {
+.about-content .contact-data {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -441,10 +449,6 @@ code {
     width: 25%;
   }
 
-  /*.content-body {
-     width: calc(67% - 2 * var(--main-gap));
-  }*/
-
   .main-content-body {
     width: calc(68% - 2 * var(--main-gap));
   }
@@ -466,7 +470,7 @@ code {
   .personal-informations > p {
     font-size: 15px;
   }
-  .content-body .contact-data {
+  .about-content .contact-data {
     font-size: 13.5px;
   }
   .handled-projects h2 {
@@ -520,7 +524,7 @@ code {
   .about-container {
     width: 30%;
   }
-  .content-body {
+  .about-content {
     width: calc(72% - 1 * var(--main-gap));
     position: relative;
     width: 100%;
@@ -670,14 +674,13 @@ code {
     width: 90%;
     padding: 0 40px 5px;
   }
-  .content-body > * {
+  .about-content > * {
     margin-top: 30px;
   }
   .navbar-small-screen {
     display: none;
   }
-  .content-body {
-  }
+
   .nav-bar {
     display: flex;
     position: fixed;
@@ -763,7 +766,7 @@ code {
 }
 
 @media (max-width: 500px) {
-  .content-body .contact-data {
+  .about-content.contact-data {
     flex-direction: column;
     justify-content: center;
     align-items: start;

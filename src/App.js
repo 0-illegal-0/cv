@@ -3,8 +3,8 @@ import { useRef, useEffect } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
-import About from "./about.js";
-import NavBar from "./nav-bar.js";
+import MainBody from "./MainBody.js";
+import NavBar from "./component/NavBar.js";
 import Avatar from "./avatar.js";
 import MainHeader from "./MainHeader.js";
 
@@ -21,7 +21,6 @@ function App() {
 
 function Main() {
   const mainRef = useRef();
-  const contentBody = useRef();
 
   function setMainElementHeight() {
     setTimeout(() => {
@@ -39,11 +38,8 @@ function Main() {
       <MainHeader />
       <div className="box-size-height"></div>
       <Avatar />
-      <About innerHeight={window.innerHeight} contentBody={contentBody} />
-      <NavBar
-        screenState={window.innerWidth > 1000 ? false : true}
-        contentBody={contentBody}
-      />
+      <MainBody innerHeight={window.innerHeight} />
+      <NavBar screenState={window.innerWidth > 1000 ? false : true} />
     </div>
   );
 }

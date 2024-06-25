@@ -11,67 +11,12 @@ import github from "./assets/images/icons/github.png";
 import react from "./assets/images/icons/react.png";
 import mysql from "./assets/images/icons/my-sql.png";
 import firbase from "./assets/images/icons/firebase.png";
-import NavBar from "./nav-bar.js";
-
-const jobNameList = [
-  "W",
-  "e",
-  "b",
-  " ",
-  "D",
-  "e",
-  "v",
-  "e",
-  "l",
-  "o",
-  "p",
-  "e",
-  "r",
-];
-
-let counter = 0;
-let switchKey = true;
-let textC = "";
-let timer = 100;
-let timerSwitch = true;
-
-function JobNameAnimation() {
-  const jobNameRef = useRef();
-
-  const [jobName, setJobName] = useState("");
-
-  useEffect(() => {
-    setTimeout(() => {
-      if (counter < jobNameList.length && switchKey === true) {
-        setJobName(jobName + jobNameList[counter]);
-        counter++;
-        textC = jobName;
-
-        // Slow down time
-        if (counter === jobNameList.length) {
-          timer = 1800;
-        }
-      } else {
-        timer = 100;
-        switchKey = false;
-        counter--;
-
-        textC = jobName.slice(0, counter);
-        setJobName(textC);
-        if (counter < 6) {
-          switchKey = true;
-        }
-      }
-    }, timer);
-  });
-
-  return (
-    <div className="job-description-text">
-      <span>I am a </span>
-      <h1 ref={jobNameRef}>{jobName}|</h1>
-    </div>
-  );
-}
+import About from "./pages/about/About.js";
+import JobNameAnimation from "./pages/about/About.js";
+import Resume from "./pages/resume/Resume.js";
+import Portofolio from "./pages/portofolio/Portofolio.js";
+import Services from "./pages/services/Services.js";
+import Contact from "./pages/contact/Contact.js";
 
 // main Icon
 
@@ -80,8 +25,6 @@ function MainIcon({ contentBody, innerHeight }) {
   const [contentBodyHeight, setContentBodyHeight] = useState(0);
 
   function getBottoContentBody() {
-    console.log("po");
-
     setTimeout(() => {
       if (contentBody.current.offsetWidth) {
         setContentBodyWidth((v) => contentBody.current.offsetWidth);
@@ -102,96 +45,27 @@ function MainIcon({ contentBody, innerHeight }) {
   );
 }
 
-//      <div className="background-fill-main-icon"></div>
+//content-body
 
-//       <div className="personal-informations-section">
-//       </div>
+/*
+        <Resume id="resume" />
+        <Portofolio />
+        <Services />
+        <Contact />
 
-function About({ innerHeight, co, contentBody }) {
-  //  const contentBody = useRef();
+*/
+
+function MainBody({ innerHeight }) {
+  const contentBody = useRef();
 
   return (
-    <div className="main-content-body">
-      <div className="content-body" ref={contentBody}>
-        <div className="personal-informations">
-          <h2>I'm Soliman Ramadan</h2>
-          <JobNameAnimation />
-          <p>
-            I am a <b>Web developer</b> use logical and mathematical solutions
-            to get a lot of work done and to solve problems, i have experience
-            using javascript and PHP to create full stack website and
-            integrating API
-          </p>
-        </div>
-
-        <div className="handled-projects">
-          <Achievements title={"Client Review"} number={46} />
-          <Achievements title={"Years Of Experience"} number={7} />
-          <Achievements title={"Handled Projects"} number={23} />
-          <Achievements title={"Awards Won"} number={25} />
-        </div>
-        <div className="resume-protofolio-buttons">
-          <button>Hire Me</button>
-          <button> Portfolio</button>
-        </div>
-        <NavBarAnimation />
+    <div id="main-content-body" className="main-content-body">
+      <div className="about-box">
+        <About contentBody={contentBody} />
       </div>
-
       <div className="bottom">
         <MainIcon contentBody={contentBody} innerHeight={innerHeight} />
       </div>
-    </div>
-  );
-}
-
-function Achievements({ title, number }) {
-  return (
-    <div className="linearGradient">
-      <div>
-        <h3>{title}</h3>
-        <span>{number}</span>
-      </div>
-    </div>
-  );
-}
-
-// NavBarAnimation function
-
-let navbarState = false;
-let navbarStateProccessing = false;
-
-function NavBarAnimation() {
-  const navbarId = useRef();
-
-  useEffect(() => {
-    navbarId.current.style.marginLeft = "101%";
-  }, []);
-
-  function navBarMove() {
-    if (!navbarStateProccessing && navbarState) {
-      navbarStateProccessing = true;
-      navbarState = false;
-      navbarId.current.classList.remove("navbar-move-on");
-      navbarId.current.classList.add("navbar-move-off");
-      navbarId.current.style.marginLeft = "101%";
-      navbarStateProccessing = false;
-    } else if (!navbarStateProccessing && !navbarState) {
-      navbarStateProccessing = true;
-      navbarState = true;
-      navbarId.current.classList.remove("navbar-move-off");
-      navbarId.current.classList.add("navbar-move-on");
-      navbarId.current.style.marginLeft = "calc(101% - 90px)";
-      navbarStateProccessing = false;
-    }
-  }
-
-  return (
-    <div ref={navbarId} className="navbar-small-screen">
-      <NavBar
-        navBarMove={() => {
-          navBarMove();
-        }}
-      />
     </div>
   );
 }
@@ -284,4 +158,5 @@ const iconsList = [
   mysql,
   firbase,
 ];
-export default About;
+
+export default MainBody;

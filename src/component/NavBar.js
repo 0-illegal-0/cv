@@ -1,34 +1,28 @@
-import navbarIcon from "./assets/images/icons/work.png";
+import navbarIcon from "../assets/images/icons/work.png";
 
-import about from "./assets/images/icons/about-2.png";
-import resume from "./assets/images/icons/resume.png";
-import portfolio from "./assets/images/icons/portfolio.png";
-import service from "./assets/images/icons/service.png";
-import contact from "./assets/images/icons/contact.png";
+import about from "../assets/images/icons/about-2.png";
+import resume from "../assets/images/icons/resume.png";
+import portfolio from "../assets/images/icons/portfolio.png";
+import service from "../assets/images/icons/service.png";
+import contact from "../assets/images/icons/contact.png";
+import { seto } from "../MainBody.js";
+import About from "../pages/about/About.js";
 
 import { useEffect, useState, useRef } from "react";
-import { renderToString } from "react-dom/server";
 
 function NavBar({ navBarMove, screenState, navList, navbarId, contentBody }) {
   const [navbarStyle, setNavbarStyle] = useState({ display: "flex" });
-  let mainContentBody;
-  let aboutContent;
 
-  //const navbarId = useRef();
+  // const navbarId = useRef();
 
   useEffect(() => {
-    mainContentBody = document.getElementById("main-content-body");
-    aboutContent = document.getElementById("about-content");
-
     if (screenState) {
       setNavbarStyle({ display: "none" });
     }
   }, []);
 
-  function moveTest() {
-    //contentBody.current.style.display = "none";
-    aboutContent.style.display = "none";
-    mainContentBody.innerHTML = renderToString(ForTest());
+  function chooseSection() {
+    document.getElementById("resume").style.opacity = "0.3";
   }
 
   return (
@@ -38,11 +32,15 @@ function NavBar({ navBarMove, screenState, navList, navbarId, contentBody }) {
           <img src={navbarIcon} />
         </div>
         <ul className="nav-list" ref={navList}>
-          <li>
+          <li
+            onClick={() => {
+              chooseSection();
+            }}
+          >
             <img src={about} />
             <span>About</span>
           </li>
-          <li onClick={moveTest}>
+          <li onClick={() => {}}>
             <img src={resume} />
 
             <span>Resume</span>
@@ -66,10 +64,6 @@ function NavBar({ navBarMove, screenState, navList, navbarId, contentBody }) {
       </div>
     </>
   );
-}
-
-function ForTest() {
-  return <h2>Waleed</h2>;
 }
 
 export default NavBar;
