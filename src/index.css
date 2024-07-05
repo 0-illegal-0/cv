@@ -61,13 +61,13 @@ code {
   display: flex;
   width: 100%;
   justify-content: space-between;
-  padding: 15px 15px;
+  padding: 22px 22px;
 }
 
 .main-content-body {
   display: flex;
   flex-direction: column;
-  width: calc(71% - 2 * var(--main-gap));
+  width: calc(70% - 2 * var(--main-gap));
   box-shadow: 0 0 5px #9b8ee7;
   border-radius: 10px;
 }
@@ -229,13 +229,16 @@ code {
 
 .about-box > div {
   position: absolute;
+  display: none;
 }
-.about-content {
+.about-content,
+.section {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: calc(71% - 2 * var(--main-gap));
   background-color: var(--background-color-secondary);
+
   border-radius: 10px;
   overflow-x: hidden;
   border: 15px solid white;
@@ -338,7 +341,6 @@ code {
 }
 
 .handled-projects {
-  width: 29%;
   margin: 0 auto;
   text-align: center;
   padding: 4px;
@@ -346,7 +348,8 @@ code {
   /* background-image: linear-gradient(to left, #743ad5, #d53a9d);*/
   display: flex;
   flex-wrap: wrap;
-  width: 70%;
+  width: 100%;
+  max-width: 700px;
   justify-content: space-between;
 }
 .handled-projects .linearGradient {
@@ -439,9 +442,60 @@ code {
   margin-top: calc(100vh - 70px);
 }
 
+.background-image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-left: 0px;
+}
+.background-image > img {
+  position: absolute;
+  height: 50px;
+  opacity: 0.8;
+}
+
+.personal-informations,
+.handled-projects,
+.resume-protofolio-buttons {
+  z-index: 5;
+}
+
+.about-content {
+  overflow-y: hidden;
+}
+
+/* all sections */
+
+.section > h2 {
+  font-size: 30px;
+}
+
+/* resume */
+.resume-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 10px;
+  overflow-y: visible;
+}
+.resume-main > div {
+  border: 2px solid var(--primary);
+  border-radius: 15px;
+  margin-top: 20px;
+  height: 500px;
+  /* background-image: linear-gradient(to left, #743ad5, #d53a9d);*/
+}
+
 /* media 1100 */
 
 @media (max-width: 1300px) {
+  .main {
+    padding: 18px 18px;
+  }
+
   :root {
     --main-gap: 20px;
   }
@@ -511,7 +565,16 @@ code {
     font-size: 14.5px;
   }
   .personal-informations {
-    height: 26%;
+    height: 32%;
+  }
+
+  .handled-projects {
+    justify-content: space-around;
+  }
+
+  .handled-projects .linearGradient {
+    width: 35%;
+    min-width: 210px;
   }
 }
 
@@ -624,7 +687,7 @@ code {
   }
 
   .personal-informations {
-    height: 23%;
+    height: 30%;
   }
   .personal-informations > h2 {
     font-size: 20px;
@@ -635,15 +698,13 @@ code {
   .personal-informations > p {
     font-size: 14.5px;
   }
-  /*
-  .nav-list {
-    width: 9%;
-    background-color: #fff;
-    border: 1px solid;
-  }*/
+
   .handled-projects {
-    justify-content: space-evenly;
+    justify-content: space-around;
     min-width: 500px;
+  }
+  .handled-projects .linearGradient {
+    justify-content: space-between;
   }
 }
 
@@ -677,6 +738,11 @@ code {
   .about-content > * {
     margin-top: 30px;
   }
+
+  .about-content > *:first-child {
+    margin-top: unset !important;
+  }
+
   .navbar-small-screen {
     display: none;
   }
@@ -745,6 +811,14 @@ code {
     box-shadow: unset;
   }
 
+  .about-box > div {
+    position: relative;
+  }
+
+  .personal-informations {
+    margin-top: 0;
+  }
+
   @keyframes navbar-header-on-animation {
     0% {
       margin-right: -100px;
@@ -766,7 +840,7 @@ code {
 }
 
 @media (max-width: 500px) {
-  .about-content.contact-data {
+  .about-content .contact-data {
     flex-direction: column;
     justify-content: center;
     align-items: start;

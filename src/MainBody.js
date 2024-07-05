@@ -11,6 +11,7 @@ import github from "./assets/images/icons/github.png";
 import react from "./assets/images/icons/react.png";
 import mysql from "./assets/images/icons/my-sql.png";
 import firbase from "./assets/images/icons/firebase.png";
+
 import About from "./pages/about/About.js";
 import JobNameAnimation from "./pages/about/About.js";
 import Resume from "./pages/resume/Resume.js";
@@ -47,21 +48,17 @@ function MainIcon({ contentBody, innerHeight }) {
 
 //content-body
 
-/*
-        <Resume id="resume" />
-        <Portofolio />
-        <Services />
-        <Contact />
-
-*/
-
 function MainBody({ innerHeight }) {
   const contentBody = useRef();
 
   return (
     <div id="main-content-body" className="main-content-body">
-      <div className="about-box">
+      <div className="about-box" id="content-body-list">
         <About contentBody={contentBody} />
+        <Resume id="resume" />
+        <Portofolio />
+        <Services />
+        <Contact />
       </div>
       <div className="bottom">
         <MainIcon contentBody={contentBody} innerHeight={innerHeight} />

@@ -14,15 +14,27 @@ function NavBar({ navBarMove, screenState, navList, navbarId, contentBody }) {
   const [navbarStyle, setNavbarStyle] = useState({ display: "flex" });
 
   // const navbarId = useRef();
-
+  let list;
   useEffect(() => {
     if (screenState) {
       setNavbarStyle({ display: "none" });
     }
+    document.getElementById("about-content").style.display = "flex";
   }, []);
 
-  function chooseSection() {
-    document.getElementById("resume").style.opacity = "0.3";
+  function chooseSection(idName) {
+    list = document
+      .getElementById("content-body-list")
+      .querySelectorAll(".section");
+    console.log("list --- ", list);
+    document.getElementById("about-content").style.display = "flex";
+    for (let index = 0; index < list.length; index++) {
+      list[index].style.opacity = 0;
+      document.getElementById(idName).style.display = "none";
+    }
+
+    document.getElementById(idName).style.opacity = "1";
+    document.getElementById(idName).style.display = "flex";
   }
 
   return (
@@ -34,28 +46,44 @@ function NavBar({ navBarMove, screenState, navList, navbarId, contentBody }) {
         <ul className="nav-list" ref={navList}>
           <li
             onClick={() => {
-              chooseSection();
+              chooseSection("about-content");
             }}
           >
             <img src={about} />
             <span>About</span>
           </li>
-          <li onClick={() => {}}>
+          <li
+            onClick={() => {
+              chooseSection("resume");
+            }}
+          >
             <img src={resume} />
 
             <span>Resume</span>
           </li>
-          <li>
+          <li
+            onClick={() => {
+              chooseSection("portofolio");
+            }}
+          >
             <img src={portfolio} />
 
             <span>Portfolio</span>
           </li>
-          <li>
+          <li
+            onClick={() => {
+              chooseSection("services");
+            }}
+          >
             <img src={service} />
 
             <span>Services</span>
           </li>
-          <li>
+          <li
+            onClick={() => {
+              chooseSection("contact");
+            }}
+          >
             <img src={contact} />
 
             <span>Contact</span>
