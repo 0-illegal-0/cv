@@ -78,9 +78,6 @@ function Achievements({ title, number }) {
 function About({ contentBody, jobName }) {
   return (
     <div id="about-content" className="about-content section" ref={contentBody}>
-      <div className="background-image" style={{ position: "absolute" }}>
-        <img src={spiral} />
-      </div>
       <div className="personal-informations">
         <h2>I'm Soliman Ramadan</h2>
         <JobNameAnimation />

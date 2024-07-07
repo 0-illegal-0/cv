@@ -7,7 +7,7 @@ import MainBody from "./MainBody.js";
 import NavBar from "./component/NavBar.js";
 import Avatar from "./avatar.js";
 import MainHeader from "./MainHeader.js";
-
+import bgImage from "./assets/images/style/background-image.jpg";
 import { screen } from "@testing-library/react";
 import NavBarIcon from "./assets/images/icons/nav-bar.png";
 

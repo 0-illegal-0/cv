@@ -73,7 +73,7 @@ code {
 }
 
 .bottom {
-  height: 80px;
+  height: 60px;
   width: 100%;
   background-color: #fff;
   position: relative;
@@ -238,10 +238,11 @@ code {
   justify-content: space-between;
   width: calc(71% - 2 * var(--main-gap));
   background-color: var(--background-color-secondary);
-
   border-radius: 10px;
   overflow-x: hidden;
   border: 15px solid white;
+  border-bottom: 0;
+  padding-bottom: 5px;
   width: 100%;
   height: 100%;
 }
@@ -470,7 +471,7 @@ code {
 /* all sections */
 
 .section > h2 {
-  font-size: 30px;
+  font-size: 40px;
 }
 
 /* resume */
@@ -482,7 +483,6 @@ code {
   overflow-y: visible;
 }
 .resume-main > div {
-  border: 2px solid var(--primary);
   border-radius: 15px;
   margin-top: 20px;
   height: 500px;
@@ -886,7 +886,81 @@ code {
   }
 }
 
-/* test */
+/* education */
+.education-head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-.content-body-space {
+.education-head > h3 {
+  margin: 0 15px;
+  font-size: 30px;
+  letter-spacing: 4px;
+}
+
+.education-head .education-head-line {
+  width: 170px;
+  height: 2px;
+  background-color: #010101;
+}
+.education-section-main {
+  border: 2px dashed #666565;
+  padding: 10px;
+  margin-top: 40px;
+  border-radius: 7px;
+}
+
+.education-section {
+  display: flex;
+  align-items: center;
+  background-color: #dee8f1;
+  width: max-content;
+  padding: 0 10px;
+  margin-top: -25px;
+}
+
+.education-section > h3,
+.education-section > h4,
+.education-section span {
+  display: inline-block;
+  font-weight: bold;
+  text-align: center;
+  color: #000;
+}
+.education-section .line-style {
+  display: inline-flex;
+  height: 100%;
+}
+
+.education-section .line {
+  margin: auto 7px;
+  width: 40px;
+  height: 2px;
+  background-color: #616060;
+  /* background-color: #c13aa9;*/
+}
+
+.education-section-paragraph {
+  font-size: 20px;
+  margin-top: 10px;
+  text-align: center;
+  line-height: 1.7;
+}
+.education {
+  padding: 0 15px;
+  margin-top: 10px !important;
+}
+
+.education-section .university,
+.date-education,
+.education-section .qualification {
+  font-size: 21px;
+}
+
+.date-education {
+  color: #c13aa9 !important;
+}
+
+.resume {
 }
