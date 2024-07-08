@@ -485,7 +485,6 @@ code {
 .resume-main > div {
   border-radius: 15px;
   margin-top: 20px;
-  height: 500px;
   /* background-image: linear-gradient(to left, #743ad5, #d53a9d);*/
 }
 
@@ -583,7 +582,7 @@ code {
   padding: 5px 0;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
   .about-container {
     width: 30%;
   }
@@ -596,8 +595,8 @@ code {
     width: calc(70% - 1 * var(--main-gap));
   }
 
-  .nav-bar {
-    display: none;
+  .main > .nav-bar {
+    display: none !important;
   }
 
   .main {
@@ -634,6 +633,7 @@ code {
     display: flex;
     position: absolute;
     width: 100%;
+    z-index: 5;
   }
 
   .navbar-move-on {
@@ -687,7 +687,7 @@ code {
   }
 
   .personal-informations {
-    height: 30%;
+    height: 24%;
   }
   .personal-informations > h2 {
     font-size: 20px;
@@ -745,6 +745,10 @@ code {
 
   .navbar-small-screen {
     display: none;
+  }
+
+  .main > .nav-bar {
+    display: unset !important;
   }
 
   .nav-bar {
@@ -812,7 +816,8 @@ code {
   }
 
   .about-box > div {
-    position: relative;
+    position: absolute;
+    height: auto;
   }
 
   .personal-informations {
@@ -947,7 +952,8 @@ code {
   text-align: center;
   line-height: 1.7;
 }
-.education {
+.education,
+.experience {
   padding: 0 15px;
   margin-top: 10px !important;
 }
@@ -962,5 +968,74 @@ code {
   color: #c13aa9 !important;
 }
 
-.resume {
+@media (max-width: 1300px) {
+  .education,
+  .experience {
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .education-section .university,
+  .date-education,
+  .education-section .qualification {
+    font-size: 19px;
+  }
+
+  .education,
+  .experience {
+    padding: 0 8px;
+  }
+
+  .resume-main {
+    padding: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .experience {
+    margin-top: 30px !important;
+  }
+  .education-section .university,
+  .date-education,
+  .education-section .qualification {
+    font-size: 21px;
+  }
+  .about-content,
+  .section {
+    border: unset;
+  }
+  .education-section-main {
+    margin-top: 20px;
+  }
+}
+@media (max-width: 500px) {
+  .education-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #dee8f1;
+    width: 100%;
+    padding: 0 10px;
+    margin: auto;
+    margin-top: -50px;
+  }
+
+  .line-style {
+    display: none !important;
+  }
+
+  .education-section .university,
+  .date-education,
+  .education-section .qualification {
+    text-decoration: underline solid #000 2px;
+    font-size: 21px;
+
+    margin-top: 5px;
+  }
+
+  .education-section-main {
+    margin-top: 60px;
+    border-top: unset;
+  }
 }

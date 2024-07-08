@@ -26,7 +26,6 @@ function NavBar({ navBarMove, screenState, navList, navbarId, contentBody }) {
     list = document
       .getElementById("content-body-list")
       .querySelectorAll(".section");
-    console.log("list --- ", list);
     document.getElementById("about-content").style.display = "flex";
     for (let index = 0; index < list.length; index++) {
       list[index].style.opacity = 0;

@@ -13,6 +13,7 @@ function NavBarAnimation() {
   }, []);
 
   function navBarMove() {
+    console.log("This is nav");
     if (!navbarStateProccessing && navbarState) {
       navbarStateProccessing = true;
       navbarState = false;
