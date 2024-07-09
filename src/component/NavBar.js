@@ -29,7 +29,8 @@ function NavBar({ navBarMove, screenState, navList, navbarId, contentBody }) {
     document.getElementById("about-content").style.display = "flex";
     for (let index = 0; index < list.length; index++) {
       list[index].style.opacity = 0;
-      document.getElementById(idName).style.display = "none";
+      list[index].style.display = "none";
+      // document.getElementById(idName).style.display = "none";
     }
 
     document.getElementById(idName).style.opacity = "1";

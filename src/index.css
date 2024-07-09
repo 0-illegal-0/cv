@@ -816,7 +816,7 @@ code {
   }
 
   .about-box > div {
-    position: absolute;
+    position: relative;
     height: auto;
   }
 
@@ -958,6 +958,10 @@ code {
   margin-top: 10px !important;
 }
 
+.experience {
+  margin-top: 50px !important;
+}
+
 .education-section .university,
 .date-education,
 .education-section .qualification {
@@ -1003,10 +1007,13 @@ code {
   }
   .about-content,
   .section {
-    border: unset;
+    border: 20px solid #fff;
   }
   .education-section-main {
     margin-top: 20px;
+  }
+  .education-head > h3 {
+    font-size: 28px;
   }
 }
 @media (max-width: 500px) {
@@ -1037,5 +1044,9 @@ code {
   .education-section-main {
     margin-top: 60px;
     border-top: unset;
+  }
+
+  .section {
+    border: unset;
   }
 }
