@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
+import { transformVal } from "../../component/NavBar";
 
 function Resume() {
+  const resumeMain = useRef();
+
   return (
     <div className="resume section" id="resume">
       <h2>Resume</h2>
-      <div className="resume-main">
+      <div className="resume-main" ref={resumeMain} id="resume-main">
         <div className="education">
           <div className="education-head">
             <span className="education-head-line"></span>
@@ -113,11 +116,6 @@ const skillsValues = [
 ];
 
 function Skills() {
-  function kol() {
-    skillsValues.forEach((element) => {
-      return <h2>ho</h2>;
-    });
-  }
   return (
     <div className="skills">
       <h3>Skills</h3>
@@ -134,44 +132,88 @@ function Skills() {
     </div>
   );
 }
+// SkillValue function
 
 let ctx;
-let canvas;
-let keyLengthIndex = 0;
+let canvas = [];
+let canvasCtx = [];
+let canvasId = "";
+let circleValue = 2;
+let canvasWidth = 144;
+let canvasColor = "red";
 
 function SkillValue({ value, skillName }) {
-  const [keyLength, SetkeyLength] = useState(value);
-
+  if (window.innerWidth < 600) {
+    canvasWidth = 140;
+  } else if (window.innerWidth < 901) {
+    canvasWidth = 130;
+  } else if (window.innerWidth < 1000) {
+    canvasWidth = 130;
+  } else {
+    canvasWidth = 140;
+  }
   function circleo() {
     if (document.getElementById(skillName)) {
-      console.log("---- ", value);
-      canvas = document.getElementById(skillName);
-      ctx = canvas.getContext("2d");
-      ctx.beginPath();
-      ctx.arc(80, 80, 76, 0, ((2 * value) / 100) * Math.PI);
-      ctx.lineWidth = 7;
-      ctx.strokeStyle = "#444764"; //"#9425b95e";
+      if (document.getElementById(skillName)) {
+        for (let index = 0; index < 2; index++) {
+          if (index === 0) {
+            canvasId = skillName;
+            circleValue = 2 * Math.PI;
+            canvasColor = "red";
+          } else {
+            canvasId = skillName + "value";
+            circleValue = ((2 * value) / 100) * Math.PI;
+            canvasColor = "orange";
+          }
 
-      ctx.stroke();
+          console.log(canvasColor, "+-+-+- ", circleValue);
+          // document.getElementById(canvasId).style.display = "none";
+          canvas[index] = document.getElementById(canvasId);
+          canvasCtx[index] = canvas[index].getContext("2d");
+          canvasCtx[index].beginPath();
+          canvasCtx[index].arc(
+            canvasWidth / 2,
+            canvasWidth / 2,
+            canvasWidth / 2 - 7,
+            0,
+            circleValue
+          );
+          canvasCtx[index].lineWidth = 6;
+          canvasCtx[index].strokeStyle = canvasColor;
+
+          canvasCtx[index].stroke();
+        }
+      }
     }
   }
-
   useEffect(() => {
     circleo();
   });
 
   return (
-    <div className="main-circle">
+    <div
+      className="main-circle"
+      style={{
+        width: canvasWidth - 10,
+        height: canvasWidth - 10,
+        marginLeft: window.innerWidth / 45.85,
+        marginRight: window.innerWidth / 45.85,
+      }}
+    >
       <canvas
         className="skill-circle-canvas"
         id={skillName}
-        width="160"
-        height="160"
+        height={canvasWidth}
+        width={canvasWidth}
       ></canvas>
-      <div className="small-circle">
-        <div className="skill-circle">
-          <h3>{value}%</h3>
-        </div>
+      <canvas
+        className="value-circle-canvas"
+        id={skillName + "value"}
+        height={canvasWidth}
+        width={canvasWidth}
+      ></canvas>
+      <div className="skill-circle">
+        <h3>{value}%</h3>
       </div>
     </div>
   );

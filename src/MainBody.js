@@ -50,7 +50,6 @@ function MainIcon({ contentBody, innerHeight }) {
 
 function MainBody({ innerHeight }) {
   const contentBody = useRef();
-
   return (
     <div id="main-content-body" className="main-content-body">
       <div className="about-box" id="content-body-list">
