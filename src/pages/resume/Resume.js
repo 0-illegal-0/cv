@@ -143,8 +143,8 @@ let canvasWidth = 144;
 let canvasColor = "red";
 
 function SkillValue({ value, skillName }) {
-  if (window.innerWidth < 600) {
-    canvasWidth = 140;
+  if (window.innerWidth < 700) {
+    canvasWidth = 120;
   } else if (window.innerWidth < 901) {
     canvasWidth = 130;
   } else if (window.innerWidth < 1000) {
@@ -191,29 +191,23 @@ function SkillValue({ value, skillName }) {
   });
 
   return (
-    <div
-      className="main-circle"
-      style={{
-        width: canvasWidth - 10,
-        height: canvasWidth - 10,
-        marginLeft: window.innerWidth / 45.85,
-        marginRight: window.innerWidth / 45.85,
-      }}
-    >
-      <canvas
-        className="skill-circle-canvas"
-        id={skillName}
-        height={canvasWidth}
-        width={canvasWidth}
-      ></canvas>
-      <canvas
-        className="value-circle-canvas"
-        id={skillName + "value"}
-        height={canvasWidth}
-        width={canvasWidth}
-      ></canvas>
-      <div className="skill-circle">
-        <h3>{value}%</h3>
+    <div className="main-circle-container">
+      <div className="main-circle" style={{ height: canvasWidth }}>
+        <canvas
+          className="skill-circle-canvas"
+          id={skillName}
+          height={canvasWidth}
+          width={canvasWidth}
+        ></canvas>
+        <canvas
+          className="value-circle-canvas"
+          id={skillName + "value"}
+          height={canvasWidth}
+          width={canvasWidth}
+        ></canvas>
+        <div className="skill-circle">
+          <h3>{value}%</h3>
+        </div>
       </div>
     </div>
   );

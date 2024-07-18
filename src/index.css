@@ -980,11 +980,16 @@ code {
 
 .skills-container {
   display: flex;
-  width: 100%;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
   flex-wrap: wrap;
-  justify-content: space-evenly;
   margin-top: 30px;
-  padding: 0 6%;
+}
+
+.main-circle-container {
+  width: calc(100% / 4);
+  margin-top: 25px;
 }
 
 .skills > h3 {
@@ -998,7 +1003,6 @@ code {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 10px 30px;
 }
 
 .main-circle > canvas {
@@ -1044,10 +1048,7 @@ code {
   }
 
   .skills-container {
-    padding: 0;
-  }
-  .main-circle {
-    margin: 0 7px 30px;
+    width: 95%;
   }
 }
 
@@ -1071,10 +1072,10 @@ code {
   .skills > h3 {
     font-size: 28px;
   }
-
-  .main-circle {
-    margin-left: 21px;
-    margin-right: 21px;
+  .skills-container {
+    width: 80%;
+    min-width: 630px;
+    margin-top: 0;
   }
 }
 @media (max-width: 700px) {
@@ -1111,7 +1112,20 @@ code {
     border: unset;
   }
 
-  .skill-circle > h3 {
-    font-size: 19px;
+  .skills-container {
+    width: 80%;
+    min-width: 300px;
+  }
+
+  .main-circle-container {
+    width: calc(100% / 2);
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .skills-container {
+    width: 98%;
+    min-width: unset;
   }
 }
