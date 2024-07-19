@@ -159,11 +159,11 @@ function SkillValue({ value, skillName }) {
           if (index === 0) {
             canvasId = skillName;
             circleValue = 2 * Math.PI;
-            canvasColor = "red";
+            canvasColor = "#dcdcf5";
           } else {
             canvasId = skillName + "value";
             circleValue = ((2 * value) / 100) * Math.PI;
-            canvasColor = "orange";
+            canvasColor = "#a8a6f5";
           }
 
           console.log(canvasColor, "+-+-+- ", circleValue);
@@ -209,6 +209,7 @@ function SkillValue({ value, skillName }) {
           <h3>{value}%</h3>
         </div>
       </div>
+      <h3 className="title">{skillName}</h3>
     </div>
   );
 }

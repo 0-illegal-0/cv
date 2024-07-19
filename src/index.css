@@ -1,3 +1,34 @@
+/* ***************************************
+Template Name: Petrix - Personal Portfolio HTML Template
+Author:  codeefly 
+Author Email: info.codeefly@gmail.com 
+website: 
+Version: 1.0
+Description: 
+***************************************
+
+CSS TABLE OF CONTENTS
+===================================
+01. GLOBAL CSS 
+02. HOME PAGE
+03. PORTFOLIO PAGE
+04. PORTFOLIO DETAILS
+05. SERVICES PAGE
+06. SERVICE DETAILS
+07. BLOG GRID PAGE
+08. BLOG LIST PAGE
+09. BLOG DETAILS
+10. CONTACT US PAGE
+11. TEXT ANIMATION
+12. CUSTOM CURSOR ANIMATION
+13. HOVER IMAGE
+14. PRELOADER
+15. BUTTON ANIMATION
+
+/*=============================
+    GLOBAL CSS START
+=============================*/
+
 :root {
   --primary: #7b68ee;
   --background-color-secondary: #fff;
@@ -61,6 +92,7 @@ code {
 .main {
   display: flex;
   width: 100%;
+  max-width: 1700px;
   justify-content: space-between;
   padding: 22px 22px;
 }
@@ -892,6 +924,8 @@ code {
   }
 }
 
+/* Resume */
+
 /* education */
 .education-head {
   display: flex;
@@ -974,6 +1008,8 @@ code {
   color: #c13aa9 !important;
 }
 
+/* skills */
+
 .skills {
   width: 100%;
 }
@@ -989,7 +1025,7 @@ code {
 
 .main-circle-container {
   width: calc(100% / 4);
-  margin-top: 25px;
+  margin-bottom: 25px;
 }
 
 .skills > h3 {
@@ -1023,6 +1059,11 @@ code {
 .skill-circle > h3 {
   font-size: 28px;
   color: #080002d9;
+}
+
+.main-circle-container .title {
+  text-align: center;
+  margin-top: 5px;
 }
 @media (max-width: 1300px) {
   .education,
@@ -1103,13 +1144,18 @@ code {
     margin-top: 5px;
   }
 
+  .education,
+  .experience {
+    padding: unset;
+  }
+
   .education-section-main {
     margin-top: 60px;
     border-top: unset;
   }
 
   .section {
-    border: unset;
+    border: 10px solid #fff;
   }
 
   .skills-container {
@@ -1119,7 +1165,7 @@ code {
 
   .main-circle-container {
     width: calc(100% / 2);
-    margin-top: 20px;
+    margin-bottom: 20px;
   }
 }
 
@@ -1127,5 +1173,60 @@ code {
   .skills-container {
     width: 98%;
     min-width: unset;
+  }
+}
+
+/* Portofolio */
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 20px;
+}
+.projects > div {
+  padding: 10px;
+  margin-bottom: 0px;
+}
+.projects > div {
+  width: calc(100% / 3);
+}
+.projects > div:nth-child(1),
+.projects > div:nth-child(2) {
+  flex: 50%;
+}
+
+.projects > div > div {
+  width: 100%;
+  height: 100%;
+}
+.projects > div img {
+  width: 100%;
+  object-fit: contain;
+  border-radius: 7px;
+}
+
+@media (max-width: 1600px) {
+  .projects {
+    width: 95%;
+    margin: 0 auto;
+  }
+  .projects > div:nth-child(1),
+  .projects > div:nth-child(2) {
+    flex: unset;
+  }
+  .projects > div {
+    width: calc(100% / 2);
+    height: 250px;
+    padding: 10px;
+  }
+
+  .projects > div > div {
+    width: 100%;
+    height: 100%;
+  }
+  .projects > div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 7px;
   }
 }
