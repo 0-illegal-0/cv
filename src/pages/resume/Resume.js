@@ -166,8 +166,6 @@ function SkillValue({ value, skillName }) {
             canvasColor = "#a8a6f5";
           }
 
-          console.log(canvasColor, "+-+-+- ", circleValue);
-          // document.getElementById(canvasId).style.display = "none";
           canvas[index] = document.getElementById(canvasId);
           canvasCtx[index] = canvas[index].getContext("2d");
           canvasCtx[index].beginPath();
