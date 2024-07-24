@@ -29,12 +29,14 @@ function NavBar({ navBarMove, screenState, navList, navbarId, contentBody }) {
     document.getElementById("about-content").style.display = "flex";
     for (let index = 0; index < list.length; index++) {
       list[index].style.opacity = 0;
-      list[index].style.zIndex = "none";
-      // document.getElementById(idName).style.display = "none";
+      list[index].style.zIndex = "unset";
+      document.getElementById(idName).style.display = "none";
     }
 
     document.getElementById(idName).style.opacity = "1";
     document.getElementById(idName).style.display = "flex";
+    document.getElementById(idName).style.zIndex = "5";
+
     console.log(
       "This is Width yo ",
       document.getElementById("resume-main").offsetWidth
