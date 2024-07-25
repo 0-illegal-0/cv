@@ -1,73 +1,93 @@
 import React, { useEffect, useRef, useState } from "react";
 import project8 from "../../assets/images/portofolio/project-1.jpg";
 
-const prototypeImages = [project8, project8, project8];
+const prototypeImages = [
+  { id: 0, image: project8 },
+  { id: 1, image: project8 },
+  { id: 2, image: project8 },
+];
 
-function PrototypeImages({ mainMarginValue = 0 }) {
+let mainMarginValue = 0;
+let currentStage = 0;
+function PrototypeDetails() {
   const [marginVal, setMarginVal] = useState(0);
 
   function portofolioSiderImage(index) {
+    // console.log(currentStage, " **** ", index, " **** ", mainMarginValue);
     setTimeout(() => {
-      if (marginValue < 960 * index) {
-        setMarginVal((v) => v + 20);
-        portofolioSiderImage();
-        console.log("..... ", marginValue);
+      if (currentStage > index) {
+        if (
+          mainMarginValue >
+          document.getElementById("prototype-images").offsetWidth * index
+        ) {
+          mainMarginValue = mainMarginValue - 32;
+          if (
+            mainMarginValue <
+            index * document.getElementById("prototype-images").offsetWidth
+          ) {
+            setMarginVal(
+              index * document.getElementById("prototype-images").offsetWidth
+            );
+          } else {
+            setMarginVal(mainMarginValue);
+          }
+          portofolioSiderImage(index);
+        } else {
+          currentStage = index;
+        }
+      } else {
+        if (
+          mainMarginValue <
+          document.getElementById("prototype-images").offsetWidth * index
+        ) {
+          mainMarginValue = mainMarginValue + 32;
+          if (
+            mainMarginValue >
+            index * document.getElementById("prototype-images").offsetWidth
+          ) {
+            setMarginVal(
+              index * document.getElementById("prototype-images").offsetWidth
+            );
+          } else {
+            setMarginVal(mainMarginValue);
+          }
+          portofolioSiderImage(index);
+        } else {
+          currentStage = index;
+          console.log("..... In ELSE");
+        }
       }
-    }, 10);
+    }, 5);
+    console.log("..... ", currentStage);
   }
-  marginValue = marginVal;
 
-  useEffect(() => {
-    setMarginVal(mainMarginValue);
-
-    console.log(marginVal);
-  });
-  return (
-    <div
-      className="prototype-images"
-      id="prototype-images"
-      style={{ marginLeft: -marginVal }}
-    >
-      {prototypeImages.map((val) => {
-        return <img alt="" src={val} />;
-      })}
-    </div>
-  );
-}
-
-let marginValue = 0;
-let mainMarginValue = 0;
-
-let buttonIndex = 0;
-
-function PrototypeDetails() {
-  const [marginValT, setMarginValT] = useState(0);
-
-  function fog(index) {
-    mainMarginValue = 600;
-    setMarginValT(600);
+  function lis() {
     setTimeout(() => {
-      /*  if (mainMarginValue < 960 * index) {
-        mainMarginValue = mainMarginValue + 20;
-        fog();
-        console.log("..... ", mainMarginValue);
-      }*/
-    }, 10);
+      console.log("^^^ ", currentStage);
+      lis();
+    }, 300);
   }
+
+  lis();
+
   return (
     <div className="prototype-details">
       <div className="view-images">
-        <PrototypeImages mainMarginValue={marginValT} />
+        <div
+          className="prototype-images"
+          id="prototype-images"
+          style={{ marginLeft: -marginVal }}
+        >
+          {prototypeImages.map((val) => {
+            return <img alt="" src={val["image"]} />;
+          })}
+        </div>
         <div className="choise-image-buttons">
           {prototypeImages.map((val) => {
-            buttonIndex = buttonIndex + 1;
-            console.log("+-+-+-+", buttonIndex);
-
             return (
               <span
                 onClick={() => {
-                  fog(buttonIndex);
-                  // portofolioSiderImage(buttonIndex);
+                  portofolioSiderImage(val["id"]);
                 }}
               ></span>
             );
