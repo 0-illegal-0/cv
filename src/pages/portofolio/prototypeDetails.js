@@ -7,27 +7,35 @@ const prototypeImages = [
   { id: 2, image: project8 },
 ];
 
+// Focused button
+
+function headerFilterFocus(type) {
+  for (let index = 0; index < prototypeImages.length; index++) {
+    document
+      .getElementById(prototypeImages[index]["id"])
+      .classList.remove("background-focused-color");
+  }
+  document.getElementById(type).classList.add("background-focused-color");
+}
+
 let mainMarginValue = 0;
 let currentStage = 0;
+let prototypeImagesWidth = 0;
+
 function PrototypeDetails() {
   const [marginVal, setMarginVal] = useState(0);
+  useEffect(() => {
+    prototypeImagesWidth =
+      document.getElementById("prototype-images").offsetWidth;
+  });
 
   function portofolioSiderImage(index) {
-    // console.log(currentStage, " **** ", index, " **** ", mainMarginValue);
     setTimeout(() => {
       if (currentStage > index) {
-        if (
-          mainMarginValue >
-          document.getElementById("prototype-images").offsetWidth * index
-        ) {
+        if (mainMarginValue > prototypeImagesWidth * index) {
           mainMarginValue = mainMarginValue - 32;
-          if (
-            mainMarginValue <
-            index * document.getElementById("prototype-images").offsetWidth
-          ) {
-            setMarginVal(
-              index * document.getElementById("prototype-images").offsetWidth
-            );
+          if (mainMarginValue < index * prototypeImagesWidth) {
+            setMarginVal(index * prototypeImagesWidth);
           } else {
             setMarginVal(mainMarginValue);
           }
@@ -36,63 +44,53 @@ function PrototypeDetails() {
           currentStage = index;
         }
       } else {
-        if (
-          mainMarginValue <
-          document.getElementById("prototype-images").offsetWidth * index
-        ) {
+        if (mainMarginValue < prototypeImagesWidth * index) {
           mainMarginValue = mainMarginValue + 32;
-          if (
-            mainMarginValue >
-            index * document.getElementById("prototype-images").offsetWidth
-          ) {
-            setMarginVal(
-              index * document.getElementById("prototype-images").offsetWidth
-            );
+          if (mainMarginValue > index * prototypeImagesWidth) {
+            setMarginVal(index * prototypeImagesWidth);
           } else {
             setMarginVal(mainMarginValue);
           }
           portofolioSiderImage(index);
         } else {
           currentStage = index;
-          console.log("..... In ELSE");
         }
       }
     }, 5);
-    console.log("..... ", currentStage);
   }
-
-  function lis() {
-    setTimeout(() => {
-      console.log("^^^ ", currentStage);
-      lis();
-    }, 300);
-  }
-
-  lis();
 
   return (
     <div className="prototype-details">
-      <div className="view-images">
-        <div
-          className="prototype-images"
-          id="prototype-images"
-          style={{ marginLeft: -marginVal }}
-        >
-          {prototypeImages.map((val) => {
-            return <img alt="" src={val["image"]} />;
-          })}
+      <div className="prototype-container">
+        <div className="view-images">
+          <div
+            className="prototype-images"
+            id="prototype-images"
+            style={{ marginLeft: -marginVal }}
+          >
+            {prototypeImages.map((val) => {
+              return <img alt="" src={val["image"]} />;
+            })}
+          </div>
+          <div className="choise-image-buttons">
+            {prototypeImages.map((val) => {
+              return (
+                <span
+                  className={
+                    val["id"] === 0 ? "background-focused-color" : null
+                  }
+                  id={val["id"]}
+                  onClick={() => {
+                    portofolioSiderImage(val["id"]);
+                    headerFilterFocus(val["id"]);
+                  }}
+                ></span>
+              );
+            })}
+          </div>
         </div>
-        <div className="choise-image-buttons">
-          {prototypeImages.map((val) => {
-            return (
-              <span
-                onClick={() => {
-                  portofolioSiderImage(val["id"]);
-                }}
-              ></span>
-            );
-          })}
-        </div>
+        <div className="prototype-info"></div>
+        <div className="prototype-description">The Description Here</div>
       </div>
     </div>
   );
