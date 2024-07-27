@@ -13,34 +13,84 @@ const project = {
   "projects-types": ["all", "image", "video", "sound"],
   "prototype-projects": [
     {
-      id: "project-1",
+      id: 0,
       "project-name": "Project 1",
       "project-image": project1,
       type: "image",
+      "prototype-review": {
+        client: "Johnson Tomas",
+        category: "UI/UX Design",
+        duration: "40 days",
+        "prototype-images": [
+          { id: 0, image: project1 },
+          { id: 1, image: project1 },
+          { id: 2, image: project1 },
+        ],
+      },
     },
     {
-      id: "project-2",
+      id: 1,
       "project-name": "Project 2",
       "project-image": project2,
       type: "video",
+      "prototype-review": {
+        client: "Johnson Tomas",
+        category: "UI/UX Design",
+        duration: "40 days",
+        "prototype-images": [
+          { id: 0, image: project2 },
+          { id: 1, image: project2 },
+          { id: 2, image: project2 },
+        ],
+      },
     },
     {
-      id: "project-3",
+      id: 2,
       "project-name": "Project 3",
       "project-image": project1,
       type: "image",
+      "prototype-review": {
+        client: "Johnson Tomas",
+        category: "UI/UX Design",
+        duration: "40 days",
+        "prototype-images": [
+          { id: 0, image: project1 },
+          { id: 1, image: project1 },
+          { id: 2, image: project1 },
+        ],
+      },
     },
     {
-      id: "project-4",
+      id: 3,
       "project-name": "Project 3",
       "project-image": project2,
       type: "image",
+      "prototype-review": {
+        client: "Johnson Tomas",
+        category: "UI/UX Design",
+        duration: "40 days",
+        "prototype-images": [
+          { id: 0, image: project2 },
+          { id: 1, image: project2 },
+          { id: 2, image: project2 },
+        ],
+      },
     },
     {
-      id: "project-5",
+      id: 4,
       "project-name": "Project 4",
       "project-image": project1,
       type: "sound",
+      "prototype-review": {
+        client: "Johnson Tomas",
+        category: "UI/UX Design",
+        duration: "40 days",
+        "prototype-images": [
+          { id: 0, image: project1 },
+          { id: 1, image: project1 },
+          { id: 2, image: project1 },
+        ],
+      },
     },
   ],
 };
@@ -130,12 +180,35 @@ function Portofolio() {
   );
 }
 
+// project
 function Projects() {
+  function projectsReviw(id) {
+    for (
+      let index = 0;
+      index <
+      project["prototype-projects"][id]["prototype-review"]["prototype-images"]
+        .length;
+      index++
+    ) {
+      document.getElementById("prototype-images").innerHTML +=
+        "<img src=" +
+        project["prototype-projects"][id]["prototype-review"][
+          "prototype-images"
+        ][0]["image"] +
+        "/>";
+    }
+  }
+
   return (
     <div className="projects">
       {project["prototype-projects"].map((count) => {
         return (
-          <div id={count["id"]}>
+          <div
+            id={count["id"]}
+            onClick={() => {
+              projectsReviw(count["id"]);
+            }}
+          >
             <div id={count["id"] + "-container"}>
               <div className="event-screen">
                 <div className="description-content">

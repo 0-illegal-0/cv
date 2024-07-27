@@ -1372,11 +1372,11 @@ code {
 /* prototype-details */
 .prototype-details {
   display: flex;
+  width: 100%;
   height: 100%;
   justify-content: center;
-  align-items: center;
   z-index: 6;
-  position: absolute;
+  position: fixed;
   background-color: #201f1faf;
 }
 .prototype-container {
@@ -1386,7 +1386,8 @@ code {
   height: 80%;
   overflow-y: scroll;
   background-color: #fff;
-  border: 10px solid #fff;
+  border: 20px solid #fff;
+  border-right: unset;
   justify-content: space-between;
   margin: auto;
 }
@@ -1394,6 +1395,7 @@ code {
   width: calc(100% - 0px);
   overflow: hidden;
   margin-bottom: 30px;
+  border-right: 15px solid #fff;
 }
 .prototype-images {
   display: flex;
@@ -1416,9 +1418,11 @@ code {
   margin-left: 15px;
   border: 1px solid #426cf5;
 }
+
 .choise-image-buttons > span:hover {
   cursor: pointer;
 }
+
 .background-focused-color {
   background-color: var(--primary);
 }
@@ -1426,10 +1430,71 @@ code {
 .prototype-info {
   width: 37%;
   height: 300px;
-  border: 1px solid grey;
+  background-color: #426cf514;
 }
 
 .prototype-description {
-  width: calc(63% - 10px);
+  width: calc(63% - 40px);
   border: 1px solid grey;
+  margin: 0 2%;
+}
+
+.close {
+  position: absolute;
+  display: flex;
+  justify-content: end;
+  width: calc(70% + 45px);
+  margin-top: -20px;
+}
+.close > span {
+  width: 45px;
+  height: 45px;
+  background-color: #fff;
+  margin-right: 20px;
+  padding: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.close > span:hover {
+  cursor: pointer;
+}
+.close img {
+  width: 100%;
+  height: 100%;
+}
+
+.prototype-review-hidden {
+  animation: prototype-review-hidden-anim 0.4s linear 0s 1 normal;
+}
+
+@keyframes prototype-review-hidden-anim {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 1200px) {
+  .prototype-details {
+    margin-top: 5%;
+  }
+  .prototype-container {
+    width: 85%;
+  }
+  .close {
+    width: calc(85% + 45px);
+  }
+}
+
+@media (max-width: 768px) {
+  .prototype-description {
+    margin: unset;
+  }
+  .prototype-info,
+  .prototype-description {
+    width: calc(100% - 20px);
+  }
 }
