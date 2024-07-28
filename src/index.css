@@ -1378,6 +1378,8 @@ code {
   z-index: 6;
   position: fixed;
   background-color: #201f1faf;
+  opacity: 0;
+  z-index: -1;
 }
 .prototype-container {
   display: flex;
@@ -1428,13 +1430,13 @@ code {
 }
 
 .prototype-info {
-  width: 37%;
+  width: 33%;
   height: 300px;
   background-color: #426cf514;
 }
 
 .prototype-description {
-  width: calc(63% - 40px);
+  width: calc(67% - 40px);
   border: 1px solid grey;
   margin: 0 2%;
 }
@@ -1463,7 +1465,43 @@ code {
   height: 100%;
 }
 
+.prototype-review-show {
+  z-index: 6;
+  animation: prototype-review-show-anim 0.4s linear 0s 1 normal;
+}
+
+.prototype-info {
+  padding: 20px 30px 30px 20px;
+}
+.prototype-info b {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.prototype-info b,
+.prototype-info span {
+  font-size: 19px;
+}
+.prototype-info span {
+  margin-left: 10%;
+}
+
+.prototype-info > div {
+  margin-bottom: 25px;
+}
+
+@keyframes prototype-review-show-anim {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 .prototype-review-hidden {
+  z-index: -1;
   animation: prototype-review-hidden-anim 0.4s linear 0s 1 normal;
 }
 

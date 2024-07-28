@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import project1 from "../../assets/images/portofolio/project-1.jpg";
 import project2 from "../../assets/images/portofolio/project-2.jpg";
+import techIconSix from "../../assets/images/tech-icon/CSS3-2.png";
+import techIconOne from "../../assets/images/tech-icon/pexels-pixabay-261621.jpg";
+import techIconTwo from "../../assets/images/tech-icon/pexels-pixabay-261621.jpg";
+import techIconThree from "../../assets/images/tech-icon/pexels-pixabay-261621.jpg";
+import techIconFour from "../../assets/images/tech-icon/pexels-pixabay-261621.jpg";
+import techIconFive from "../../assets/images/tech-icon/pexels-pixabay-261621.jpg";
 import project3 from "../../assets/images/portofolio/project-3.jpg";
 import project4 from "../../assets/images/portofolio/project-4.jpg";
 import project5 from "../../assets/images/portofolio/project-5.jpg";
@@ -21,6 +27,13 @@ const project = {
         client: "Johnson Tomas",
         category: "UI/UX Design",
         duration: "40 days",
+        technologies: [
+          techIconOne,
+          techIconTwo,
+          techIconThree,
+          techIconFour,
+          techIconFive,
+        ],
         "prototype-images": [
           { id: 0, image: project1 },
           { id: 1, image: project1 },
@@ -37,6 +50,14 @@ const project = {
         client: "Johnson Tomas",
         category: "UI/UX Design",
         duration: "40 days",
+        technologies: [
+          techIconOne,
+          techIconTwo,
+          techIconThree,
+          techIconFour,
+          techIconFive,
+        ],
+
         "prototype-images": [
           { id: 0, image: project2 },
           { id: 1, image: project2 },
@@ -53,6 +74,14 @@ const project = {
         client: "Johnson Tomas",
         category: "UI/UX Design",
         duration: "40 days",
+        technologies: [
+          techIconOne,
+          techIconTwo,
+          techIconThree,
+          techIconFour,
+          techIconFive,
+        ],
+
         "prototype-images": [
           { id: 0, image: project1 },
           { id: 1, image: project1 },
@@ -69,6 +98,14 @@ const project = {
         client: "Johnson Tomas",
         category: "UI/UX Design",
         duration: "40 days",
+        technologies: [
+          techIconOne,
+          techIconTwo,
+          techIconThree,
+          techIconFour,
+          techIconFive,
+        ],
+
         "prototype-images": [
           { id: 0, image: project2 },
           { id: 1, image: project2 },
@@ -85,6 +122,14 @@ const project = {
         client: "Johnson Tomas",
         category: "UI/UX Design",
         duration: "40 days",
+        technologies: [
+          techIconOne,
+          techIconTwo,
+          techIconThree,
+          techIconFour,
+          techIconFive,
+        ],
+
         "prototype-images": [
           { id: 0, image: project1 },
           { id: 1, image: project1 },
@@ -181,21 +226,42 @@ function Portofolio() {
 }
 
 // project
+let prototypeDetails = null;
+let prototypeTechnologies = null;
+let prototypeImages;
+
 function Projects() {
+  let prototypeData = null;
+
+  useEffect(() => {
+    prototypeImages = document.getElementById("prototype-images");
+    prototypeTechnologies = document.getElementById("prototype-technologies");
+    prototypeDetails = document.getElementById("prototype-details");
+  });
+
   function projectsReviw(id) {
+    prototypeImages.innerHTML = ""; // reset
+    prototypeTechnologies.innerHTML = "";
+    prototypeData = project["prototype-projects"][id]["prototype-review"];
+
     for (
       let index = 0;
-      index <
-      project["prototype-projects"][id]["prototype-review"]["prototype-images"]
-        .length;
+      index < prototypeData["prototype-images"].length;
       index++
     ) {
-      document.getElementById("prototype-images").innerHTML +=
-        "<img src=" +
-        project["prototype-projects"][id]["prototype-review"][
-          "prototype-images"
-        ][0]["image"] +
-        "/>";
+      prototypeImages.innerHTML +=
+        "<img src=" + prototypeData["prototype-images"][index]["image"] + "/>";
+
+      prototypeDetails.classList.remove("prototype-review-hidden");
+      prototypeDetails.classList.add("prototype-review-show");
+      prototypeDetails.style.display = "flex";
+      prototypeDetails.style.opacity = "1";
+    }
+    console.log("==== ", prototypeData["technologies"].length);
+    for (let index = 0; index < prototypeData["technologies"].length; index++) {
+      console.log("==== ", prototypeData["technologies"].length);
+
+      prototypeTechnologies.innerHTML += "<img src=" + techIconSix + "/>";
     }
   }
 

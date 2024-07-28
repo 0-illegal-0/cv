@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import project8 from "../../assets/images/portofolio/project-1.jpg";
 import close from "../../assets/images/icons/red-close.png";
+import techIconTwo from "../../assets/images/tech-icon/css.png";
 
 const prototypeReviw = {
   client: "Johnson Tomas",
@@ -23,8 +24,9 @@ const prototypeImages = [
 function headerFilterFocus(type) {
   for (let index = 0; index < prototypeImages.length; index++) {
     document
-      .getElementById(prototypeImages[index]["id"])
+      .getElementById(prototypeImages[index]["id"] + "-button")
       .classList.remove("background-focused-color");
+    console.log("TYPE ", type);
   }
   document.getElementById(type).classList.add("background-focused-color");
 }
@@ -77,6 +79,7 @@ function PrototypeDetails() {
           currentStage = index;
         }
       }
+      console.log("boook ", marginVal);
     }, 5);
   }
 
@@ -97,22 +100,16 @@ function PrototypeDetails() {
             className="prototype-images"
             id="prototype-images"
             style={{ marginLeft: -marginVal }}
-          >
-            {/*prototypeImages.map((val) => {
-              return <img alt="" src={val["image"]} />;
-            })*/}
-          </div>
+          ></div>
           <div className="choise-image-buttons">
             {prototypeImages.map((val) => {
               return (
                 <span
-                  className={
-                    val["id"] === 0 ? "background-focused-color" : null
-                  }
-                  id={val["id"]}
+                  className={val["id"] === 0 ? "background-focused-color" : ""}
+                  id={val["id"] + "-button"}
                   onClick={() => {
                     portofolioSiderImage(val["id"]);
-                    headerFilterFocus(val["id"]);
+                    headerFilterFocus(val["id"] + "-button");
                   }}
                 ></span>
               );
@@ -120,12 +117,20 @@ function PrototypeDetails() {
           </div>
         </div>
         <div className="prototype-info">
-          <div className="prototype-client">
-            <b>Client</b>
-            <span>prototypeReviw[]</span>
+          <div className="prototype-client ">
+            <b>Client :</b>
+            <span>prototypeReviw</span>
           </div>
           <div className="prototype-category"></div>
+          <b>Category :</b>
+          <span>UI/UX Design</span>
           <div className="prototype-date"></div>
+          <b>Duration :</b>
+          <span>40 Days</span>
+          <div
+            className="prototype-technologies"
+            id="prototype-technologies"
+          ></div>
         </div>
         <div className="prototype-description">The Description Here</div>
       </div>
