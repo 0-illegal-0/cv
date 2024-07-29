@@ -42,7 +42,7 @@ function Main() {
         <div className="box-size-height"></div>
         <Avatar />
         <MainBody innerHeight={window.innerHeight} />
-        <NavBar screenState={window.innerWidth > 1000 ? false : true} />
+        <NavBar screenState={window.innerWidth > 1100 ? false : true} />
       </div>
     </div>
   );

@@ -46,10 +46,10 @@ function PrototypeDetails() {
 
   function prototypeReviewHidden() {
     prototypeDetails.classList.add("prototype-review-hidden");
-    prototypeDetails.style.opacity = "0";
     setTimeout(() => {
       prototypeDetails.style.display = "none";
-    }, 410);
+      prototypeDetails.style.opacity = "0";
+    }, 400);
   }
 
   function portofolioSiderImage(index) {
@@ -117,22 +117,23 @@ function PrototypeDetails() {
           </div>
         </div>
         <div className="prototype-info">
-          <div className="prototype-client ">
-            <b>Client :</b>
-            <span>prototypeReviw</span>
-          </div>
-          <div className="prototype-category"></div>
-          <b>Category :</b>
-          <span>UI/UX Design</span>
-          <div className="prototype-date"></div>
-          <b>Duration :</b>
-          <span>40 Days</span>
+          <div
+            id="prototype-info-details"
+            className="prototype-info-details"
+          ></div>
           <div
             className="prototype-technologies"
             id="prototype-technologies"
           ></div>
         </div>
-        <div className="prototype-description">The Description Here</div>
+
+        <div className="prototype-description">
+          <h2>Description</h2>
+          <p
+            id="prototype-description-content"
+            className="prototype-description-content"
+          ></p>
+        </div>
       </div>
     </div>
   );

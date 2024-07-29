@@ -9,7 +9,6 @@ function MainHeader() {
   const navbarId = useRef();
 
   function navBarMove() {
-    console.log("fog");
     if (!navbarStateProccessing && navbarState) {
       navbarStateProccessing = true;
       navbarState = false;
