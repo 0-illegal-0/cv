@@ -273,12 +273,6 @@ function Projects() {
 
     descriptionContent.innerHTML = prototypeData["description"];
 
-    for (
-      let index = 0;
-      index < prototypeData["prototype-review-details"].length;
-      index++
-    ) {}
-
     prototypeData["prototype-review-details"].forEach((element) => {
       prototypeInfo.innerHTML +=
         "<div><b>" +

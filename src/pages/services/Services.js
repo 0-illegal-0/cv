@@ -35,7 +35,7 @@ const services = {
         "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print.",
     },
     {
-      icon: development,
+      icon: photography,
       title: "Photography",
       description:
         "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print.",
