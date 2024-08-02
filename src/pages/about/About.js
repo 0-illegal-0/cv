@@ -1,6 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
 import NavBarAnimation from "../../component/NavBarAnimation.js";
-import spiral from "../../assets/images/style/spiral.png";
 
 // JobNameAnimation
 const jobNameList = [
@@ -23,7 +22,6 @@ let counter = 0;
 let switchKey = true;
 let textC = "";
 let timer = 100;
-let timerSwitch = true;
 
 function JobNameAnimation() {
   const jobNameRef = useRef();

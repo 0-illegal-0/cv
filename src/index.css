@@ -745,16 +745,13 @@ code {
 
 /*General*/
 
-@media (max-width: 900px) {
+@media (max-width: 992px) {
   .main-content-body {
     border-radius: 3px;
   }
   .section > h2 {
     font-size: 33px;
   }
-}
-
-@media (max-width: 900px) {
   .box-size-height {
     display: block;
   }
@@ -1111,7 +1108,7 @@ code {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 992px) {
   .experience {
     margin-top: 30px !important;
   }
@@ -1125,7 +1122,7 @@ code {
     border: 20px solid #fff;
   }
   .education-section-main {
-    margin-top: 20px;
+    margin-top: 40px;
   }
   .education-head > h3,
   .skills > h3 {
@@ -1137,7 +1134,7 @@ code {
     margin-top: 0;
   }
 }
-@media (max-width: 700px) {
+@media (max-width: 768px) {
   .education-section {
     display: flex;
     flex-direction: column;
@@ -1710,7 +1707,7 @@ code {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .service-content {
     width: 100%;
   }
@@ -1781,6 +1778,10 @@ code {
   aspect-ratio: 1 / 1;
 }
 
+.contact-icons > div:hover {
+  cursor: pointer;
+}
+
 .contact-welcome-text {
   object-fit: contain;
   background-image: linear-gradient(to left, #6489f7, #d53a9d, #6489f7);
@@ -1801,17 +1802,33 @@ code {
 @media (max-width: 992px) {
   .contact-body {
     width: 75%;
+    min-width: 600px;
   }
   .contact-welcome-text {
     min-width: 400px;
+  }
+  .contact-title {
+    margin-top: 20px;
   }
 }
 
 @media (max-width: 768px) {
   .contact-body {
     width: 85%;
+    min-width: unset;
   }
   .contact-welcome-text {
     min-width: 400px;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-body {
+    width: 100%;
+    margin-top: 15px;
+  }
+  .contact-welcome-text {
+    width: 90%;
+    min-width: unset;
   }
 }
