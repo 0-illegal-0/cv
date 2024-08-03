@@ -18,6 +18,7 @@ import Resume from "./pages/resume/Resume.js";
 import Portofolio from "./pages/portofolio/Portofolio.js";
 import Services from "./pages/services/Services.js";
 import Contact from "./pages/contact/Contact.js";
+import NavBarAnimation from "./component/NavBarAnimation.js";
 
 // main Icon
 

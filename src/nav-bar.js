@@ -25,10 +25,22 @@ function NavBar({ navBarMove, screenState, navList, navbarId, contentBody }) {
     }
   }, []);
 
-  function moveTest() {
-    //contentBody.current.style.display = "none";
-    aboutContent.style.display = "none";
-    mainContentBody.innerHTML = renderToString(ForTest());
+  let list;
+
+  function chooseSection(idName) {
+    list = document
+      .getElementById("content-body-list")
+      .querySelectorAll(".section");
+    document.getElementById("about-content").style.display = "flex";
+    for (let index = 0; index < list.length; index++) {
+      list[index].style.opacity = 0;
+      list[index].style.zIndex = "unset";
+      list[index].style.display = "none";
+      //  document.getElementById(idName).style.display = "none";
+    }
+    document.getElementById(idName).style.opacity = "1";
+    document.getElementById(idName).style.display = "flex";
+    document.getElementById(idName).style.zIndex = "5";
   }
 
   return (
@@ -38,26 +50,46 @@ function NavBar({ navBarMove, screenState, navList, navbarId, contentBody }) {
           <img src={navbarIcon} />
         </div>
         <ul className="nav-list" ref={navList}>
-          <li>
+          <li
+            onClick={() => {
+              chooseSection("about-content");
+            }}
+          >
             <img src={about} />
             <span>About</span>
           </li>
-          <li onClick={moveTest}>
+          <li
+            onClick={() => {
+              chooseSection("resume");
+            }}
+          >
             <img src={resume} />
 
             <span>Resume</span>
           </li>
-          <li>
+          <li
+            onClick={() => {
+              chooseSection("portofolio");
+            }}
+          >
             <img src={portfolio} />
 
             <span>Portfolio</span>
           </li>
-          <li>
+          <li
+            onClick={() => {
+              chooseSection("services");
+            }}
+          >
             <img src={service} />
 
             <span>Services</span>
           </li>
-          <li>
+          <li
+            onClick={() => {
+              chooseSection("contact");
+            }}
+          >
             <img src={contact} />
 
             <span>Contact</span>
@@ -66,10 +98,6 @@ function NavBar({ navBarMove, screenState, navList, navbarId, contentBody }) {
       </div>
     </>
   );
-}
-
-function ForTest() {
-  return <h2>Waleed</h2>;
 }
 
 export default NavBar;

@@ -1,4 +1,5 @@
-import AvatarImage from "./assets/images/avatar/avatar.jpg";
+/*import AvatarImage from "./assets/images/avatar/44508.jpg";15591 20011*/
+import AvatarImage from "./assets/images/avatar/44508.jpg";
 
 function Avatar() {
   return (
@@ -7,8 +8,7 @@ function Avatar() {
         <div className="about-container-avatar">
           <div className="avatar-name-description">
             <img src={AvatarImage} alt="" />
-            <div className="shadow"></div>
-            <h3>Soliman Ramadan</h3>
+            <h3>Robin Oliver</h3>
             <h3 className="job-description">Web Developer</h3>
           </div>
 

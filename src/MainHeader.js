@@ -9,6 +9,7 @@ function MainHeader() {
   const navbarId = useRef();
 
   function navBarMove() {
+    console.log("kooo");
     if (!navbarStateProccessing && navbarState) {
       navbarStateProccessing = true;
       navbarState = false;
@@ -24,7 +25,7 @@ function MainHeader() {
       navListId.current.classList.remove("navbar-header-off");
       navListId.current.classList.add("navbar-header-on");
       navListId.current.style.marginRight = "0px";
-      navbarId.current.style.zIndex = "1";
+      navbarId.current.style.zIndex = "10";
       navbarStateProccessing = false;
     }
   }

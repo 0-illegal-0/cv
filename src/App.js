@@ -11,6 +11,7 @@ import PrototypeDetails from "./pages/portofolio/prototypeDetails.js";
 import bgImage from "./assets/images/style/background-image.jpg";
 import { screen } from "@testing-library/react";
 import NavBarIcon from "./assets/images/icons/nav-bar.png";
+import NavBarAnimation from "./component/NavBarAnimation.js";
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function Main() {
         <Avatar />
         <MainBody innerHeight={window.innerHeight} />
         <NavBar screenState={window.innerWidth > 1100 ? false : true} />
+        <NavBarAnimation />
       </div>
     </div>
   );

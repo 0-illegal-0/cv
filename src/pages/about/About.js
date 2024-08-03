@@ -1,5 +1,4 @@
 import React, { useRef, useState, useEffect } from "react";
-import NavBarAnimation from "../../component/NavBarAnimation.js";
 
 // JobNameAnimation
 const jobNameList = [
@@ -96,7 +95,6 @@ function About({ contentBody, jobName }) {
         <button>Hire Me</button>
         <button> Portfolio</button>
       </div>
-      <NavBarAnimation />
     </div>
   );
 }

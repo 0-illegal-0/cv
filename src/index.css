@@ -82,6 +82,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--background-color);
+  overflow-x: hidden;
 }
 
 code {
@@ -138,7 +139,6 @@ code {
 
 .nav-bar > .navbar-icon {
   display: none;
-
   position: absolute;
 }
 
@@ -155,6 +155,10 @@ code {
   margin: 10px auto;
   text-align: center;
   width: 100%;
+}
+
+.nav-list li:hover {
+  cursor: pointer;
 }
 
 .nav-list li > span {
@@ -188,21 +192,24 @@ code {
 }
 
 .avatar-name-description {
-  width: 90%;
-  margin: auto auto;
-  padding: 0px 20px 10px;
-  border-bottom: 2px solid #9cc3e9;
+  width: 100%;
+  height: 380px;
+  /* margin: auto auto;
+   padding: 0px 20px 10px;
+   border-bottom: 2px solid #9cc3e9;
   border-bottom-right-radius: 5%;
-  border-bottom-left-radius: 5%;
+  border-bottom-left-radius: 5%;*/
 }
 
 .avatar-name-description > img {
   width: 100%;
-  object-fit: contain;
+  height: 100%;
+  object-fit: cover;
+
   /*box-shadow: 0 0 10px 5px #b7d5eb75;*/
 }
 
-.shadow {
+.shado {
   width: 90%;
   height: 0px;
   box-shadow: 0 0 10px 15px #fdf8f8;
@@ -214,7 +221,6 @@ code {
 
 .avatar-name-description > h3 {
   text-align: center;
-  margin-top: 8px;
   font-weight: bold;
   font-family: Radio_Canada;
   position: relative;
@@ -574,15 +580,15 @@ code {
 
   .avatar-name-description {
     width: 100%;
-    padding: 0 10px 5px;
+    /* padding: 0 10px 5px;*/
     display: flex;
     flex-direction: column;
   }
 
   .avatar-name-description > img {
-    border-radius: 30%;
-    margin: auto;
-    width: 80%;
+    /*   border-radius: 30%;
+    margin: auto;*/
+    width: 100%;
   }
 
   .bottom-icon-image-wrap img {
@@ -669,6 +675,7 @@ code {
     position: absolute;
     width: 100%;
     z-index: 5;
+    margin-top: 3%;
   }
 
   .navbar-move-on {
@@ -685,7 +692,7 @@ code {
     }
 
     100% {
-      margin-left: calc(101% - 90px);
+      margin-left: calc(101% - 120px);
     }
   }
 
@@ -757,7 +764,7 @@ code {
   }
   .about-container {
     width: 40% !important;
-    min-width: 340px;
+    min-width: 310px;
     padding-bottom: 15px;
   }
 
@@ -775,9 +782,9 @@ code {
     margin-top: 15px !important;
   }
 
-  .avatar-name-description {
-    width: 90%;
-    padding: 0 40px 5px;
+  .about-container-avatar .avatar-name-description {
+    width: 100%;
+    margin-top: unset !important;
   }
   .about-content > * {
     margin-top: 30px;
@@ -829,7 +836,7 @@ code {
     align-items: center;
     margin-top: 0;
     margin-bottom: 20px;
-    z-index: 10;
+    z-index: 11;
     position: fixed;
     background-color: white;
     box-shadow: 0 0 25px 1px #c4cbfb;

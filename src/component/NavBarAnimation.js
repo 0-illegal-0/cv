@@ -13,7 +13,6 @@ function NavBarAnimation() {
   }, []);
 
   function navBarMove() {
-    console.log("This is nav");
     if (!navbarStateProccessing && navbarState) {
       navbarStateProccessing = true;
       navbarState = false;
@@ -26,7 +25,7 @@ function NavBarAnimation() {
       navbarState = true;
       navbarId.current.classList.remove("navbar-move-off");
       navbarId.current.classList.add("navbar-move-on");
-      navbarId.current.style.marginLeft = "calc(101% - 90px)";
+      navbarId.current.style.marginLeft = "calc(101% - 120px)";
       navbarStateProccessing = false;
     }
   }
