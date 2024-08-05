@@ -76,7 +76,7 @@ function About({ contentBody, jobName }) {
   return (
     <div id="about-content" className="about-content section" ref={contentBody}>
       <div className="personal-informations">
-        <h2>I'm Soliman Ramadan</h2>
+        <h2>I'm Robin Oliver</h2>
         <JobNameAnimation />
         <p>
           I am a <b>Web developer</b> use logical and mathematical solutions to

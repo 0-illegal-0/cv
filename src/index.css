@@ -219,14 +219,14 @@ code {
   margin: 0 auto;
 }
 
-.avatar-name-description > h3 {
+.avatar-personal-info > h3 {
   text-align: center;
   font-weight: bold;
   font-family: Radio_Canada;
   position: relative;
   z-index: 2;
 }
-.avatar-name-description .job-description {
+.avatar-personal-info .job-description {
   color: var(--primary);
 }
 
@@ -239,8 +239,20 @@ code {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  font-size: 17px;
+  font-size: 18px;
   padding: 0 10px;
+}
+
+.social-media-icons {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.social-media-icons > img {
+  width: 35px;
+  object-fit: contain;
 }
 
 .about-container-avatar .download-vc {
@@ -310,7 +322,7 @@ code {
 }
 
 .personal-informations > p {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.7;
   font-family: "Rubik", "Calibri", " sans-serif";
   margin-top: 10px;
@@ -574,7 +586,7 @@ code {
     font-size: 23px;
   }
 
-  .avatar-name-description h3 {
+  .avatar-personal-info h3 {
     font-size: 15.5px;
   }
 
@@ -1838,4 +1850,24 @@ code {
     width: 90%;
     min-width: unset;
   }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #dee8f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #5a88b3; /*5a88b3*/
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
