@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
+import aboutData from "../../data/about.json";
 
 // JobNameAnimation
 const jobNameList = [
@@ -76,20 +77,27 @@ function About({ contentBody, jobName }) {
   return (
     <div id="about-content" className="about-content section" ref={contentBody}>
       <div className="personal-informations">
-        <h2>I'm Robin Oliver</h2>
+        <h2>I'm {aboutData["name"]}</h2>
         <JobNameAnimation />
         <p>
-          I am a <b>Web developer</b> use logical and mathematical solutions to
-          get a lot of work done and to solve problems, i have experience using
-          javascript and PHP to create full stack website and integrating API
+          I am a <b>{aboutData["job-title"]}</b> {aboutData["summary"]}
         </p>
       </div>
 
       <div className="handled-projects">
-        <Achievements title={"Client Review"} number={46} />
-        <Achievements title={"Years Of Experience"} number={7} />
-        <Achievements title={"Handled Projects"} number={23} />
-        <Achievements title={"Awards Won"} number={25} />
+        <Achievements
+          title={"Client Review"}
+          number={aboutData["client-review"]}
+        />
+        <Achievements
+          title={"Years Of Experience"}
+          number={aboutData["years-of-experience"]}
+        />
+        <Achievements
+          title={"Handled Projects"}
+          number={aboutData["handled-projects"]}
+        />
+        <Achievements title={"Awards Won"} number={aboutData["awards-won"]} />
       </div>
       <div className="resume-protofolio-buttons">
         <button>Hire Me</button>

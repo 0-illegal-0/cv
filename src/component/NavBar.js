@@ -5,9 +5,6 @@ import resume from "../assets/images/icons/resume.png";
 import portfolio from "../assets/images/icons/portfolio.png";
 import service from "../assets/images/icons/service.png";
 import contact from "../assets/images/icons/contact.png";
-import { seto } from "../MainBody.js";
-import About from "../pages/about/About.js";
-
 import { useEffect, useState, useRef } from "react";
 
 function NavBar({ navBarMove, screenState, navList, navbarId, contentBody }) {

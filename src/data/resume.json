@@ -1,0 +1,52 @@
+{
+  "education": [
+    {
+      "​certificate": "Diploma in Graphic Design",
+      "university": "Dhaka University",
+      "duration-date": "2007 - 2010",
+      "description": "Morbi nulla arcu, pellentesque sed egestas in, tempor eget felis. Nullam tincidunt augue in leo feugiat, quis interdum nisi sollicitudin, quis interdum nisi sollicitudin"
+    },
+    {
+      "​certificate": "Diploma in Graphic Design",
+      "university": "Dhaka University",
+      "duration-date": "2012 - 2015",
+      "description": "Morbi nulla arcu, pellentesque sed egestas in, tempor eget felis. Nullam tincidunt augue in leo feugiat, quis interdum nisi sollicitudin, quis interdum nisi sollicitudin"
+    },
+    {
+      "​certificate": "ARTIST OF COLLEGE",
+      "university": "Dhaka University",
+      "duration-date": "2028 - 2020",
+      "description": "Morbi nulla arcu, pellentesque sed egestas in, tempor eget felis. Nullam tincidunt augue in leo feugiat, quis interdum nisi sollicitudin, quis interdum nisi sollicitudin"
+    }
+  ],
+  "experience": [
+    {
+      "​certificate": "Diploma in Graphic Design",
+      "university": "Dhaka University",
+      "duration-date": "2007 - 2010",
+      "description": "Morbi nulla arcu, pellentesque sed egestas in, tempor eget felis. Nullam tincidunt augue in leo feugiat, quis interdum nisi sollicitudin, quis interdum nisi sollicitudin"
+    },
+    {
+      "​certificate": "Diploma in Graphic Design",
+      "university": "Dhaka University",
+      "duration-date": "2012 - 2015",
+      "description": "Morbi nulla arcu, pellentesque sed egestas in, tempor eget felis. Nullam tincidunt augue in leo feugiat, quis interdum nisi sollicitudin, quis interdum nisi sollicitudin"
+    },
+    {
+      "​certificate": "ARTIST OF COLLEGE",
+      "university": "Dhaka University",
+      "duration-date": "2028 - 2020",
+      "description": "Morbi nulla arcu, pellentesque sed egestas in, tempor eget felis. Nullam tincidunt augue in leo feugiat, quis interdum nisi sollicitudin, quis interdum nisi sollicitudin"
+    }
+  ],
+  "skills": [
+    { "value": 80, "skill-name": "HTML" },
+    { "value": 75, "skill-name": "CSS" },
+    { "value": 90, "skill-name": "JAVASCRIPT" },
+    { "value": 95, "skill-name": "PHP" },
+    { "value": 90, "skill-name": "ANGULAR" },
+    { "value": 80, "skill-name": "REACT" },
+    { "value": 85, "skill-name": "MYSQL" },
+    { "value": 90, "skill-name": "LARAVEL" }
+  ]
+}

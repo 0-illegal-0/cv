@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { transformVal } from "../../component/NavBar";
+import aboutData from "../../data/resume.json";
 
 function Resume() {
   const resumeMain = useRef();
@@ -14,21 +15,16 @@ function Resume() {
             <h3> Education </h3>
             <span className="education-head-line"></span>
           </div>
-          <EducationSection
-            qualification={"Diploma in Graphic Design "}
-            university={"Dhaka University"}
-            date={"2007 - 2010"}
-          />
-          <EducationSection
-            qualification={"Diploma in Graphic Design "}
-            university={"BACHELOR OF ARTS"}
-            date={"2012 - 2015"}
-          />
-          <EducationSection
-            qualification={"ARTIST OF COLLEGE"}
-            university={"Dhaka University"}
-            date={"2028 - 2020"}
-          />
+          {aboutData["education"].map((v) => {
+            return (
+              <EducationSection
+                qualification={v["​certificate"]}
+                university={v["university"]}
+                date={v["duration-date"]}
+                description={v["description"]}
+              />
+            );
+          })}
         </div>
         <div className="experience">
           <div className="education-head">
@@ -36,21 +32,16 @@ function Resume() {
             <h3> Experience </h3>
             <span className="education-head-line"></span>
           </div>
-          <EducationSection
-            qualification={"ARTIST OF COLLEGE"}
-            university={"Dhaka University"}
-            date={"2028 - 2020"}
-          />
-          <EducationSection
-            qualification={"ARTIST OF COLLEGE"}
-            university={"Dhaka University"}
-            date={"2028 - 2020"}
-          />{" "}
-          <EducationSection
-            qualification={"ARTIST OF COLLEGE"}
-            university={"Dhaka University"}
-            date={"2028 - 2020"}
-          />
+          {aboutData["education"].map((v) => {
+            return (
+              <EducationSection
+                qualification={v["​certificate"]}
+                university={v["university"]}
+                date={v["duration-date"]}
+                description={v["description"]}
+              />
+            );
+          })}
         </div>
         <Skills />
       </div>
@@ -58,7 +49,7 @@ function Resume() {
   );
 }
 
-function EducationSection({ qualification, university, date }) {
+function EducationSection({ qualification, university, date, description }) {
   return (
     <div className="education-section-main">
       <div className="education-section">
@@ -72,55 +63,17 @@ function EducationSection({ qualification, university, date }) {
         </div>
         <span className="date-education"> {date}</span>
       </div>
-      <p className="education-section-paragraph">
-        Morbi nulla arcu, pellentesque sed egestas in, tempor eget felis. Nullam
-        tincidunt augue in leo feugiat, quis interdum nisi sollicitudin, quis
-        interdum nisi sollicitudin
-      </p>
+      <p className="education-section-paragraph">{description}</p>
     </div>
   );
 }
-
-function ExperienceSection({ qualification, university, date }) {
-  return (
-    <div className="education-section-main">
-      <div className="education-section">
-        <h3 className="qualification">{qualification}</h3>
-        <div className="line-style">
-          <span className="line"></span>
-        </div>
-        <h4 className="university">{university}</h4>
-        <div className="line-style">
-          <span className="line"></span>
-        </div>
-        <span className="date-education"> {date}</span>
-      </div>
-      <p className="education-section-paragraph">
-        Morbi nulla arcu, pellentesque sed egestas in, tempor eget felis. Nullam
-        tincidunt augue in leo feugiat, quis interdum nisi sollicitudin, quis
-        interdum nisi sollicitudin
-      </p>
-    </div>
-  );
-}
-
-const skillsValues = [
-  { value: 80, "skill-name": "HTML" },
-  { value: 75, "skill-name": "CSS" },
-  { value: 90, "skill-name": "JAVASCRIPT" },
-  { value: 95, "skill-name": "PHP" },
-  { value: 90, "skill-name": "ANGULAR" },
-  { value: 80, "skill-name": "REACT" },
-  { value: 85, "skill-name": "MYSQL" },
-  { value: 90, "skill-name": "LARAVEL" },
-];
 
 function Skills() {
   return (
     <div className="skills">
       <h3>Skills</h3>
       <div className="skills-container">
-        {skillsValues.map((count) => {
+        {aboutData["skills"].map((count) => {
           return (
             <SkillValue
               value={count["value"]}

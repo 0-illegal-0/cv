@@ -4,7 +4,7 @@ import NavBar from "./nav-bar.js";
 
 let navbarState = false;
 let navbarStateProccessing = false;
-function MainHeader() {
+function MainHeader({ data }) {
   const navListId = useRef();
   const navbarId = useRef();
 
@@ -32,7 +32,7 @@ function MainHeader() {
   return (
     <>
       <div className="main-head">
-        <a>SOLO</a>
+        <a>{data}</a>
         <img alt="" src={NavBarIcon} onClick={navBarMove} />
       </div>
       <NavBar

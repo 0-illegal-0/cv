@@ -1,5 +1,5 @@
 import { useRef, useEffect } from "react";
-
+import data from "./data/general-data.json";
 import logo from "./logo.svg";
 import "./App.css";
 
@@ -39,7 +39,7 @@ function Main() {
     <div className="main">
       <PrototypeDetails />
       <div ref={mainPage} className="page">
-        <MainHeader />
+        <MainHeader data={data["app-name"]} />
         <div className="box-size-height"></div>
         <Avatar />
         <MainBody innerHeight={window.innerHeight} />
