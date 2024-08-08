@@ -1,19 +1,13 @@
 import React, { useEffect } from "react";
+// import aboutData from "../../data/portofolio.json";
+
 import project1 from "../../assets/images/portofolio/project-1.jpg";
 import project2 from "../../assets/images/portofolio/project-2.jpg";
-import techIconSix from "../../assets/images/tech-icon/CSS3-2.png";
-import techIconOne from "../../assets/images/tech-icon/js.png";
-import techIconTwo from "../../assets/images/tech-icon/pexels-pixabay-261621.jpg";
-import techIconThree from "../../assets/images/tech-icon/pexels-pixabay-261621.jpg";
-import techIconFour from "../../assets/images/tech-icon/pexels-pixabay-261621.jpg";
-import techIconFive from "../../assets/images/tech-icon/pexels-pixabay-261621.jpg";
+
 import project3 from "../../assets/images/portofolio/project-8.jpg";
 import project4 from "../../assets/images/portofolio/project-9.jpg";
 import project5 from "../../assets/images/portofolio/project-10.jpg";
-import project6 from "../../assets/images/portofolio/project-6.jpg";
-import project7 from "../../assets/images/portofolio/project-7.jpg";
-import project8 from "../../assets/images/portofolio/pexels-kaboompics-1280-853.jpg";
-import project9 from "../../assets/images/portofolio/pexels-nurseryart-1280-853.jpg";
+const fogo = require("../../assets/images/portofolio/project-10.jpg");
 
 const project = {
   "projects-types": ["all", "image", "video", "sound"],
@@ -21,7 +15,7 @@ const project = {
     {
       id: 0,
       "project-name": "Project 1",
-      "project-image": project1,
+      "project-image": "../../assets/images/portofolio/project-1.jpg",
       type: "image",
       "prototype-review": {
         "prototype-review-details": [
@@ -44,7 +38,7 @@ const project = {
     {
       id: 1,
       "project-name": "Project 2",
-      "project-image": project2,
+      "project-image": "../../assets/images/portofolio/project-1.jpg",
       type: "video",
       "prototype-review": {
         "prototype-review-details": [
@@ -68,7 +62,7 @@ const project = {
     {
       id: 2,
       "project-name": "Project 3",
-      "project-image": project3,
+      "project-image": "../../assets/images/portofolio/project-1.jpg",
       type: "image",
       "prototype-review": {
         "prototype-review-details": [
@@ -92,7 +86,7 @@ const project = {
     {
       id: 3,
       "project-name": "Project 3",
-      "project-image": project4,
+      "project-image": "../../assets/images/portofolio/project-1.jpg",
       type: "image",
       "prototype-review": {
         "prototype-review-details": [
@@ -116,7 +110,7 @@ const project = {
     {
       id: 4,
       "project-name": "Project 4",
-      "project-image": project5,
+      "project-image": "../../assets/images/portofolio/project-1.jpg",
       type: "sound",
       "prototype-review": {
         "prototype-review-details": [
@@ -131,9 +125,9 @@ const project = {
         technologies: ["HTML", "CSS", "JAVASCRIPT", "BOOTSTRAP", "FIGMA"],
 
         "prototype-images": [
-          { id: 0, image: project1 },
-          { id: 1, image: project1 },
-          { id: 2, image: project1 },
+          { id: 0, image: project5 },
+          { id: 1, image: project5 },
+          { id: 2, image: project5 },
         ],
       },
     },
@@ -304,7 +298,7 @@ function Projects() {
               <img
                 id={count["id"] + "-image"}
                 alt={count["project-name"]}
-                src={count["project-image"]}
+                src={fogo}
               />
             </div>
           </div>

@@ -1,5 +1,4 @@
 import React from "react";
-import email from "../../assets/images/icons/contact/email.png";
 import facebook from "../../assets/images/icons/contact/facebook.png";
 import phone from "../../assets/images/icons/contact/phone.png";
 import twitter from "../../assets/images/icons/contact/twitter.png";

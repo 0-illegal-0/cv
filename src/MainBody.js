@@ -1,5 +1,4 @@
 import React, { useReducer, useState, useRef, useEffect, useMemo } from "react";
-import bigAvatar from "./assets/images/avatar/2.png";
 import html from "./assets/images/icons/html.png";
 import css from "./assets/images/icons/css3.png";
 import js from "./assets/images/icons/js.png";
@@ -13,12 +12,10 @@ import mysql from "./assets/images/icons/my-sql.png";
 import firbase from "./assets/images/icons/firebase.png";
 
 import About from "./pages/about/About.js";
-import JobNameAnimation from "./pages/about/About.js";
 import Resume from "./pages/resume/Resume.js";
 import Portofolio from "./pages/portofolio/Portofolio.js";
 import Services from "./pages/services/Services.js";
 import Contact from "./pages/contact/Contact.js";
-import NavBarAnimation from "./component/NavBarAnimation.js";
 
 // main Icon
 

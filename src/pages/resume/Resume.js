@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from "react";
-import { transformVal } from "../../component/NavBar";
 import aboutData from "../../data/resume.json";
 
 function Resume() {

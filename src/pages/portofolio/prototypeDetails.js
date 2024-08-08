@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import project8 from "../../assets/images/portofolio/project-1.jpg";
 import close from "../../assets/images/icons/red-close.png";
-import techIconTwo from "../../assets/images/tech-icon/css.png";
 
 const prototypeReviw = {
   client: "Johnson Tomas",
@@ -13,6 +12,7 @@ const prototypeReviw = {
     { id: 2, image: project8 },
   ],
 };
+
 const prototypeImages = [
   { id: 0, image: project8 },
   { id: 1, image: project8 },

@@ -461,11 +461,10 @@ code {
   width: 150px;
   height: 40px;
   border: 2px solid #7b68ee;
-  background-color: #fff;
-  color: #7b68ee;
+  background-color: #7b68ee;
+  color: #fff;
   font-size: 17px;
   font-weight: bold;
-  border-radius: 5px 20px;
 }
 
 .resume-protofolio-buttons button:hover {

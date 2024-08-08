@@ -1,0 +1,119 @@
+{
+  "projects-types": ["all", "image", "video", "sound"],
+  "prototype-projects": [
+    {
+      "id": 0,
+      "project-name": "Project 1",
+      "project-image": "../../assets/images/portofolio/project-1.jpg",
+      "type": "image",
+      "prototype-review": {
+        "prototype-review-details": [
+          { "value": "Johnson Tomas", "title": "Client" },
+          { "value": "UI/UX Design", "title": "Category" },
+          { "value": "40 days", "title": "Duration" },
+          { "value": "40 days", "title": "Web Site" }
+        ],
+
+        "description": "Duis at viverra lacus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur mi est, fringilla non magna et, sollicitudin elementum ex. Suspendisse molestie urna molestie risus laoreet semper. Suspendisse placerat metus consequat tellus dapibus aliquam. Quisque semper ullamcorper mauris, quis volutpat sem sodales quis. Aenean ut cursus nisl. Mauris posuere sapien a mi eleifend ornare. Phasellus suscipit ex a tortor tincidunt, eget lacinia lacus pulvinar. Phasellus posuere diam tortor, sed pretium quam tristique non. Sed metus felis, volutpat in viverra ac, egestas vel urna.",
+        "technologies": ["HTML", "CSS", "JAVASCRIPT", "BOOTSTRAP", "FIGMA"],
+        "prototype-images": [
+          { "id": 0, "image": "../../assets/images/portofolio/project-1.jpg" },
+          { "id": 1, "image": "../../assets/images/portofolio/project-1.jpg" },
+          { "id": 2, "image": "../../assets/images/portofolio/project-1.jpg" }
+        ]
+      }
+    },
+    {
+      "id": 1,
+      "project-name": "Project 2",
+      "project-image": "../../assets/images/portofolio/project-2.jpg",
+      "type": "video",
+      "prototype-review": {
+        "prototype-review-details": [
+          { "value": "Johnson Tomas", "title": "Client" },
+          { "value": "UI/UX Design", "title": "Category" },
+          { "value": "40 days", "title": "Duration" },
+          { "value": "40 days", "title": "Web Site" }
+        ],
+        "description": "Duis at viverra lacus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur mi est, fringilla non magna et, sollicitudin elementum ex. Suspendisse molestie urna molestie risus laoreet semper. Suspendisse placerat metus consequat tellus dapibus aliquam. Quisque semper ullamcorper mauris, quis volutpat sem sodales quis. Aenean ut cursus nisl. Mauris posuere sapien a mi eleifend ornare. Phasellus suscipit ex a tortor tincidunt, eget lacinia lacus pulvinar. Phasellus posuere diam tortor, sed pretium quam tristique non. Sed metus felis, volutpat in viverra ac, egestas vel urna.",
+
+        "technologies": ["HTML", "CSS", "JAVASCRIPT", "BOOTSTRAP", "FIGMA"],
+
+        "prototype-images": [
+          { "id": 0, "image": "../../assets/images/portofolio/project-2.jpg" },
+          { "id": 1, "image": "../../assets/images/portofolio/project-2.jpg" },
+          { "id": 2, "image": "../../assets/images/portofolio/project-2.jpg" }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "project-name": "../../assets/images/portofolio/project-8.jpg",
+      "project-image": "../../assets/images/portofolio/project-8.jpg",
+      "type": "image",
+      "prototype-review": {
+        "prototype-review-details": [
+          { "value": "Johnson Tomas", "title": "Client" },
+          { "value": "UI/UX Design", "title": "Category" },
+          { "value": "40 days", "title": "Duration" },
+          { "value": "40 days", "title": "Web Site" }
+        ],
+        "description": "Duis at viverra lacus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur mi est, fringilla non magna et, sollicitudin elementum ex. Suspendisse molestie urna molestie risus laoreet semper. Suspendisse placerat metus consequat tellus dapibus aliquam. Quisque semper ullamcorper mauris, quis volutpat sem sodales quis. Aenean ut cursus nisl. Mauris posuere sapien a mi eleifend ornare. Phasellus suscipit ex a tortor tincidunt, eget lacinia lacus pulvinar. Phasellus posuere diam tortor, sed pretium quam tristique non. Sed metus felis, volutpat in viverra ac, egestas vel urna.",
+
+        "technologies": ["HTML", "CSS", "JAVASCRIPT", "BOOTSTRAP", "FIGMA"],
+
+        "prototype-images": [
+          { "id": 0, "image": "../../assets/images/portofolio/project-8.jpg" },
+          { "id": 1, "image": "../../assets/images/portofolio/project-8.jpg" },
+          { "id": 2, "image": "../../assets/images/portofolio/project-8.jpg" }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "project-name": "Project 3",
+      "project-image": "../../assets/images/portofolio/project-9.jpg",
+      "type": "image",
+      "prototype-review": {
+        "prototype-review-details": [
+          { "value": "Johnson Tomas", "title": "Client" },
+          { "value": "UI/UX Design", "title": "Category" },
+          { "value": "40 days", "title": "Duration" },
+          { "value": "40 days", "title": "Web Site" }
+        ],
+        "description": "Duis at viverra lacus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur mi est, fringilla non magna et, sollicitudin elementum ex. Suspendisse molestie urna molestie risus laoreet semper. Suspendisse placerat metus consequat tellus dapibus aliquam. Quisque semper ullamcorper mauris, quis volutpat sem sodales quis. Aenean ut cursus nisl. Mauris posuere sapien a mi eleifend ornare. Phasellus suscipit ex a tortor tincidunt, eget lacinia lacus pulvinar. Phasellus posuere diam tortor, sed pretium quam tristique non. Sed metus felis, volutpat in viverra ac, egestas vel urna.",
+
+        "technologies": ["HTML", "CSS", "JAVASCRIPT", "BOOTSTRAP", "FIGMA"],
+
+        "prototype-images": [
+          { "id": 0, "image": "../../assets/images/portofolio/project-2.jpg" },
+          { "id": 1, "image": "../../assets/images/portofolio/project-2.jpg" },
+          { "id": 2, "image": "../../assets/images/portofolio/project-2.jpg" }
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "project-name": "Project 4",
+      "project-image": "../../assets/images/portofolio/project-9.jpg",
+      "type": "sound",
+      "prototype-review": {
+        "prototype-review-details": [
+          { "value": "Johnson Tomas", "title": "Client" },
+          { "value": "UI/UX Design", "title": "Category" },
+          { "value": "40 days", "title": "Duration" },
+          { "value": "40 days", "title": "Web Site" }
+        ],
+        "description": "Duis at viverra lacus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur mi est, fringilla non magna et, sollicitudin elementum ex. Suspendisse molestie urna molestie risus laoreet semper. Suspendisse placerat metus consequat tellus dapibus aliquam. Quisque semper ullamcorper mauris, quis volutpat sem sodales quis. Aenean ut cursus nisl. Mauris posuere sapien a mi eleifend ornare. Phasellus suscipit ex a tortor tincidunt, eget lacinia lacus pulvinar. Phasellus posuere diam tortor, sed pretium quam tristique non. Sed metus felis, volutpat in viverra ac, egestas vel urna.",
+
+        "technologies": ["HTML", "CSS", "JAVASCRIPT", "BOOTSTRAP", "FIGMA"],
+
+        "prototype-images": [
+          { "id": 0, "image": "../../assets/images/portofolio/project-9.jpg" },
+          { "id": 1, "image": "../../assets/images/portofolio/project-9.jpg" },
+          { "id": 2, "image": "../../assets/images/portofolio/project-9.jpg" }
+        ]
+      }
+    }
+  ]
+}

@@ -1,5 +1,5 @@
-/*import AvatarImage from "./assets/images/avatar/44508.jpg";15591 20011*/
-import AvatarImage from "./assets/images/avatar/44508.jpg";
+/*import AvatarImage from "./assets/images/avatar/44508.jpg";15591 20011 // 44508*/
+import AvatarImage from "./assets/images/avatar/avatar.jpg";
 import twitter from "./assets/images/icons/contact/twitter.png";
 import facebook from "./assets/images/icons/contact/facebook.png";
 import github from "./assets/images/icons/contact/github.png";
