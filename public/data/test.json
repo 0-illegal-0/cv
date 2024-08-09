@@ -4,7 +4,7 @@
     {
       "id": 0,
       "project-name": "Project 1",
-      "project-image": "/images/portofolio/karma/project-10.jpg",
+      "project-image": "../../assets/images/portofolio/project-10.jpg",
       "type": "image",
       "prototype-review": {
         "prototype-review-details": [
@@ -17,25 +17,16 @@
         "description": "Duis at viverra lacus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur mi est, fringilla non magna et, sollicitudin elementum ex. Suspendisse molestie urna molestie risus laoreet semper. Suspendisse placerat metus consequat tellus dapibus aliquam. Quisque semper ullamcorper mauris, quis volutpat sem sodales quis. Aenean ut cursus nisl. Mauris posuere sapien a mi eleifend ornare. Phasellus suscipit ex a tortor tincidunt, eget lacinia lacus pulvinar. Phasellus posuere diam tortor, sed pretium quam tristique non. Sed metus felis, volutpat in viverra ac, egestas vel urna.",
         "technologies": ["HTML", "CSS", "JAVASCRIPT", "BOOTSTRAP", "FIGMA"],
         "prototype-images": [
-          {
-            "id": 0,
-            "image": "/images/portofolio/karma/other_imges/project-10.jpg"
-          },
-          {
-            "id": 1,
-            "image": "/images/portofolio/karma/other_imges/project-6.jpg "
-          },
-          {
-            "id": 2,
-            "image": "/images/portofolio/karma/other_imges/project-10.jpg "
-          }
+          { "id": 0, "image": "../../assets/images/portofolio/project-1.jpg" },
+          { "id": 1, "image": "../../assets/images/portofolio/project-1.jpg" },
+          { "id": 2, "image": "../../assets/images/portofolio/project-1.jpg" }
         ]
       }
     },
     {
       "id": 1,
       "project-name": "Project 2",
-      "project-image": "/images/portofolio/paradise/project-10.jpg",
+      "project-image": "../../assets/images/portofolio/project-2.jpg",
       "type": "video",
       "prototype-review": {
         "prototype-review-details": [
@@ -49,25 +40,16 @@
         "technologies": ["HTML", "CSS", "JAVASCRIPT", "BOOTSTRAP", "FIGMA"],
 
         "prototype-images": [
-          {
-            "id": 0,
-            "image": "/images/portofolio/paradise/other_imges/project-10.jpg"
-          },
-          {
-            "id": 1,
-            "image": "/images/portofolio/paradise/other_imges/project-10.jpg"
-          },
-          {
-            "id": 2,
-            "image": "/images/portofolio/paradise/other_imges/project-10.jpg"
-          }
+          { "id": 0, "image": "../../assets/images/portofolio/project-2.jpg" },
+          { "id": 1, "image": "../../assets/images/portofolio/project-2.jpg" },
+          { "id": 2, "image": "../../assets/images/portofolio/project-2.jpg" }
         ]
       }
     },
     {
       "id": 2,
-      "project-name": "/images/portofolio/project-8.jpg",
-      "project-image": "/images/portofolio/heaven/project-8.jpg",
+      "project-name": "../../assets/images/portofolio/project-8.jpg",
+      "project-image": "../../assets/images/portofolio/project-8.jpg",
       "type": "image",
       "prototype-review": {
         "prototype-review-details": [
@@ -81,25 +63,16 @@
         "technologies": ["HTML", "CSS", "JAVASCRIPT", "BOOTSTRAP", "FIGMA"],
 
         "prototype-images": [
-          {
-            "id": 0,
-            "image": "/images/portofolio/heaven/other_imges/project-9.jpg"
-          },
-          {
-            "id": 1,
-            "image": "/images/portofolio/heaven/other_imges/project-10.jpg"
-          },
-          {
-            "id": 2,
-            "image": "/images/portofolio/heaven/other_imges/project-9.jpg"
-          }
+          { "id": 0, "image": "../../assets/images/portofolio/project-8.jpg" },
+          { "id": 1, "image": "../../assets/images/portofolio/project-8.jpg" },
+          { "id": 2, "image": "../../assets/images/portofolio/project-8.jpg" }
         ]
       }
     },
     {
       "id": 3,
       "project-name": "Project 3",
-      "project-image": "/images/portofolio/diamond/project-2.jpg",
+      "project-image": "../../assets/images/portofolio/project-9.jpg",
       "type": "image",
       "prototype-review": {
         "prototype-review-details": [
@@ -113,25 +86,16 @@
         "technologies": ["HTML", "CSS", "JAVASCRIPT", "BOOTSTRAP", "FIGMA"],
 
         "prototype-images": [
-          {
-            "id": 0,
-            "image": "/images/portofolio/diamond/other_imges/project-3.jpg"
-          },
-          {
-            "id": 1,
-            "image": "/images/portofolio/diamond/other_imges/project-3.jpg"
-          },
-          {
-            "id": 2,
-            "image": "/images/portofolio/diamond/other_imges/project-3.jpg"
-          }
+          { "id": 0, "image": "../../assets/images/portofolio/project-2.jpg" },
+          { "id": 1, "image": "../../assets/images/portofolio/project-2.jpg" },
+          { "id": 2, "image": "../../assets/images/portofolio/project-2.jpg" }
         ]
       }
     },
     {
       "id": 4,
       "project-name": "Project 4",
-      "project-image": "/images/portofolio/green-earth/project-2.jpg",
+      "project-image": "../../assets/images/portofolio/project-9.jpg",
       "type": "sound",
       "prototype-review": {
         "prototype-review-details": [
@@ -145,18 +109,9 @@
         "technologies": ["HTML", "CSS", "JAVASCRIPT", "BOOTSTRAP", "FIGMA"],
 
         "prototype-images": [
-          {
-            "id": 0,
-            "image": "/images/portofolio/green-earth/other_imges/project-3.jpg"
-          },
-          {
-            "id": 1,
-            "image": "/images/portofolio/green-earth/other_imges/project-3.jpg"
-          },
-          {
-            "id": 2,
-            "image": "/images/portofolio/green-earth/other_imges/project-10.jpg"
-          }
+          { "id": 0, "image": "../../assets/images/portofolio/project-9.jpg" },
+          { "id": 1, "image": "../../assets/images/portofolio/project-9.jpg" },
+          { "id": 2, "image": "../../assets/images/portofolio/project-9.jpg" }
         ]
       }
     }

@@ -1,13 +1,20 @@
 import React, { useEffect } from "react";
-// import aboutData from "../../data/portofolio.json";
-
+import aboutData from "../../data/portofolio.json";
 import project1 from "../../assets/images/portofolio/project-1.jpg";
 import project2 from "../../assets/images/portofolio/project-2.jpg";
-
 import project3 from "../../assets/images/portofolio/project-8.jpg";
-import project4 from "../../assets/images/portofolio/project-9.jpg";
 import project5 from "../../assets/images/portofolio/project-10.jpg";
-const fogo = require("../../assets/images/portofolio/project-10.jpg");
+
+// get prototype image
+const protoTypeImage = [];
+function getImageData() {
+  for (let index = 0; index < aboutData["prototype-projects"].length; index++) {
+    protoTypeImage.push(
+      aboutData["prototype-projects"][index]["project-image"]
+    );
+  }
+}
+getImageData();
 
 const project = {
   "projects-types": ["all", "image", "video", "sound"],
@@ -137,9 +144,9 @@ const project = {
 // project filter
 
 function headerFilterFocus(type) {
-  for (let index = 0; index < project["projects-types"].length; index++) {
+  for (let index = 0; index < aboutData["projects-types"].length; index++) {
     document
-      .getElementById(project["projects-types"][index])
+      .getElementById(aboutData["projects-types"][index])
       .classList.remove("primary-color");
   }
   document.getElementById(type).classList.add("primary-color");
@@ -147,45 +154,53 @@ function headerFilterFocus(type) {
 
 function projectFilter(type) {
   if (type === "all") {
-    for (let index = 0; index < project["prototype-projects"].length; index++) {
+    for (
+      let index = 0;
+      index < aboutData["prototype-projects"].length;
+      index++
+    ) {
       document.getElementById(
-        project["prototype-projects"][index]["id"]
+        aboutData["prototype-projects"][index]["id"]
       ).style.display = "block";
 
       document
         .getElementById(
-          project["prototype-projects"][index]["id"] + "-container"
+          aboutData["prototype-projects"][index]["id"] + "-container"
         )
         .classList.add("filter-animation-remove");
 
       setTimeout(() => {
         document
           .getElementById(
-            project["prototype-projects"][index]["id"] + "-container"
+            aboutData["prototype-projects"][index]["id"] + "-container"
           )
           .classList.remove("filter-animation-remove");
       }, 200);
     }
   } else {
-    for (let index = 0; index < project["prototype-projects"].length; index++) {
-      if (project["prototype-projects"][index]["type"] !== type) {
+    for (
+      let index = 0;
+      index < aboutData["prototype-projects"].length;
+      index++
+    ) {
+      if (aboutData["prototype-projects"][index]["type"] !== type) {
         document.getElementById(
-          project["prototype-projects"][index]["id"]
+          aboutData["prototype-projects"][index]["id"]
         ).style.display = "none";
 
         document
           .getElementById(
-            project["prototype-projects"][index]["id"] + "-container"
+            aboutData["prototype-projects"][index]["id"] + "-container"
           )
           .classList.remove("filter-animation-remove");
       } else {
         document.getElementById(
-          project["prototype-projects"][index]["id"]
+          aboutData["prototype-projects"][index]["id"]
         ).style.display = "block";
 
         document
           .getElementById(
-            project["prototype-projects"][index]["id"] + "-container"
+            aboutData["prototype-projects"][index]["id"] + "-container"
           )
           .classList.add("filter-animation-remove");
       }
@@ -198,7 +213,7 @@ function Portofolio() {
     <div className="section portofolio" id="portofolio">
       <h2>Portofolio</h2>
       <div className="project-types">
-        {project["projects-types"].map((value) => {
+        {aboutData["projects-types"].map((value) => {
           return (
             <b
               id={value}
@@ -238,13 +253,13 @@ function Projects() {
     prototypeTechnologies = document.getElementById("prototype-technologies");
     prototypeDetails = document.getElementById("prototype-details");
   });
-
   function projectsReviw(id) {
     prototypeImages.innerHTML = ""; // reset
     descriptionContent.innerHTML = "";
     prototypeInfo.innerHTML = "";
     prototypeTechnologies.innerHTML = "<b >Technologies : </b>";
-    prototypeData = project["prototype-projects"][id]["prototype-review"];
+    prototypeData = aboutData["prototype-projects"][id]["prototype-review"];
+    console.log("=+=+=+= ", prototypeData["prototype-images"][0]["image"]);
 
     for (
       let index = 0;
@@ -252,7 +267,12 @@ function Projects() {
       index++
     ) {
       prototypeImages.innerHTML +=
-        "<img src=" + prototypeData["prototype-images"][index]["image"] + "/>";
+        "<img src=" +
+        process.env.PUBLIC_URL +
+        `${prototypeData["prototype-images"][index]["image"]}` +
+        ">";
+      /*  process.env.PUBLIC_URL +
+        prototypeData["prototype-images"][index]["image"];*/
 
       prototypeDetails.classList.remove("prototype-review-hidden");
       prototypeDetails.classList.add("prototype-review-show");
@@ -275,13 +295,11 @@ function Projects() {
         element["value"] +
         "</span></div>";
     });
-
-    console.log("This is Content ", prototypeData["description"]);
   }
 
   return (
     <div className="projects">
-      {project["prototype-projects"].map((count) => {
+      {aboutData["prototype-projects"].map((count, index) => {
         return (
           <div
             id={count["id"]}
@@ -298,7 +316,7 @@ function Projects() {
               <img
                 id={count["id"] + "-image"}
                 alt={count["project-name"]}
-                src={fogo}
+                src={process.env.PUBLIC_URL + protoTypeImage[index]}
               />
             </div>
           </div>
