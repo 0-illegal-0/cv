@@ -26,7 +26,6 @@ function headerFilterFocus(type) {
     document
       .getElementById(prototypeImages[index]["id"] + "-button")
       .classList.remove("background-focused-color");
-    console.log("TYPE ", type);
   }
   document.getElementById(type).classList.add("background-focused-color");
 }
@@ -79,7 +78,6 @@ function PrototypeDetails() {
           currentStage = index;
         }
       }
-      console.log("boook ", marginVal);
     }, 5);
   }
 
@@ -92,7 +90,7 @@ function PrototypeDetails() {
               prototypeReviewHidden();
             }}
           >
-            <img src={close} />
+            <img src={close} alt="" />
           </span>
         </div>
         <div className="view-images">
@@ -101,8 +99,8 @@ function PrototypeDetails() {
             id="prototype-images"
             style={{ marginLeft: -marginVal }}
           ></div>
-          <div className="choise-image-buttons">
-            {prototypeImages.map((val) => {
+          <div className="choise-image-buttons" id="choise-image-buttons">
+            {/* prototypeImages.map((val) => {
               return (
                 <span
                   className={val["id"] === 0 ? "background-focused-color" : ""}
@@ -113,7 +111,7 @@ function PrototypeDetails() {
                   }}
                 ></span>
               );
-            })}
+            }) */}
           </div>
         </div>
         <div className="prototype-info">

@@ -233,7 +233,7 @@ code {
 .about-container-avatar .personal-data {
   width: 90%;
   margin: auto;
-  border: 2px solid #9cc3e9;
+  border: 2px dashed var(--primary);
   border-radius: 7px;
   height: 100px;
   display: flex;
@@ -469,8 +469,9 @@ code {
 
 .resume-protofolio-buttons button:hover {
   cursor: pointer;
-  background-color: var(--primary);
-  color: #fff;
+  background-color: #fff;
+  border: 2px dashed var(--primary);
+  color: var(--primary);
 }
 
 .contact-data * {

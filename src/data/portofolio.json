@@ -3,7 +3,7 @@
   "prototype-projects": [
     {
       "id": 0,
-      "project-name": "Project 1",
+      "project-name": "karma",
       "project-image": "/images/portofolio/karma/project-10.jpg",
       "type": "image",
       "prototype-review": {
@@ -34,7 +34,7 @@
     },
     {
       "id": 1,
-      "project-name": "Project 2",
+      "project-name": "Paradise",
       "project-image": "/images/portofolio/paradise/project-10.jpg",
       "type": "video",
       "prototype-review": {
@@ -66,7 +66,7 @@
     },
     {
       "id": 2,
-      "project-name": "/images/portofolio/project-8.jpg",
+      "project-name": "Heaven",
       "project-image": "/images/portofolio/heaven/project-8.jpg",
       "type": "image",
       "prototype-review": {
@@ -98,7 +98,7 @@
     },
     {
       "id": 3,
-      "project-name": "Project 3",
+      "project-name": "Diamond",
       "project-image": "/images/portofolio/diamond/project-2.jpg",
       "type": "image",
       "prototype-review": {
@@ -130,7 +130,7 @@
     },
     {
       "id": 4,
-      "project-name": "Project 4",
+      "project-name": "Green Earth",
       "project-image": "/images/portofolio/green-earth/project-2.jpg",
       "type": "sound",
       "prototype-review": {

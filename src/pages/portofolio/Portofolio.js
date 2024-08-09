@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import aboutData from "../../data/portofolio.json";
 import project1 from "../../assets/images/portofolio/project-1.jpg";
 import project2 from "../../assets/images/portofolio/project-2.jpg";
@@ -235,13 +235,20 @@ function Portofolio() {
 }
 
 // project
-let prototypeDetails = null;
-let prototypeTechnologies = null;
+let prototypeDetails;
+let prototypeTechnologies;
+let choiseImageButtons;
 let prototypeImages;
 let descriptionContent;
 let prototypeInfo;
+
+let mainMarginValue = 0;
+let currentStage = 0;
+let prototypeImagesWidth = 0;
 //&nbsp:&nbsp
 function Projects() {
+  const [marginVal, setMarginVal] = useState(0);
+
   let prototypeData = null;
 
   useEffect(() => {
@@ -252,14 +259,47 @@ function Projects() {
     );
     prototypeTechnologies = document.getElementById("prototype-technologies");
     prototypeDetails = document.getElementById("prototype-details");
+    choiseImageButtons = document.getElementById("choise-image-buttons");
   });
+
+  // portofolioSiderImage
+  function portofolioSiderImage(index) {
+    setTimeout(() => {
+      if (currentStage > index) {
+        if (mainMarginValue > prototypeImagesWidth * index) {
+          mainMarginValue = mainMarginValue - 32;
+          if (mainMarginValue < index * prototypeImagesWidth) {
+            setMarginVal(index * prototypeImagesWidth);
+          } else {
+            setMarginVal(mainMarginValue);
+          }
+          portofolioSiderImage(index);
+        } else {
+          currentStage = index;
+        }
+      } else {
+        if (mainMarginValue < prototypeImagesWidth * index) {
+          mainMarginValue = mainMarginValue + 32;
+          if (mainMarginValue > index * prototypeImagesWidth) {
+            setMarginVal(index * prototypeImagesWidth);
+          } else {
+            setMarginVal(mainMarginValue);
+          }
+          portofolioSiderImage(index);
+        } else {
+          currentStage = index;
+        }
+      }
+    }, 5);
+  }
+
   function projectsReviw(id) {
     prototypeImages.innerHTML = ""; // reset
     descriptionContent.innerHTML = "";
     prototypeInfo.innerHTML = "";
+    choiseImageButtons.innerHTML = "";
     prototypeTechnologies.innerHTML = "<b >Technologies : </b>";
     prototypeData = aboutData["prototype-projects"][id]["prototype-review"];
-    console.log("=+=+=+= ", prototypeData["prototype-images"][0]["image"]);
 
     for (
       let index = 0;
@@ -271,13 +311,13 @@ function Projects() {
         process.env.PUBLIC_URL +
         `${prototypeData["prototype-images"][index]["image"]}` +
         ">";
-      /*  process.env.PUBLIC_URL +
-        prototypeData["prototype-images"][index]["image"];*/
 
       prototypeDetails.classList.remove("prototype-review-hidden");
       prototypeDetails.classList.add("prototype-review-show");
       prototypeDetails.style.display = "flex";
       prototypeDetails.style.opacity = "1";
+
+      choiseImageButtons.innerHTML += "<span></span>";
     }
 
     for (let index = 0; index < prototypeData["technologies"].length; index++) {
@@ -327,3 +367,25 @@ function Projects() {
 }
 
 export default Portofolio;
+
+/*
+
+        "<span class=" + prototypeData["prototype-images"][index]["id"] === 0
+          ? "background-focused-color"
+          : "" +
+            " id=" +
+            prototypeData["prototype-images"][index]["id"] +
+            "-button " +
+            "></span>";
+
+        onClick={() => {
+            portofolioSiderImage(
+              prototypeData["prototype-images"][index]["id"]
+            );
+            headerFilterFocus(
+              prototypeData["prototype-images"][index]["id"] + "-button"
+            );
+          }}
+
+
+*/
