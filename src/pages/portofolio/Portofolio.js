@@ -4,6 +4,7 @@ import project1 from "../../assets/images/portofolio/project-1.jpg";
 import project2 from "../../assets/images/portofolio/project-2.jpg";
 import project3 from "../../assets/images/portofolio/project-8.jpg";
 import project5 from "../../assets/images/portofolio/project-10.jpg";
+import { renderToString } from "react-dom/server";
 
 // get prototype image
 const protoTypeImage = [];
@@ -246,6 +247,12 @@ let mainMarginValue = 0;
 let currentStage = 0;
 let prototypeImagesWidth = 0;
 //&nbsp:&nbsp
+let formso = "before";
+
+function goh() {
+  console.log("++++");
+}
+
 function Projects() {
   const [marginVal, setMarginVal] = useState(0);
 
@@ -263,6 +270,7 @@ function Projects() {
   });
 
   // portofolioSiderImage
+
   function portofolioSiderImage(index) {
     setTimeout(() => {
       if (currentStage > index) {
@@ -297,7 +305,7 @@ function Projects() {
     prototypeImages.innerHTML = ""; // reset
     descriptionContent.innerHTML = "";
     prototypeInfo.innerHTML = "";
-    choiseImageButtons.innerHTML = "";
+    // choiseImageButtons.innerHTML = "";
     prototypeTechnologies.innerHTML = "<b >Technologies : </b>";
     prototypeData = aboutData["prototype-projects"][id]["prototype-review"];
 
@@ -317,7 +325,34 @@ function Projects() {
       prototypeDetails.style.display = "flex";
       prototypeDetails.style.opacity = "1";
 
-      choiseImageButtons.innerHTML += "<span></span>";
+      // choiseImageButtons
+      choiseImageButtons.innerHTML += renderToString(
+        <TestCom val={prototypeData["prototype-images"][index]["id"]} />
+      );
+      /*  choiseImageButtons.innerHTML +=
+        "<span " +
+        "id=" +
+        prototypeData["prototype-images"][index]["id"] +
+        "-button  > </span>";
+      if (index < 1) {
+        document
+          .getElementById("0-button")
+          .classList.add("background-focused-color");
+      }
+
+      document
+        .getElementById(
+          prototypeData["prototype-images"][index]["id"] + "-button"
+        )
+        .setAttribute("onClick", goh);/
+
+      /*  document
+        .getElementById(
+          prototypeData["prototype-images"][index]["id"] + "-button"
+        )
+        .addEventListener("click", () => {
+          console.log(prototypeData["prototype-images"][0]["id"]);
+        });*/
     }
 
     for (let index = 0; index < prototypeData["technologies"].length; index++) {
@@ -345,6 +380,14 @@ function Projects() {
             id={count["id"]}
             onClick={() => {
               projectsReviw(count["id"]);
+              document
+                .getElementById("choise-image-buttons")
+                .setAttribute("cla", 5);
+              formso = count["prototype-review"]["prototype-images"];
+              console.log(
+                "id---- ",
+                count["prototype-review"]["prototype-images"]
+              );
             }}
           >
             <div id={count["id"] + "-container"}>
@@ -365,6 +408,30 @@ function Projects() {
     </div>
   );
 }
+
+export function testCo() {
+  return formso;
+}
+
+function TestCom({ val }) {
+  return (
+    <span
+      ref={val}
+      className={val === 0 ? "background-focused-color" : ""}
+      id={val["id"] + "-button"}
+      onClick={() => {
+        console.log("-=-=-=-");
+        //  portofolioSiderImage(val["id"]);
+        headerFilterFocus(val["id"] + "-button");
+      }}
+    ></span>
+  );
+}
+
+export let gof = [
+  { id: 0, image: project5 },
+  { id: 1, image: project5 },
+];
 
 export default Portofolio;
 

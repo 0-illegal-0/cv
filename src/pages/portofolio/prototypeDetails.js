@@ -1,6 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import project8 from "../../assets/images/portofolio/project-1.jpg";
 import close from "../../assets/images/icons/red-close.png";
+import { testCo } from "./Portofolio";
+import { gof } from "./Portofolio";
+import Portofolio from "./Portofolio";
 
 const prototypeReviw = {
   client: "Johnson Tomas",
@@ -37,11 +40,24 @@ let prototypeDetails;
 
 function PrototypeDetails() {
   const [marginVal, setMarginVal] = useState(0);
+  //  const [choiseImage, setChoiseImage] = useState(gof);
+
   useEffect(() => {
     prototypeImagesWidth =
       document.getElementById("prototype-images").offsetWidth;
     prototypeDetails = document.getElementById("prototype-details");
   });
+
+  function goo() {
+    setTimeout(() => {
+      //  setChoiseImage();
+      //   testCo([...choiseImage])
+      //  document.getElementById("choise-image-buttons").getAttribute("cla")
+      //console.log("uoouou " + choiseImage);
+      goo();
+    }, 1000);
+  }
+  goo();
 
   function prototypeReviewHidden() {
     prototypeDetails.classList.add("prototype-review-hidden");
@@ -81,6 +97,21 @@ function PrototypeDetails() {
     }, 5);
   }
 
+  function Nanm() {
+    return prototypeImages.map((val, index) => {
+      return (
+        <span
+          className={val["id"] === 0 ? "background-focused-color" : ""}
+          id={val["id"] + "-button"}
+          onClick={() => {
+            portofolioSiderImage(val["id"]);
+            headerFilterFocus(val["id"] + "-button");
+          }}
+        ></span>
+      );
+    });
+  }
+
   return (
     <div className="prototype-details" id="prototype-details">
       <div className="prototype-container">
@@ -99,8 +130,12 @@ function PrototypeDetails() {
             id="prototype-images"
             style={{ marginLeft: -marginVal }}
           ></div>
-          <div className="choise-image-buttons" id="choise-image-buttons">
-            {/* prototypeImages.map((val) => {
+          <div
+            className="choise-image-buttons"
+            id="choise-image-buttons"
+            cla=""
+          >
+            {/*prototypeImages.map((val, index) => {
               return (
                 <span
                   className={val["id"] === 0 ? "background-focused-color" : ""}
@@ -111,7 +146,7 @@ function PrototypeDetails() {
                   }}
                 ></span>
               );
-            }) */}
+            })*/}
           </div>
         </div>
         <div className="prototype-info">
@@ -136,4 +171,5 @@ function PrototypeDetails() {
     </div>
   );
 }
+
 export default PrototypeDetails;
