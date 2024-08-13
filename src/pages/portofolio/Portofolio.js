@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import aboutData from "../../data/portofolio.json";
 import project1 from "../../assets/images/portofolio/project-1.jpg";
 import project2 from "../../assets/images/portofolio/project-2.jpg";
@@ -269,43 +269,11 @@ function Projects() {
     choiseImageButtons = document.getElementById("choise-image-buttons");
   });
 
-  // portofolioSiderImage
-
-  function portofolioSiderImage(index) {
-    setTimeout(() => {
-      if (currentStage > index) {
-        if (mainMarginValue > prototypeImagesWidth * index) {
-          mainMarginValue = mainMarginValue - 32;
-          if (mainMarginValue < index * prototypeImagesWidth) {
-            setMarginVal(index * prototypeImagesWidth);
-          } else {
-            setMarginVal(mainMarginValue);
-          }
-          portofolioSiderImage(index);
-        } else {
-          currentStage = index;
-        }
-      } else {
-        if (mainMarginValue < prototypeImagesWidth * index) {
-          mainMarginValue = mainMarginValue + 32;
-          if (mainMarginValue > index * prototypeImagesWidth) {
-            setMarginVal(index * prototypeImagesWidth);
-          } else {
-            setMarginVal(mainMarginValue);
-          }
-          portofolioSiderImage(index);
-        } else {
-          currentStage = index;
-        }
-      }
-    }, 5);
-  }
-
   function projectsReviw(id) {
     prototypeImages.innerHTML = ""; // reset
     descriptionContent.innerHTML = "";
     prototypeInfo.innerHTML = "";
-    // choiseImageButtons.innerHTML = "";
+    //  choiseImageButtons.innerHTML = "";
     prototypeTechnologies.innerHTML = "<b >Technologies : </b>";
     prototypeData = aboutData["prototype-projects"][id]["prototype-review"];
 
@@ -325,34 +293,9 @@ function Projects() {
       prototypeDetails.style.display = "flex";
       prototypeDetails.style.opacity = "1";
 
-      // choiseImageButtons
-      choiseImageButtons.innerHTML += renderToString(
-        <TestCom val={prototypeData["prototype-images"][index]["id"]} />
-      );
-      /*  choiseImageButtons.innerHTML +=
-        "<span " +
-        "id=" +
-        prototypeData["prototype-images"][index]["id"] +
-        "-button  > </span>";
-      if (index < 1) {
-        document
-          .getElementById("0-button")
-          .classList.add("background-focused-color");
-      }
-
       document
-        .getElementById(
-          prototypeData["prototype-images"][index]["id"] + "-button"
-        )
-        .setAttribute("onClick", goh);/
-
-      /*  document
-        .getElementById(
-          prototypeData["prototype-images"][index]["id"] + "-button"
-        )
-        .addEventListener("click", () => {
-          console.log(prototypeData["prototype-images"][0]["id"]);
-        });*/
+        .getElementById("prototype-images")
+        .setAttribute("countImage", prototypeData["prototype-images"].length);
     }
 
     for (let index = 0; index < prototypeData["technologies"].length; index++) {
@@ -380,14 +323,7 @@ function Projects() {
             id={count["id"]}
             onClick={() => {
               projectsReviw(count["id"]);
-              document
-                .getElementById("choise-image-buttons")
-                .setAttribute("cla", 5);
               formso = count["prototype-review"]["prototype-images"];
-              console.log(
-                "id---- ",
-                count["prototype-review"]["prototype-images"]
-              );
             }}
           >
             <div id={count["id"] + "-container"}>
@@ -414,15 +350,20 @@ export function testCo() {
 }
 
 function TestCom({ val }) {
+  const resumeMain = useRef();
+
+  useEffect(() => {
+    resumeMain.current.setAttribute("onClick", mok());
+  });
   return (
     <span
-      ref={val}
+      ref={resumeMain}
       className={val === 0 ? "background-focused-color" : ""}
-      id={val["id"] + "-button"}
+      id={val + "-button"}
       onClick={() => {
         console.log("-=-=-=-");
         //  portofolioSiderImage(val["id"]);
-        headerFilterFocus(val["id"] + "-button");
+        // headerFilterFocus(val["id"] + "-button");
       }}
     ></span>
   );
@@ -432,6 +373,10 @@ export let gof = [
   { id: 0, image: project5 },
   { id: 1, image: project5 },
 ];
+
+function mok() {
+  console.log("77777");
+}
 
 export default Portofolio;
 

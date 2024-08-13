@@ -5,32 +5,30 @@ import { testCo } from "./Portofolio";
 import { gof } from "./Portofolio";
 import Portofolio from "./Portofolio";
 
-const prototypeReviw = {
-  client: "Johnson Tomas",
-  category: "UI/UX Design",
-  duration: "40 days",
-  prototypeImages: [
-    { id: 0, image: project8 },
-    { id: 1, image: project8 },
-    { id: 2, image: project8 },
-  ],
-};
-
-const prototypeImages = [
-  { id: 0, image: project8 },
-  { id: 1, image: project8 },
-  { id: 2, image: project8 },
-];
-
 // Focused button
 
-function headerFilterFocus(type) {
-  for (let index = 0; index < prototypeImages.length; index++) {
+function headerFilterFocus(type, list) {
+  for (let index = 0; index < list.length; index++) {
     document
-      .getElementById(prototypeImages[index]["id"] + "-button")
+      .getElementById(index + "-button")
       .classList.remove("background-focused-color");
   }
   document.getElementById(type).classList.add("background-focused-color");
+}
+
+function Nanm({ choiseImage, portofolioSiderImage, faws }) {
+  return choiseImage.map((val, index) => {
+    return (
+      <span
+        className={index === 0 ? "background-focused-color" : ""}
+        id={index + "-button"}
+        onClick={() => {
+          portofolioSiderImage(index);
+          headerFilterFocus(index + "-button", faws);
+        }}
+      ></span>
+    );
+  });
 }
 
 let mainMarginValue = 0;
@@ -38,34 +36,18 @@ let currentStage = 0;
 let prototypeImagesWidth = 0;
 let prototypeDetails;
 
+let faw = [];
+let imageListState = false;
+
 function PrototypeDetails() {
   const [marginVal, setMarginVal] = useState(0);
-  //  const [choiseImage, setChoiseImage] = useState(gof);
+  const [choiseImage, setChoiseImage] = useState([]);
 
   useEffect(() => {
     prototypeImagesWidth =
       document.getElementById("prototype-images").offsetWidth;
     prototypeDetails = document.getElementById("prototype-details");
   });
-
-  function goo() {
-    setTimeout(() => {
-      //  setChoiseImage();
-      //   testCo([...choiseImage])
-      //  document.getElementById("choise-image-buttons").getAttribute("cla")
-      //console.log("uoouou " + choiseImage);
-      goo();
-    }, 1000);
-  }
-  goo();
-
-  function prototypeReviewHidden() {
-    prototypeDetails.classList.add("prototype-review-hidden");
-    setTimeout(() => {
-      prototypeDetails.style.display = "none";
-      prototypeDetails.style.opacity = "0";
-    }, 400);
-  }
 
   function portofolioSiderImage(index) {
     setTimeout(() => {
@@ -97,19 +79,44 @@ function PrototypeDetails() {
     }, 5);
   }
 
-  function Nanm() {
-    return prototypeImages.map((val, index) => {
-      return (
-        <span
-          className={val["id"] === 0 ? "background-focused-color" : ""}
-          id={val["id"] + "-button"}
-          onClick={() => {
-            portofolioSiderImage(val["id"]);
-            headerFilterFocus(val["id"] + "-button");
-          }}
-        ></span>
-      );
-    });
+  function getLisOfImageLength() {
+    setTimeout(() => {
+      if (!imageListState) {
+        faw = [];
+
+        if (
+          document
+            .getElementById("prototype-images")
+            .getAttribute("countImage") > 0
+        ) {
+          for (
+            let index = 0;
+            index <
+            document
+              .getElementById("prototype-images")
+              .getAttribute("countImage");
+            index++
+          ) {
+            faw.push(0);
+          }
+          setChoiseImage(faw);
+          imageListState = true;
+        }
+      }
+      getLisOfImageLength();
+    }, 500);
+  }
+  getLisOfImageLength();
+
+  function prototypeReviewHidden() {
+    document.getElementById("prototype-images").setAttribute("countImage", 0);
+    console.log(".......");
+    imageListState = false;
+    prototypeDetails.classList.add("prototype-review-hidden");
+    setTimeout(() => {
+      prototypeDetails.style.display = "none";
+      prototypeDetails.style.opacity = "0";
+    }, 400);
   }
 
   return (
@@ -135,7 +142,12 @@ function PrototypeDetails() {
             id="choise-image-buttons"
             cla=""
           >
-            {/*prototypeImages.map((val, index) => {
+            {
+              <Nanm
+                choiseImage={choiseImage}
+                portofolioSiderImage={portofolioSiderImage}
+                faws={choiseImage}
+              /> /*prototypeImages.map((val, index) => {
               return (
                 <span
                   className={val["id"] === 0 ? "background-focused-color" : ""}
@@ -146,7 +158,8 @@ function PrototypeDetails() {
                   }}
                 ></span>
               );
-            })*/}
+            })*/
+            }
           </div>
         </div>
         <div className="prototype-info">
