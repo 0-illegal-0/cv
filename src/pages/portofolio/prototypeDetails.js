@@ -1,9 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import project8 from "../../assets/images/portofolio/project-1.jpg";
 import close from "../../assets/images/icons/red-close.png";
-import { testCo } from "./Portofolio";
-import { gof } from "./Portofolio";
-import Portofolio from "./Portofolio";
 
 // Focused button
 
@@ -16,7 +12,7 @@ function headerFilterFocus(type, list) {
   document.getElementById(type).classList.add("background-focused-color");
 }
 
-function Nanm({ choiseImage, portofolioSiderImage, faws }) {
+function ImageListButtons({ choiseImage, portofolioSiderImage }) {
   return choiseImage.map((val, index) => {
     return (
       <span
@@ -24,7 +20,7 @@ function Nanm({ choiseImage, portofolioSiderImage, faws }) {
         id={index + "-button"}
         onClick={() => {
           portofolioSiderImage(index);
-          headerFilterFocus(index + "-button", faws);
+          headerFilterFocus(index + "-button", choiseImage);
         }}
       ></span>
     );
@@ -109,8 +105,10 @@ function PrototypeDetails() {
   getLisOfImageLength();
 
   function prototypeReviewHidden() {
+    // reset focused
+    portofolioSiderImage(0);
+    headerFilterFocus(0 + "-button", choiseImage);
     document.getElementById("prototype-images").setAttribute("countImage", 0);
-    console.log(".......");
     imageListState = false;
     prototypeDetails.classList.add("prototype-review-hidden");
     setTimeout(() => {
@@ -137,28 +135,12 @@ function PrototypeDetails() {
             id="prototype-images"
             style={{ marginLeft: -marginVal }}
           ></div>
-          <div
-            className="choise-image-buttons"
-            id="choise-image-buttons"
-            cla=""
-          >
+          <div className="choise-image-buttons" id="choise-image-buttons">
             {
-              <Nanm
+              <ImageListButtons
                 choiseImage={choiseImage}
                 portofolioSiderImage={portofolioSiderImage}
-                faws={choiseImage}
-              /> /*prototypeImages.map((val, index) => {
-              return (
-                <span
-                  className={val["id"] === 0 ? "background-focused-color" : ""}
-                  id={val["id"] + "-button"}
-                  onClick={() => {
-                    portofolioSiderImage(val["id"]);
-                    headerFilterFocus(val["id"] + "-button");
-                  }}
-                ></span>
-              );
-            })*/
+              />
             }
           </div>
         </div>

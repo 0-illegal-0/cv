@@ -1,0 +1,34 @@
+{
+  "available-services": [
+    {
+      "icon": "/images/services/development.png",
+      "title": "Web Development",
+      "description": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print."
+    },
+    {
+      "icon": "/images/services/photography.png",
+      "title": "Web Design",
+      "description": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print."
+    },
+    {
+      "icon": "/images/services/photography.png",
+      "title": "Photography",
+      "description": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print."
+    },
+    {
+      "icon": "/images/services/development.png",
+      "title": "Web Design",
+      "description": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print."
+    },
+    {
+      "icon": "/images/services/development.png",
+      "title": "Web Development",
+      "description": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print."
+    },
+    {
+      "icon": "/images/services/photography.png",
+      "title": "Photography",
+      "description": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print."
+    }
+  ]
+}
