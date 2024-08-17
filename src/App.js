@@ -27,7 +27,7 @@ function Main() {
   function setMainElementHeight() {
     setTimeout(() => {
       if (window.innerHeight) {
-        mainPage.current.style.height = 739 + "px"; //window.innerHeight + "px";
+        mainPage.current.style.height = window.innerHeight + "px"; // 739 + "px";
       } else {
         setMainElementHeight();
       }

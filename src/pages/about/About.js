@@ -76,6 +76,7 @@ function Achievements({ title, number }) {
 function About({ contentBody, jobName }) {
   return (
     <div id="about-content" className="about-content section" ref={contentBody}>
+      <h2>About</h2>
       <div className="personal-informations">
         <h2>I'm {aboutData["name"]}</h2>
         <JobNameAnimation />
@@ -99,7 +100,7 @@ function About({ contentBody, jobName }) {
         />
         <Achievements title={"Awards Won"} number={aboutData["awards-won"]} />
       </div>
-      <div className="resume-protofolio-buttons">
+      <div className="resume-protofolio-buttons" style={{ display: "non" }}>
         <button>Hire Me</button>
         <button> Portfolio</button>
       </div>
