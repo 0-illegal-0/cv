@@ -93,7 +93,7 @@ code {
 .page {
   display: flex;
   width: 100%;
-  max-width: 1700px;
+  max-width: 1900px;
   justify-content: space-between;
   margin: 0 auto;
   padding: 22px 22px;
@@ -158,6 +158,10 @@ code {
 }
 
 .nav-list li:hover {
+  background-color: #c8e1f7;
+}
+
+.nav-list li:hover {
   cursor: pointer;
 }
 
@@ -193,7 +197,10 @@ code {
 
 .avatar-name-description {
   width: 100%;
-  height: 350px;
+  height: 320px;
+  display: flex;
+  justify-content: center;
+  background-color: #e4e1dc;
   /* margin: auto auto;
    padding: 0px 20px 10px;
    border-bottom: 2px solid #9cc3e9;
@@ -205,8 +212,12 @@ code {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
 
-  /*box-shadow: 0 0 10px 5px #b7d5eb75;*/
+@media (min-width: 1500px) {
+  .avatar-name-description > img {
+    max-width: 320px;
+  }
 }
 
 .shado {
@@ -287,7 +298,7 @@ code {
 
 .about-content {
   z-index: 5;
-  background-image: linear-gradient(to top, #ffffff, #ffffff, #e4ecf3);
+  background-image: linear-gradient(to top, #ffffff, #ffffff, #f1d8f1);
 }
 
 .about-content,
@@ -460,6 +471,7 @@ code {
   width: 100%;
   justify-content: space-around;
   margin-bottom: 0 !important;
+  max-width: 900px;
 }
 
 .resume-protofolio-buttons button {
@@ -546,8 +558,11 @@ code {
 }
 
 @media (min-width: 1100px) and (max-height: 680px) {
-  .about-content {
-    display: none !important;
+  .about-content > div {
+    margin-bottom: 55px !important;
+  }
+  .about-content > div:last-child {
+    margin-bottom: unset !important;
   }
 }
 
@@ -622,9 +637,6 @@ code {
   }
   .personal-data {
     font-size: 14.5px;
-  }
-  .personal-informations {
-    height: 32%;
   }
 
   .handled-projects {

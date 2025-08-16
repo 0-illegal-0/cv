@@ -12,6 +12,7 @@ import bgImage from "./assets/images/style/background-image.jpg";
 import { screen } from "@testing-library/react";
 import NavBarIcon from "./assets/images/icons/nav-bar.png";
 import NavBarAnimation from "./component/NavBarAnimation.js";
+import { useState } from "react";
 
 function App() {
   return (
@@ -23,14 +24,17 @@ function App() {
 
 function Main() {
   const mainPage = useRef();
+  const [getTest, setTest] = useState("Wing");
 
   function setMainElementHeight() {
     setTimeout(() => {
       if (window.innerHeight) {
-        mainPage.current.style.height = window.innerHeight + "px"; // 739 + "px";
+        mainPage.current.style.height = window.innerHeight + "px"; // window.innerHeight 739 + "px";
+        //  setMainElementHeight();
       } else {
         setMainElementHeight();
       }
+      console.log("this is ... ", window.innerHeight);
     }, 10);
   }
   setMainElementHeight();

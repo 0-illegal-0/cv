@@ -69,7 +69,7 @@ let bottomSectionWidthState = false;
 
 function Icons({ contentBodyWidth, contentBodyHeight }) {
   const [firstElementState, setFirstElementState] = useState(0);
-  const [secondElementState, setSecondElementState] = useState(0);
+  const [secondElementState, setSecondElementState] = useState(1265);
 
   const firstElement = useRef();
   const secondElement = useRef();
@@ -96,7 +96,6 @@ function Icons({ contentBodyWidth, contentBodyHeight }) {
 
   getBottomSection();
 
-  // (Not finished)  should make width of firstElement or width secondElement is dynamic instead of {1320}
   function IconsAnimation() {
     setTimeout(() => {
       setFirstElementState(firstElementState - 1);
@@ -116,15 +115,7 @@ function Icons({ contentBodyWidth, contentBodyHeight }) {
     return <img alt="" src={v} />;
   });
   return (
-    <div
-      className="bottom-section"
-      ref={bottomSection}
-      style={
-        {
-          //marginTop: contentBodyHeight + "px",
-        }
-      }
-    >
+    <div className="bottom-section" ref={bottomSection}>
       <div
         className="right-section-in-bottom"
         style={{

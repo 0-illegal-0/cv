@@ -152,7 +152,7 @@ function Projects() {
         process.env.PUBLIC_URL +
         `${prototypeData["prototype-images"][index]["image"]}` +
         ">";
-
+      // eyeyeyeyey
       prototypeDetails.classList.remove("prototype-review-hidden");
       prototypeDetails.classList.add("prototype-review-show");
       prototypeDetails.style.display = "flex";
