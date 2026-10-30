@@ -73,6 +73,21 @@ function Achievements({ title, number }) {
   );
 }
 
+// view Achievements content
+
+function ViewAchcontent({}) {
+  return (
+    <div className="view-content-container">
+      <div>
+      </div>
+      <div> 
+      </div> 
+      <div>
+      </div>
+    </div>
+  );
+}
+
 function About({ contentBody, jobName }) {
   return (
     <div id="about-content" className="about-content section" ref={contentBody}>
@@ -84,28 +99,49 @@ function About({ contentBody, jobName }) {
           I am a <b>{aboutData["job-title"]}</b> {aboutData["summary"]}
         </p>
       </div>
+      <div className="handled-projects-container"> 
+        <div className="handled-projects-to-align">
+            <div className="handled-projects">
+                <div className="handled-projects-con">
 
-      <div className="handled-projects">
-        <Achievements
-          title={"Client Review"}
-          number={aboutData["client-review"]}
-        />
-        <Achievements
-          title={"Years Of Experience"}
-          number={aboutData["years-of-experience"]}
-        />
-        <Achievements
-          title={"Handled Projects"}
-          number={aboutData["handled-projects"]}
-        />
-        <Achievements title={"Awards Won"} number={aboutData["awards-won"]} />
+              <Achievements
+                title={"Client Review"}
+                number={aboutData["client-review"]}
+              />
+            {/*} <Achievements
+                title={"Years Of Experience"}
+                number={aboutData["years-of-experience"]}
+              />*/}
+              <Achievements
+                title={"Handled Projects"}
+                number={aboutData["handled-projects"]}
+              />
+              <Achievements title={"Awards Won"} number={aboutData["awards-won"]} />
+              </div>
+            </div>
+          </div>
+
+
+          <ViewAchcontent />
       </div>
+
+
       <div className="resume-protofolio-buttons" style={{ display: "non" }}>
         <button>Hire Me</button>
         <button> Portfolio</button>
       </div>
     </div>
   );
+}
+
+function Carousel() {
+  return(
+    <div>
+      <div>1</div> 
+      <div>2</div>
+      <div>3</div>
+    </div>
+  )
 }
 
 export default About;
