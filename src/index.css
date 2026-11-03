@@ -214,6 +214,10 @@ code {
   object-fit: cover;
 }
 
+.avatar-personal-info {
+  margin-top:8px
+}
+
 @media (min-width: 1500px) {
   .avatar-name-description > img {
     max-width: 320px;
@@ -419,15 +423,19 @@ code {
   width: 100%;
   position: relative;
   margin-top: 0 !important;
+  height: 270px;  /* Not finished */
+  top:25px ;  /* Not finished */
 
 }
 
 .view-content-container{  
-  height: 250px;
+    height: 270px;
     box-shadow: 0px 0px 4px #8e8d95;
-  position: absolute;
-  width: 100%;
-  top: 0;
+    position: absolute;
+    width: 75%;
+    top: 0;
+     margin: 0 auto; 
+    margin-left:  12.5%;
 }
 
 .handled-projects-con{
@@ -478,7 +486,8 @@ code {
 }
 
 .resume-protofolio-buttons {
-  display: flex;
+  /*display: flex;*/
+  display: none;
   width: 100%;
   justify-content: space-around;
   margin-bottom: 0 !important;
