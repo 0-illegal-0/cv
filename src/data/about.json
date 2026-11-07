@@ -1,14 +1,28 @@
 {
-  "name": "Robin Oliver",
+  "name": "Robin Oliver", 
   "job-title": "Web Developer",
   "summary": "use logical and mathematical solutions to get a lot of work done and to solve problems, i have experience using javascript and PHP to create full stack website and integrating API",
-  "client-review": "46",
   "years-of-experience": "7",
   "handled-projects": "23",
   "awards-won": "25",
-  "sliders": [ 
-  { "content": "I would like to thank those responsible for the completion of these projects, they understand the true value of time and possess genuine expertise in understanding their clients.", "alt": "Mountain ridge at dawn", "label": "","image-src": "../../assets/images/testimonials/pexels-duygugungor.jpg" },
-  { "content": "I would like to thank those responsible for the completion of these projects, they understand the true value of time and possess genuine expertise in understanding their clients.", "alt": "Sunset over the ocean", "label": "","image-src": "../../assets/images/testimonials/pexels-omransoliman97.jpg" },
-  { "content": "I would like to thank those responsible for the completion of these projects, they understand the true value of time and possess genuine expertise in understanding their clients.", "alt": "Quiet shoreline", "label": "","image-src": "../../assets/images/testimonials/pexels-aysegul-aytoren.jpg" }
-]
+  "achievements": [
+    { "title": "UI/UX Design", "number": "7", "color": "green" , "img-src": "/images/about/achievement/app-development.png"},
+    { "title": "Web Design", "number": "15", "color": "purple", "img-src":"/images/about/achievement/responsive-design.png"},
+    { "title": "Web Development", "number": "23", "color": "blue", "img-src":"/images/about/achievement/responsive-design.png" },
+    { "title": "AI Projects", "number": "23", "color": "blue", "img-src":"/images/about/achievement/" }
+
+  ],
+  "client-review": [ 
+  { "content": "I would like to thank those responsible for the completion of these projects, they understand the true value of time and possess genuine expertise in understanding their clients.",
+   "alt": "Mountain ridge at dawn", "label": "","client-name": "John Doe","title": "Software Engineer", "image-src": "/images/about/testimonials/pexels-duygugungor.jpg" ,
+   "star-rate": 3,"task": "Web Development" ,"date": "2023-05-15","duration": "13 days"},
+
+  {"content": "I'm extremely happy with the website design service.The team understood exactly what I needed.The final result was modern, professional, and responsive.I highly recommend their services to everyone!",
+   "alt": "Sunset over the ocean", "label": "","client-name": "Jane Smith", "title": "Project Manager", "image-src": "/images/about/testimonials/pexels-omransoliman97.jpg" ,
+    "star-rate": 4,"task": "Project Management","date": "2023-06-20","duration": "2 weeks"},
+
+  { "content": "Working with this development team was amazing. They delivered exactly what we were looking for. The quality of work was outstanding. I would definitely work with them again!",
+   "alt": "Quiet shoreline", "label": "","client-name": "Bob Johnson", "title": "Designer", "image-src": "/images/about/testimonials/pexels-aysegul-aytoren.jpg" ,
+    "star-rate": 3,"task": "UI/UX Design","date": "2023-07-10","duration": "3 weeks","date-icon": "/images/about/testimonials/date-icon.png"}
+  ]
 }

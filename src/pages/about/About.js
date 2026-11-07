@@ -1,8 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import aboutData from "../../data/about.json";
 
-import testImage from "../../assets/images/testimonials/pexels-duygugungor.jpg";
-
 // JobNameAnimation
 const jobNameList = [
   "W",
@@ -64,13 +62,23 @@ function JobNameAnimation() {
 }
 
 // Achievements
-function Achievements({ title, number }) {
+function Achievements({ title, number, color, image }) {
   return (
-    <div className="linearGradient">
-      <div>
-        <h3>{title}</h3>
-        <span>{number}</span>
+    <div className="skill-card">
+      <div className="skill-card-image">
+        <img src={image} />
       </div>
+      <span className={`skill-card-design-${color}`}></span>
+      <span
+        style={{ color: color }}
+        className={`skill-card-num skill-card-num-${color}`}
+      >{` +${number}`}</span>
+      <span
+        style={{ color: color }}
+        className={`skill-card-title skill-card-title-${color}`}
+      >
+        {title}
+      </span>
     </div>
   );
 }
@@ -80,12 +88,9 @@ function Achievements({ title, number }) {
 function ViewAchcontent({}) {
   return (
     <div className="view-content-container">
-      <div>
-      </div>
-      <div> 
-      </div> 
-      <div>
-      </div>
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
   );
 }
@@ -101,11 +106,18 @@ function About({ contentBody, jobName }) {
           I am a <b>{aboutData["job-title"]}</b> {aboutData["summary"]}
         </p>
       </div>
-
-
-
-                <Carousel />
-
+      <div className="achievements">
+        {aboutData["achievements"].map((achievement, index) => (
+          <Achievements
+            key={index}
+            title={achievement["title"]}
+            number={achievement["number"]}
+            color={achievement["color"]}
+            image={achievement["img-src"]}
+          />
+        ))}
+      </div>
+      <Carousel />
 
       <div className="resume-protofolio-buttons" style={{ display: "non" }}>
         <button>Hire Me</button>
@@ -115,15 +127,11 @@ function About({ contentBody, jobName }) {
   );
 }
 
-
-
-
-// Sliders
-
+// client-review
 
 const INTERVAL_MS = 2000;
 
- function Carousel() {
+function Carousel() {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
 
@@ -132,16 +140,15 @@ const INTERVAL_MS = 2000;
   useEffect(() => {
     if (paused) return;
     const id = setTimeout(() => {
-      setIndex((i) => (i + 1) % aboutData["sliders"].length);
+      setIndex((i) => (i + 1) % aboutData["client-review"].length);
     }, INTERVAL_MS);
     return () => clearTimeout(id);
   }, [index, paused]);
 
   return (
     <>
-      {/*<style>{css}</style>*/}
       <section
-        className="carousel"
+        className="customer-review"
         aria-roledescription="carousel"
         aria-label="Photo carousel"
         onMouseEnter={() => setPaused(true)}
@@ -157,21 +164,58 @@ const INTERVAL_MS = 2000;
             style={{ transform: `translateX(-${index * 100}%)` }}
             aria-live={paused ? "polite" : "off"}
           >
-            {aboutData["sliders"].map((slide, i) => (
-              <div   className="slide"
-               key={slide.label}
->               
-              <img src= {aboutData["sliders"][i]["image-src"]} /*process.env.PUBLIC_URL+slide["image-src"]*/  alt={slide.alt} />
+            {aboutData["client-review"].map((slide, i) => (
+              <div className="slide" key={slide.label}>
+                <div className="slide-client-profile">
+                  <img src={slide["image-src"]} alt={slide.alt} />
+                  <h3>{slide["client-name"]}</h3>
+                  <h5>{slide["title"]}</h5>
+                </div>
+                <div className="client-review-details">
+                  <div className="client-review-top-section">
+                    <div className="client-review-task">
+                      <b>Task:&nbsp;</b>
+                      <span>{slide.task}</span>
+                    </div>
 
+                    <div className="slide-star-rate">
+                      {Array.from({ length: 5 }, (_, j) => (
+                        <div key={j} className="star-orane">
+                          {j < slide["star-rate"] ? (
+                            <span key={j} className="star-orange">
+                              ★
+                            </span>
+                          ) : (
+                            <span key={j} className="star-empty">
+                              ☆
+                            </span>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
 
-              <p className="slide-content">{slide.content}</p>
+                  <p className="slide-content">{slide.content}</p>
+                  <div className="client-review-bottom-section">
+                    <div className="client-review-duration">
+                      <b>Task:&nbsp;</b>
+
+                      <span> {slide.duration}</span>
+                    </div>
+                    <div className="client-review-date">
+                      <b>Date:&nbsp;</b>
+
+                      <span>{slide.date}</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
         </div>
 
-                <div className="controls" role="group" aria-label="Choose a slide">
-          {aboutData["sliders"].map((slide, i) => (
+        <div className="controls" role="group" aria-label="Choose a slide">
+          {aboutData["client-review"].map((slide, i) => (
             <button
               key={slide.label}
               type="button"
@@ -188,14 +232,20 @@ const INTERVAL_MS = 2000;
   );
 }
 
-
-  {/*<figure
+{
+  /*<figure
                 className="slide"
                 key={slide.label}
                 aria-hidden={i !== index}
                 aria-label={`${i + 1} of ${SLIDES.length}`}
               >
                 <img src={slide.src} alt={slide.alt} loading={i === 0 ? "eager" : "lazy"} />
-              </figure>*/}
+              </figure>*/
+}
 
 export default About;
+
+/*
+☆
+★
+*/

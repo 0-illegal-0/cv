@@ -11,7 +11,7 @@ function getImageData() {
     index++
   ) {
     protoTypeImage.push(
-      portofolioData["prototype-projects"][index]["project-image"]
+      portofolioData["prototype-projects"][index]["project-image"],
     );
   }
 }
@@ -40,19 +40,19 @@ function projectFilter(type) {
       index++
     ) {
       document.getElementById(
-        portofolioData["prototype-projects"][index]["id"]
+        portofolioData["prototype-projects"][index]["id"],
       ).style.display = "block";
 
       document
         .getElementById(
-          portofolioData["prototype-projects"][index]["id"] + "-container"
+          portofolioData["prototype-projects"][index]["id"] + "-container",
         )
         .classList.add("filter-animation-remove");
 
       setTimeout(() => {
         document
           .getElementById(
-            portofolioData["prototype-projects"][index]["id"] + "-container"
+            portofolioData["prototype-projects"][index]["id"] + "-container",
           )
           .classList.remove("filter-animation-remove");
       }, 200);
@@ -65,22 +65,22 @@ function projectFilter(type) {
     ) {
       if (portofolioData["prototype-projects"][index]["type"] !== type) {
         document.getElementById(
-          portofolioData["prototype-projects"][index]["id"]
+          portofolioData["prototype-projects"][index]["id"],
         ).style.display = "none";
 
         document
           .getElementById(
-            portofolioData["prototype-projects"][index]["id"] + "-container"
+            portofolioData["prototype-projects"][index]["id"] + "-container",
           )
           .classList.remove("filter-animation-remove");
       } else {
         document.getElementById(
-          portofolioData["prototype-projects"][index]["id"]
+          portofolioData["prototype-projects"][index]["id"],
         ).style.display = "block";
 
         document
           .getElementById(
-            portofolioData["prototype-projects"][index]["id"] + "-container"
+            portofolioData["prototype-projects"][index]["id"] + "-container",
           )
           .classList.add("filter-animation-remove");
       }
@@ -128,7 +128,7 @@ function Projects() {
     prototypeImages = document.getElementById("prototype-images");
     prototypeInfo = document.getElementById("prototype-info-details");
     descriptionContent = document.getElementById(
-      "prototype-description-content"
+      "prototype-description-content",
     );
     prototypeTechnologies = document.getElementById("prototype-technologies");
     prototypeDetails = document.getElementById("prototype-details");
@@ -212,7 +212,6 @@ function Projects() {
 export default Portofolio;
 
 /*
-
         "<span class=" + prototypeData["prototype-images"][index]["id"] === 0
           ? "background-focused-color"
           : "" +
