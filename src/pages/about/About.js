@@ -66,15 +66,15 @@ function Achievements({ title, number, color, image }) {
   return (
     <div className="skill-card">
       <div className="skill-card-image">
-        <img src={image} />
+        <img src={image} alt="" />
       </div>
       <span className={`skill-card-design-${color}`}></span>
       <span
-        style={{ color: color }}
+        style={{ color: "#000" }}
         className={`skill-card-num skill-card-num-${color}`}
       >{` +${number}`}</span>
       <span
-        style={{ color: color }}
+        style={{ color: "#000" }}
         className={`skill-card-title skill-card-title-${color}`}
       >
         {title}

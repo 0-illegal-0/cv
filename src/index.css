@@ -1917,15 +1917,16 @@ code {
 
 .achievements {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   margin:40px 0 !important;
   text-align: center;
 }
 
 .skill-card{
-  width: 27%;
+  width: 22%;
+  min-width: 165px;
   border-radius: 10px;
-  height: 200px;
+  height: 180px;
   position: relative;
   display: flex !important;
   flex-direction: column;
@@ -1934,10 +1935,6 @@ code {
   align-content: center;
 }
 
-.achievements .skill-card-green, .achievements .skill-card-blue , .achievements .skill-card-purple {
-  margin: 0 auto;
-  padding: 40px;
-}
 
 .achievements *{
   position: relative;
@@ -1953,7 +1950,7 @@ code {
     left: 0;
 }
 .skill-card-image img {
-    width: 100px;
+    width: 70px;
     top: 0;
     left: 0;
     object-fit: fill;
@@ -1961,7 +1958,13 @@ code {
 }
 
 .skill-card-num {
-  margin-top: 20px;
+  margin-top: 28px;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.skill-card-title{
+  margin-top: 4px;
   font-weight: bold;
   font-size: 17px;
 }
@@ -1972,15 +1975,55 @@ code {
   font-size: 17px;
 }
 .achievements .skill-card-design-green{
-    background: linear-gradient(135deg, #D1FAE5, #A7F3D0);
+   /* background: linear-gradient(135deg, #D1FAE5, #A7F3D0);*/
+    background: linear-gradient(to top, #7b68ee,#d671f0);
+    opacity: 0.25;
 }
 .achievements .skill-card-design-blue{
-    background: linear-gradient(135deg, #DBEAFE, #BFDBFE);
+ /*   background: linear-gradient(135deg, #DBEAFE, #BFDBFE);*/
+    background: linear-gradient(to top, #d671f0, #7b68ee);
+    opacity: 0.25;
 }
 .achievements .skill-card-design-purple{
-    background: linear-gradient(135deg, #EDE9FE, #DDD6FE);
+   /* background: linear-gradient(135deg, #EDE9FE, #DDD6FE);*/
+      background: linear-gradient(to top, #7b68ee, #f1d8f1, #7b68ee);
 
 }
+
+
+
+@media (max-width: 1200px) {
+  .achievements{
+    justify-content: space-between;
+  }
+  .achievements .skill-card{
+    width: 23.5%;
+    min-width: unset;
+    height: 150px;
+  }
+
+  .skill-card-image img{
+    width: 60px;
+  }
+
+  .skill-card-title , .skill-card-num{
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .achievements{
+      flex-wrap: wrap;
+      justify-content: space-between;
+  }
+
+  .achievements .skill-card{
+    width: calc(50% - 7.5px);
+    margin-bottom:15px;
+  }
+  }
+
+
 
 /* customer-review */
 
@@ -2168,5 +2211,8 @@ code {
     margin-bottom: 4px;
   }
 }
+
+
+
 
 

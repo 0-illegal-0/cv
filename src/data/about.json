@@ -6,10 +6,10 @@
   "handled-projects": "23",
   "awards-won": "25",
   "achievements": [
-    { "title": "UI/UX Design", "number": "7", "color": "green" , "img-src": "/images/about/achievement/app-development.png"},
-    { "title": "Web Design", "number": "15", "color": "purple", "img-src":"/images/about/achievement/responsive-design.png"},
-    { "title": "Web Development", "number": "23", "color": "blue", "img-src":"/images/about/achievement/responsive-design.png" },
-    { "title": "AI Projects", "number": "23", "color": "blue", "img-src":"/images/about/achievement/" }
+    { "title": "AI Project", "number": "7", "color": "green" , "img-src": "/images/about/achievement/ai.png"},
+    { "title": "Web Design", "number": "15", "color": "blue", "img-src":"/images/about/achievement/world-wide-web.png"},
+    { "title": "Web Development", "number": "23", "color": "green", "img-src":"/images/about/achievement/web-coding.png" },
+    { "title": "UI/UX Design", "number": "23", "color": "blue", "img-src":"/images/about/achievement/responsive-design.png" }
 
   ],
   "client-review": [ 
