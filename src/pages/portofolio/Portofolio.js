@@ -152,7 +152,6 @@ function Projects() {
         process.env.PUBLIC_URL +
         `${prototypeData["prototype-images"][index]["image"]}` +
         ">";
-      // eyeyeyeyey
       prototypeDetails.classList.remove("prototype-review-hidden");
       prototypeDetails.classList.add("prototype-review-show");
       prototypeDetails.style.display = "flex";
@@ -210,24 +209,3 @@ function Projects() {
 }
 
 export default Portofolio;
-
-/*
-        "<span class=" + prototypeData["prototype-images"][index]["id"] === 0
-          ? "background-focused-color"
-          : "" +
-            " id=" +
-            prototypeData["prototype-images"][index]["id"] +
-            "-button " +
-            "></span>";
-
-        onClick={() => {
-            portofolioSiderImage(
-              prototypeData["prototype-images"][index]["id"]
-            );
-            headerFilterFocus(
-              prototypeData["prototype-images"][index]["id"] + "-button"
-            );
-          }}
-
-
-*/

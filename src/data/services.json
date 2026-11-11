@@ -3,32 +3,66 @@
     {
       "icon": "/images/services/development.png",
       "title": "Web Development",
-      "description": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print."
+      "description": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print.",
+      "preview-service-image":"/images/services/development.png",
+      "completed-task":"32",
+      "experience":"9",
+      "supported-projects":"19",
+      "developing":7
     },
     {
       "icon": "/images/services/photography.png",
       "title": "Web Design",
-      "description": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print."
+      "description": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print.",
+      "preview-service-image":"/images/services/development.png",
+      "completed-task":"32",
+      "experience":"9",
+      "supported-projects":"19",
+      "developing":7
     },
     {
       "icon": "/images/services/photography.png",
       "title": "Photography",
-      "description": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print."
+      "description": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print.",
+      "preview-service-image":"/images/services/development.png",
+      "completed-task":"32",
+      "experience":"9",
+      "supported-projects":"19",
+      "developing":7
+
     },
     {
       "icon": "/images/services/development.png",
       "title": "Web Design",
-      "description": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print."
+      "description": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print.",
+      "preview-service-image":"/images/services/development.png",
+      "completed-task":"32",
+      "experience":"9",
+      "supported-projects":"19",
+      "developing":7
+
+
     },
     {
       "icon": "/images/services/development.png",
       "title": "Web Development",
-      "description": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print."
+      "description": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print.",
+      "preview-service-image":"/images/services/development.png",
+      "completed-task":"32",
+      "experience":"9",
+      "supported-projects":"19",
+      "developing":7
     },
     {
       "icon": "/images/services/photography.png",
       "title": "Photography",
-      "description": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print."
+      "description": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print.",
+      "preview-service-image":"/images/services/development.png",
+      "completed-task":"32",
+      "experience":"9",
+      "supported-projects":"19",
+      "developing":7
+
     }
   ]
 }

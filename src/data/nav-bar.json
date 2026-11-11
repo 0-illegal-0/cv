@@ -1,0 +1,29 @@
+{
+  "nav-bar-design": [
+    {
+      "icon": "/images/nav-bar/about-2.png",
+      "id":"about-content",
+      "title": "About"
+    },
+    {
+      "icon": "/images/nav-bar/resume.png",
+      "id":"resume",
+      "title": "Resume"
+    },
+    {
+      "icon": "/images/nav-bar/portfolio.png",
+      "id":"portofolio",
+      "title": "Portfolio"
+    },
+    {
+      "icon": "/images/nav-bar/service.png",
+      "id":"services",
+      "title": "Services"
+    },
+    {
+      "icon": "/images/nav-bar/contact.png",
+      "id":"contact",
+      "title": "Contact"
+    }
+  ]
+}

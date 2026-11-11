@@ -1,25 +1,14 @@
 import navbarIcon from "./assets/images/icons/work.png";
 
-import about from "./assets/images/icons/about-2.png";
-import resume from "./assets/images/icons/resume.png";
-import portfolio from "./assets/images/icons/portfolio.png";
-import service from "./assets/images/icons/service.png";
-import contact from "./assets/images/icons/contact.png";
+import { navBarOff } from "./MainHeader";
+import navBarData from "./data/nav-bar.json";
 
-import { useEffect, useState, useRef } from "react";
-import { renderToString } from "react-dom/server";
+import { useEffect, useState } from "react";
 
 function NavBar({ navBarMove, screenState, navList, navbarId, contentBody }) {
   const [navbarStyle, setNavbarStyle] = useState({ display: "flex" });
-  let mainContentBody;
-  let aboutContent;
-
-  //const navbarId = useRef();
 
   useEffect(() => {
-    mainContentBody = document.getElementById("main-content-body");
-    aboutContent = document.getElementById("about-content");
-
     if (screenState) {
       setNavbarStyle({ display: "none" });
     }
@@ -49,51 +38,18 @@ function NavBar({ navBarMove, screenState, navList, navbarId, contentBody }) {
         <div className="navbar-icon" onClick={navBarMove}>
           <img src={navbarIcon} />
         </div>
-        <ul className="nav-list" ref={navList}>
-          <li
-            onClick={() => {
-              chooseSection("about-content");
-            }}
-          >
-            <img src={about} />
-            <span>About</span>
-          </li>
-          <li
-            onClick={() => {
-              chooseSection("resume");
-            }}
-          >
-            <img src={resume} />
-
-            <span>Resume</span>
-          </li>
-          <li
-            onClick={() => {
-              chooseSection("portofolio");
-            }}
-          >
-            <img src={portfolio} />
-
-            <span>Portfolio</span>
-          </li>
-          <li
-            onClick={() => {
-              chooseSection("services");
-            }}
-          >
-            <img src={service} />
-
-            <span>Services</span>
-          </li>
-          <li
-            onClick={() => {
-              chooseSection("contact");
-            }}
-          >
-            <img src={contact} />
-
-            <span>Contact</span>
-          </li>
+        <ul className="nav-list" ref={navList} id="nav-list">
+          {navBarData["nav-bar-design"].map((navBarDesin, index) => (
+            <li
+              onClick={() => {
+                chooseSection(navBarDesin["id"]);
+                navBarOff(navList, navbarId);
+              }}
+            >
+              <img src={navBarDesin["icon"]} />
+              <span>{navBarDesin["title"]}</span>
+            </li>
+          ))}
         </ul>
       </div>
     </>

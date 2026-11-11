@@ -8,6 +8,7 @@ import NavBar from "./component/NavBar.js";
 import Avatar from "./avatar.js";
 import MainHeader from "./MainHeader.js";
 import PrototypeDetails from "./pages/portofolio/prototypeDetails.js";
+import PreviewService from "./pages/services/previewService.js";
 import bgImage from "./assets/images/style/background-image.jpg";
 import { screen } from "@testing-library/react";
 import NavBarIcon from "./assets/images/icons/nav-bar.png";
@@ -43,6 +44,8 @@ function Main() {
   return (
     <div className="main">
       <PrototypeDetails />
+      <PreviewService />
+
       <div ref={mainPage} className="page">
         <MainHeader data={data["app-name"]} />
         <div className="box-size-height"></div>
