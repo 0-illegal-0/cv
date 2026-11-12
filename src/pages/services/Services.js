@@ -6,7 +6,19 @@ const serviceseImage = [];
 
 let previewServic;
 let previewServiceImage;
-let serviceDetails;
+let serviceDetailsTopSection;
+let serviceDetailsBottomSection;
+
+function previewPageSections(title, id, key) {
+  return ` <div class = services-details-design-box>
+                <div>
+                    <span class="services-details-design-linear"></span>
+                    <span>${title}</span>
+                    <b>+${servicesData["available-services"][id][key]}</b>
+                </div>
+  </div>
+  `;
+}
 
 function getImageData() {
   for (
@@ -23,16 +35,25 @@ function Services() {
   useEffect(() => {
     previewServic = document.getElementById("preview-service");
     previewServiceImage = document.getElementById("preview-service-image");
-    serviceDetails = document.getElementById("services-details");
+    serviceDetailsTopSection = document.getElementById(
+      "services-details-top-section",
+    );
+    serviceDetailsBottomSection = document.getElementById(
+      "services-details-bottom-section",
+    );
   });
 
   function previewService(id) {
     previewServiceImage.innerHTML = "";
-
-    previewServiceImage.innerHTML =
-      "<img src= " +
-      servicesData["available-services"][id]["preview-service-image"] +
-      " />";
+    serviceDetailsTopSection.innerHTML = "";
+    serviceDetailsBottomSection.innerHTML = "";
+    previewServiceImage.innerHTML = `<img src=${servicesData["available-services"][id]["preview-service-image"]} /> `;
+    serviceDetailsTopSection.innerHTML = `
+    ${previewPageSections("Completed Task", id, "completed-task")}
+    ${previewPageSections("Years of Experience", id, "experience")}
+    ${previewPageSections("Supported Projects", id, "supported-projects")}
+    ${previewPageSections("Developing", id, "developing")}`;
+    serviceDetailsBottomSection.innerHTML = `<div class = service-preview-description><p>${servicesData["available-services"][id]["preview-description"]}</P></div>`;
 
     previewServic.classList.remove("prototype-review-hidden");
     previewServic.classList.add("prototype-review-show");
@@ -69,3 +90,10 @@ function Services() {
 }
 
 export default Services;
+
+/*
+
+       <div class = services-details-design-box><div><span class="services-details-design-linear"></span><span>Completed Task </span><b>+${servicesData["available-services"][id]["completed-task"]}</b></div></div>
+
+
+*/

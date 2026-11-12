@@ -1772,17 +1772,93 @@ code {
   }
 }
 
+
+/* Service .. Preview */
+
 .preview-service {
     display: flex;
+    flex-direction: column;
     width: 100%;
     height: 100%;
-    justify-content: center;
-    z-index: 6;
+    overflow-y: scroll;
     position: fixed;
-    background-color: #201f1faf;
+    background-color: #fff;
     opacity: 0;
     z-index: -1;
 }
+
+.preview-service-image  img {
+  width: 100%;
+  object-fit: contain;
+}
+.preview-service  .services-details {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+  margin: 0 auto;
+  height: auto;
+}
+.preview-service .services-details-top-section {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 24px auto 0 auto;
+}
+.preview-service .services-details-design-box {
+  width: 20%;
+  text-align: center;
+  padding: 1px;
+  border-radius:10px 10px;
+}
+
+.preview-service .services-details-design-box span {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.preview-service .services-details-design-box b {
+  font-size: 30px;
+  color: var(--primary);
+}
+
+
+.preview-service .services-details-design-box div {
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  border-radius:10px 10px;
+  display: flex;
+  flex-direction: column;
+}
+.preview-service .preview-service-image {
+  width: 65%;
+  margin: 0 auto;
+}
+
+.preview-service .services-details-design-linear{
+  position: absolute !important;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, #7b68ee, #d671f0);
+  border-radius: 10px;
+  opacity: 0.25;
+  top: 0;
+  left: 0;
+
+}
+
+
+.preview-service .service-preview-description{
+  font-size: 18px;
+  margin-top: 28px;
+  line-height: 1.7;
+}
+
+
 @media (max-width: 768px) {
   .service-content {
     width: 100%;
@@ -1991,8 +2067,7 @@ code {
   font-weight: bold;
   font-size: 17px;
 }
-.achievements .skill-card-design-green{
-   /* background: linear-gradient(135deg, #D1FAE5, #A7F3D0);*/
+.achievements .skill-card-design-green {
     background: linear-gradient(to top, #7b68ee,#d671f0);
     opacity: 0.25;
 }

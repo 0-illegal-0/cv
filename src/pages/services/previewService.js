@@ -4,11 +4,15 @@ function Previewervice() {
   return (
     <div className="preview-service" id="preview-service">
       <div className="preview-service-image" id="preview-service-image"></div>
-      <div className="services-details" id="services-details">
-        <span>Completed Task :</span>
-        <span>Years of Experience :</span>
-        <span>Supported Projects :</span>
-        <span>Developing :</span>
+      <div className="services-details">
+        <div
+          className="services-details-top-section"
+          id="services-details-top-section"
+        ></div>
+        <div
+          className="services-details-bottom-section"
+          id="services-details-bottom-section"
+        ></div>
       </div>
     </div>
   );
