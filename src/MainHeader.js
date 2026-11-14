@@ -12,7 +12,7 @@ export async function navBarOff(navListId, navbarId) {
   navListId.current.classList.add("navbar-header-off");
   navListId.current.style.marginRight = "-100px";
   const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-  await delay(1000); // Pauses code execution for 2 seconds (2000ms)*/
+  await delay(1000); //
 
   navbarId.current.style.zIndex = "-1";
   navbarStateProccessing = false;

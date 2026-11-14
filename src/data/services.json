@@ -1,7 +1,33 @@
 {
   "available-services": [
     {
-      "icon": "/images/services/photography.png",
+      "icon": "/images/services/apexdigitalagency-website-8305451_1920.jpg",
+      "title": "AI Automation",
+      "description": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print.",
+      "preview-service-image":"/images/services/pexels-pixabay-270348.jpg",
+      "completed-task":"32",
+      "experience":"9",
+      "supported-projects":"19",
+      "developing":7,
+      "promotional-text":"Our commitment doesn’t end at delivery — we stay by your side with dedicated support to ensure your continued success.",
+      "preview-description":"We Create Modern Websites That Bring Your Vision to Life. Our mission is to deliver creative, responsive, and high-performance web solutions tailored to your business needs. We combine innovative design with powerful technology to create seamless user experiences. Let us help you build a strong digital presence, attract more customers, and grow your business. Your Success Starts With a Great Website."
+
+    },
+    {
+      "icon": "/images/services/apexdigitalagency-website-8305451_1920.jpg",
+      "title": "Web Design",
+      "description": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print.",
+      "preview-service-image":"/images/services/pexels-pixabay-270348.jpg",
+      "completed-task":"32",
+      "experience":"9",
+      "supported-projects":"19",
+      "developing":7,
+      "promotional-text":"Our commitment doesn’t end at delivery — we stay by your side with dedicated support to ensure your continued success.",
+      "preview-description":"We Create Modern Websites That Bring Your Vision to Life. Our mission is to deliver creative, responsive, and high-performance web solutions tailored to your business needs. We combine innovative design with powerful technology to create seamless user experiences. Let us help you build a strong digital presence, attract more customers, and grow your business. Your Success Starts With a Great Website."
+
+    },
+    {
+      "icon": "/images/services/apexdigitalagency-website-8305451_1920.jpg",
       "title": "Web Development",
       "description": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print.",
       "preview-service-image":"/images/services/pexels-pixabay-270348.jpg",
@@ -14,34 +40,8 @@
 
     },
     {
-      "icon": "/images/services/photography.png",
-      "title": "Web Design",
-      "description": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print.",
-      "preview-service-image":"/images/services/pexels-pixabay-270348.jpg",
-      "completed-task":"32",
-      "experience":"9",
-      "supported-projects":"19",
-      "developing":7,
-      "promotional-text":"Our commitment doesn’t end at delivery — we stay by your side with dedicated support to ensure your continued success.",
-      "preview-description":"We Create Modern Websites That Bring Your Vision to Life. Our mission is to deliver creative, responsive, and high-performance web solutions tailored to your business needs. We combine innovative design with powerful technology to create seamless user experiences. Let us help you build a strong digital presence, attract more customers, and grow your business. Your Success Starts With a Great Website."
-
-    },
-    {
-      "icon": "/images/services/photography.png",
-      "title": "Photography",
-      "description": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print.",
-      "preview-service-image":"/images/services/pexels-pixabay-270348.jpg",
-      "completed-task":"32",
-      "experience":"9",
-      "supported-projects":"19",
-      "developing":7,
-      "promotional-text":"Our commitment doesn’t end at delivery — we stay by your side with dedicated support to ensure your continued success.",
-      "preview-description":"We Create Modern Websites That Bring Your Vision to Life. Our mission is to deliver creative, responsive, and high-performance web solutions tailored to your business needs. We combine innovative design with powerful technology to create seamless user experiences. Let us help you build a strong digital presence, attract more customers, and grow your business. Your Success Starts With a Great Website."
-
-    },
-    {
-      "icon": "/images/services/photography.png",
-      "title": "Web Design",
+      "icon": "/images/services/apexdigitalagency-website-8305451_1920.jpg",
+      "title": "UI/UX Design",
       "description": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print.",
       "preview-service-image":"/images/services/pexels-pixabay-270348.jpg",
       "completed-task":"32",
@@ -52,8 +52,8 @@
       "preview-description":"We Create Modern Websites That Bring Your Vision to Life. Our mission is to deliver creative, responsive, and high-performance web solutions tailored to your business needs. We combine innovative design with powerful technology to create seamless user experiences. Let us help you build a strong digital presence, attract more customers, and grow your business. Your Success Starts With a Great Website. "
     }, 
     {
-      "icon": "/images/services/photography.png",
-      "title": "Web Development",
+      "icon": "/images/services/apexdigitalagency-website-8305451_1920.jpg",
+      "title": "Seo Optimization",
       "description": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print.",
       "preview-service-image":"/images/services/pexels-pixabay-270348.jpg",
       "completed-task":"32",
@@ -65,7 +65,7 @@
 
     },
     {
-      "icon": "/images/services/photography.png",
+      "icon": "/images/services/apexdigitalagency-website-8305451_1920.jpg",
       "title": "Photography",
       "description": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print.",
       "preview-service-image":"/images/services/pexels-pixabay-270348.jpg",
