@@ -165,7 +165,7 @@ function Carousel() {
             aria-live={paused ? "polite" : "off"}
           >
             {aboutData["client-review"].map((slide, i) => (
-              <div className="slide" key={slide.label}>
+              <div className="slide">
                 <div className="slide-client-profile">
                   <img src={slide["image-src"]} alt={slide.alt} />
                   <h3>{slide["client-name"]}</h3>
@@ -180,15 +180,11 @@ function Carousel() {
 
                     <div className="slide-star-rate">
                       {Array.from({ length: 5 }, (_, j) => (
-                        <div key={j} className="star-orane">
+                        <div className="star-orane">
                           {j < slide["star-rate"] ? (
-                            <span key={j} className="star-orange">
-                              ★
-                            </span>
+                            <span className="star-orange">★</span>
                           ) : (
-                            <span key={j} className="star-empty">
-                              ☆
-                            </span>
+                            <span className="star-empty">☆</span>
                           )}
                         </div>
                       ))}
@@ -217,7 +213,6 @@ function Carousel() {
         <div className="controls" role="group" aria-label="Choose a slide">
           {aboutData["client-review"].map((slide, i) => (
             <button
-              key={slide.label}
               type="button"
               className={i === index ? "ctrl active" : "ctrl"}
               aria-pressed={i === index}

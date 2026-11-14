@@ -7,7 +7,7 @@ const serviceseImage = [];
 let previewServic;
 let previewServiceImage;
 let serviceDetailsTopSection;
-let serviceDetailsBottomSection;
+let servicePreviewDescription;
 
 function previewPageSections(title, id, key) {
   return ` <div class = services-details-design-box>
@@ -38,7 +38,7 @@ function Services() {
     serviceDetailsTopSection = document.getElementById(
       "services-details-top-section",
     );
-    serviceDetailsBottomSection = document.getElementById(
+    servicePreviewDescription = document.getElementById(
       "services-details-bottom-section",
     );
   });
@@ -46,20 +46,21 @@ function Services() {
   function previewService(id) {
     previewServiceImage.innerHTML = "";
     serviceDetailsTopSection.innerHTML = "";
-    serviceDetailsBottomSection.innerHTML = "";
+    servicePreviewDescription.innerHTML = "";
     previewServiceImage.innerHTML = `<img src=${servicesData["available-services"][id]["preview-service-image"]} /> `;
     serviceDetailsTopSection.innerHTML = `
     ${previewPageSections("Completed Task", id, "completed-task")}
     ${previewPageSections("Years of Experience", id, "experience")}
     ${previewPageSections("Supported Projects", id, "supported-projects")}
     ${previewPageSections("Developing", id, "developing")}`;
-    serviceDetailsBottomSection.innerHTML = `<div class = service-preview-description><p>${servicesData["available-services"][id]["preview-description"]}</P></div>`;
-
-    previewServic.classList.remove("prototype-review-hidden");
-    previewServic.classList.add("prototype-review-show");
+    servicePreviewDescription.innerHTML = `<div class = service-preview-description><p>${servicesData["available-services"][id]["preview-description"]}</P></div>`;
+    servicePreviewDescription.innerHTML += `<div class = promotional-text>
+                                                    <p>${servicesData["available-services"][id]["promotional-text"]}</P>
+                                            </div>`;
+    previewServic.classList.remove("preview-service-hidden");
+    previewServic.classList.add("preview-service-show");
     previewServic.style.display = "flex";
     previewServic.style.opacity = "1";
-    previewServic.style.zIndex = "99999";
   }
 
   return (
@@ -95,5 +96,36 @@ export default Services;
 
        <div class = services-details-design-box><div><span class="services-details-design-linear"></span><span>Completed Task </span><b>+${servicesData["available-services"][id]["completed-task"]}</b></div></div>
 
+
+
+
+       import close from "../../assets/images/icons/red-close.png";
+
+function Previewervice() {
+  return (
+    <div className="preview-service" id="preview-service">
+      <div className="preview-service-container">
+        <div className="preview-service-close">
+          <span className="preview-service-icon">
+            <img src={close} alt="" />
+          </span>
+        </div>
+
+        <div className="preview-service-image" id="preview-service-image"></div>
+        <div className="services-details">
+          <div
+            className="services-details-top-section"
+            id="services-details-top-section"
+          ></div>
+          <div
+            className="services-details-bottom-section"
+            id="services-details-bottom-section"
+          ></div>
+        </div>
+      </div>
+    </div>
+  );
+}
+export default Previewervice;
 
 */
