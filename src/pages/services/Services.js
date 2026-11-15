@@ -84,6 +84,12 @@ function Services() {
               </div>
             );
           })}
+          <div className="services-quotation">
+            <span>
+              <img src={servicesData["icon-quotation"]} alt="" />
+            </span>
+            <p>{servicesData["quotation-text"]}</p>
+          </div>
         </div>
       </div>
     </div>

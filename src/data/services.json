@@ -1,4 +1,6 @@
 {
+  "icon-quotation":"/images/services/quote.png",
+  "quotation-text":"The quality of work and attention to detail were truly impressive. Our website now looks more modern, professional, and visually appealing. The design perfectly reflects our brand identity and business goals. We couldn't be happier with the final outcome!",
   "available-services": [
     {
       "icon": "/images/services/apexdigitalagency-website-8305451_1920.jpg",
@@ -53,7 +55,7 @@
     }, 
     {
       "icon": "/images/services/apexdigitalagency-website-8305451_1920.jpg",
-      "title": "Seo Optimization",
+      "title": "SEO Optimization",
       "description": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print.",
       "preview-service-image":"/images/services/pexels-pixabay-270348.jpg",
       "completed-task":"32",
