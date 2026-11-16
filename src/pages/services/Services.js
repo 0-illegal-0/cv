@@ -84,12 +84,24 @@ function Services() {
               </div>
             );
           })}
-          <div className="services-quotation">
-            <span>
-              <img src={servicesData["icon-quotation"]} alt="" />
-            </span>
-            <p>{servicesData["quotation-text"]}</p>
-          </div>
+        </div>
+
+        <div className="rules-of-work">
+          {servicesData["rules-of-work"].map((value, index) => {
+            return (
+              <div>
+                <h3>{value["title"]}</h3>
+                <p>{value["text"]}</p>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="services-quotation">
+          <span>
+            <img src={servicesData["icon-quotation"]} alt="" />
+          </span>
+          <p>{servicesData["quotation-text"]}</p>
         </div>
       </div>
     </div>
@@ -97,41 +109,3 @@ function Services() {
 }
 
 export default Services;
-
-/*
-
-       <div class = services-details-design-box><div><span class="services-details-design-linear"></span><span>Completed Task </span><b>+${servicesData["available-services"][id]["completed-task"]}</b></div></div>
-
-
-
-
-       import close from "../../assets/images/icons/red-close.png";
-
-function Previewervice() {
-  return (
-    <div className="preview-service" id="preview-service">
-      <div className="preview-service-container">
-        <div className="preview-service-close">
-          <span className="preview-service-icon">
-            <img src={close} alt="" />
-          </span>
-        </div>
-
-        <div className="preview-service-image" id="preview-service-image"></div>
-        <div className="services-details">
-          <div
-            className="services-details-top-section"
-            id="services-details-top-section"
-          ></div>
-          <div
-            className="services-details-bottom-section"
-            id="services-details-bottom-section"
-          ></div>
-        </div>
-      </div>
-    </div>
-  );
-}
-export default Previewervice;
-
-*/

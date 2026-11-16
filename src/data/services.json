@@ -5,7 +5,7 @@
     {
       "icon": "/images/services/apexdigitalagency-website-8305451_1920.jpg",
       "title": "AI Automation",
-      "description": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print.",
+      "description": "Clean layouts, thoughtful details, and unforgettable visuals",
       "preview-service-image":"/images/services/pexels-pixabay-270348.jpg",
       "completed-task":"32",
       "experience":"9",
@@ -13,12 +13,11 @@
       "developing":7,
       "promotional-text":"Our commitment doesn’t end at delivery — we stay by your side with dedicated support to ensure your continued success.",
       "preview-description":"We Create Modern Websites That Bring Your Vision to Life. Our mission is to deliver creative, responsive, and high-performance web solutions tailored to your business needs. We combine innovative design with powerful technology to create seamless user experiences. Let us help you build a strong digital presence, attract more customers, and grow your business. Your Success Starts With a Great Website."
-
     },
     {
       "icon": "/images/services/apexdigitalagency-website-8305451_1920.jpg",
       "title": "Web Design",
-      "description": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print.",
+      "description": "Clean layouts, thoughtful details, and unforgettable visuals",
       "preview-service-image":"/images/services/pexels-pixabay-270348.jpg",
       "completed-task":"32",
       "experience":"9",
@@ -31,7 +30,7 @@
     {
       "icon": "/images/services/apexdigitalagency-website-8305451_1920.jpg",
       "title": "Web Development",
-      "description": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print.",
+      "description": "Where Web Development Meets Artificial Intelligence",
       "preview-service-image":"/images/services/pexels-pixabay-270348.jpg",
       "completed-task":"32",
       "experience":"9",
@@ -44,7 +43,7 @@
     {
       "icon": "/images/services/apexdigitalagency-website-8305451_1920.jpg",
       "title": "UI/UX Design",
-      "description": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print.",
+      "description": "Simplifying interactions and making technology feel effortless",
       "preview-service-image":"/images/services/pexels-pixabay-270348.jpg",
       "completed-task":"32",
       "experience":"9",
@@ -56,7 +55,7 @@
     {
       "icon": "/images/services/apexdigitalagency-website-8305451_1920.jpg",
       "title": "SEO Optimization",
-      "description": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print.",
+      "description": "Boost Your Visibility. Dominate Search Results",
       "preview-service-image":"/images/services/pexels-pixabay-270348.jpg",
       "completed-task":"32",
       "experience":"9",
@@ -68,8 +67,8 @@
     },
     {
       "icon": "/images/services/apexdigitalagency-website-8305451_1920.jpg",
-      "title": "Photography",
-      "description": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print.",
+      "title": "Video Editing",
+      "description": "Visual Stories That Leave a Lasting Impression",
       "preview-service-image":"/images/services/pexels-pixabay-270348.jpg",
       "completed-task":"32",
       "experience":"9",
@@ -79,5 +78,11 @@
       "preview-description":"We Create Modern Websites That Bring Your Vision to Life. Our mission is to deliver creative, responsive, and high-performance web solutions tailored to your business needs. We combine innovative design with powerful technology to create seamless user experiences. Let us help you build a strong digital presence, attract more customers, and grow your business. Your Success Starts With a Great Website."
 
     }
+  ],
+  "rules-of-work":[
+    {"title":"Modernity", "text":"Keeping Your Digital Presence Fresh, Modern, and Relevant"},
+    {"title":"Ongoing Support", "text":"We're With You Beyond the Finish Line"},
+    {"title":"AI-Driven Innovation", "text":"AI-Powered Innovation for a Better Future"},
+    {"title":"Creative Designs", "text":"Turning Ideas Into Exceptional User Experiences"}
   ]
 }
