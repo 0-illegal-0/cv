@@ -1458,7 +1458,6 @@ code {
   border-right: unset;
   justify-content: space-between;
   margin: auto;
-  padding-top: 15px;
 }
 
   .prototype-container>div{
@@ -1516,14 +1515,14 @@ code {
 }
 
 .close {
-  position: absolute;
   display: flex;
   justify-content: end;
-  width: calc(70% + 45px);
+  width: 100%;
   border: none !important;
-  margin-top: -15px;
+  padding: 7px 0;
 }
 .close > span {
+  margin-right: 12px;
   width: 45px;
   height: 45px;
   border-top-right-radius: 3px;
@@ -1614,12 +1613,9 @@ code {
   }
   .prototype-container {
     margin-top: 80px;
-
     width: 85%;
   }
-  .close {
-    width: calc(85% + 45px);
-  }
+ 
 }
 
 @media (max-width: 1080px) {
@@ -1651,6 +1647,9 @@ code {
   .view-images {
     border-right: 6px solid #fff;
   }
+
+  
+
   .prototype-description {
     margin: unset;
   }
@@ -1665,7 +1664,7 @@ code {
     width: calc(100% - 7px);
   }
 
-      .prototype-info b, .prototype-info span {
+.prototype-info b, .prototype-info span {
         font-size: 16px;
     }
 .prototype-info > div:last-child {
@@ -1710,6 +1709,27 @@ code {
   .colon {
     display: none;
   }
+}
+
+@media (max-width: 576px) {
+  .prototype-container>div {
+    border: 5px solid #fff !important;
+  } 
+  .prototype-info, .prototype-description {
+    width: 100%;
+  }
+
+  .close > span {
+    width: 38px;
+    height: 38px;
+  }
+
+.prototype-container>div:first-child {
+  padding: 5px 0 0;
+  border: 0 !important;
+}
+
+
 }
 
 /* Services */
@@ -2386,7 +2406,7 @@ code {
     margin-bottom:8px;
   }
 .customer-review .viewport {
-  width: 85%;
+  width: 96%;
   overflow: hidden;
   border-radius: 12px;
   height: 270px;
@@ -2466,19 +2486,17 @@ code {
   align-items: center;
 }
 
-
-
 .client-review-task img, .client-review-bottom-section img {
   width:15px;
   height: 15px;
   margin-right: 4px;
 }
+
 .customer-review .controls {
   display: flex;
   gap: 8px;
   justify-content: center;
   margin-top: 12px;
-
 }
 
 .customer-review .slide-client-profile{
@@ -2557,5 +2575,159 @@ code {
 
 
 
+.preload{
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+}
 
 
+
+
+ .navbar-move-on {
+    animation: preload-move-on 0.2s linear 0s 1 alternate;
+  }
+
+    @keyframes preload-move-on {
+    0% {
+  transform: rotate3d(1, 1, 0, 0deg);
+    }
+
+    50% {
+  transform: rotate3d(1, 1, 1, 360deg);
+    }
+
+        100% {
+  transform: rotate3d(1, 1, 0, 0deg);
+    }
+  }
+
+
+
+
+
+  /* Preload */
+
+  .preload{
+       animation:  preloadAnimation 0.5s forwards linear 1.5s 1 alternate; 
+
+  }
+
+  .preload-logo-name{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    opacity: 1;
+    overflow: hidden;
+  }
+
+
+  .preload-logo-name>span {
+    display: inline-flex;
+    justify-content: center;
+    color: #fff;
+    margin-left: 7px;
+    position: relative;
+    font-size: 80px;
+  }
+
+  .preload-logo-name>span:nth-child(2){
+    top: -100px;
+    animation:  preloadAnimationSecondSide 0.8s forwards linear 0.5s 1 alternate;
+  }
+
+    .preload-logo-name>span:nth-child(3){
+    bottom: -100px;
+    animation:  preloadAnimationThirdSide 0.8s forwards linear 0.5s 1 alternate;
+
+  }
+
+  .preload-logo-name>span:first-child{
+    margin: unset;
+    left: -60px;
+    color: #fff;
+    animation:  preloadAnimationLeftSide 0.8s forwards linear 0.5s 1 alternate;
+   }
+
+   .preload-logo-name>span:last-child{
+    right: -60px;
+    animation:  preloadAnimationrightSide 0.8s forwards linear 0.5s 1 alternate;
+
+   }
+
+
+
+
+@keyframes preloadAnimationLeftSide {
+  from {
+    opacity: 0;
+    left: -60px;
+  }
+  to {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+@keyframes preloadAnimationrightSide {
+  from {
+    opacity: 0;
+    right: -60px;
+  }
+  to {
+    opacity: 1;
+    right: 0;
+  }
+}
+
+@keyframes preloadAnimationSecondSide {
+  from {
+    opacity: 0;
+    top: -100px;
+  }
+  to {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+@keyframes preloadAnimationThirdSide {
+  from {
+    opacity: 0;
+    bottom: -100px;
+  }
+  to {
+    opacity: 1;
+    bottom: 0;
+  }
+}
+
+
+
+@keyframes preloadAnimation {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.preload-cover-animation {
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    position: absolute;
+}
+
+
+
+
+
+
+    /*  background-image: linear-gradient(to left, #6489f7, #d53a9d, #6489f7); */

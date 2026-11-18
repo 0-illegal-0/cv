@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import close from "../../assets/images/icons/red-close.png";
+import close from "../../assets/images/icons/close.png";
 
 // Focused button
 
