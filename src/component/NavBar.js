@@ -32,13 +32,23 @@ function NavBar({ navBarMove, screenState, navList, navbarId, contentBody }) {
     document.getElementById(idName).style.opacity = "1";
     document.getElementById(idName).style.display = "flex";
     document.getElementById(idName).style.zIndex = "5";
+
+    document
+      .getElementById("transition-animation")
+      .classList.add("transition-display-anim");
+    document
+      .getElementById("transition-animation-bottom")
+      .classList.add("transition-animation-bottom-anim");
+    document
+      .getElementById("transition-animation-top")
+      .classList.add("transition-animation-top-anim");
   }
 
   return (
     <>
       <div className="nav-bar" style={navbarStyle} ref={navbarId}>
         <div className="navbar-icon" onClick={navBarMove}>
-          <img src={navbarIcon} />
+          <img src={navbarIcon} alt=" " />
         </div>
         <ul className="nav-list" ref={navList}>
           <li

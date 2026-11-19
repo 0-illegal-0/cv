@@ -50,6 +50,18 @@ function MainBody({ innerHeight }) {
   const contentBody = useRef();
   return (
     <div id="main-content-body" className="main-content-body">
+      <div className="transition-animation" id="transition-animation">
+        <div className="transition-animation-container">
+          <div
+            className="transition-animation-top"
+            id="transition-animation-top"
+          ></div>
+          <div
+            className="transition-animation-bottom"
+            id="transition-animation-bottom"
+          ></div>
+        </div>
+      </div>
       <div className="about-box" id="content-body-list">
         <About contentBody={contentBody} />
         <Resume id="resume" />

@@ -36,7 +36,7 @@ function NavBar({ navBarMove, screenState, navList, navbarId, contentBody }) {
     <>
       <div className="nav-bar" style={navbarStyle} ref={navbarId}>
         <div className="navbar-icon" onClick={navBarMove}>
-          <img src={navbarIcon} />
+          <img src={navbarIcon} alt="" />
         </div>
         <ul className="nav-list" ref={navList} id="nav-list">
           {navBarData["nav-bar-design"].map((navBarDesin, index) => (
@@ -46,7 +46,7 @@ function NavBar({ navBarMove, screenState, navList, navbarId, contentBody }) {
                 navBarOff(navList, navbarId);
               }}
             >
-              <img src={navBarDesin["icon"]} />
+              <img src={navBarDesin["icon"]} alt="" />
               <span>{navBarDesin["title"]}</span>
             </li>
           ))}

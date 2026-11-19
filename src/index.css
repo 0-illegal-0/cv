@@ -98,6 +98,7 @@ code {
   justify-content: space-between;
   margin: 0 auto;
   padding: 22px 22px;
+  overflow: hidden;
 }
 
 .main-content-body {
@@ -106,6 +107,7 @@ code {
   width: calc(70% - 2 * var(--main-gap));
   box-shadow: 0 0 5px #9b8ee7;
   border-radius: 10px;
+  position: relative;
 }
 
 .bottom {
@@ -2614,6 +2616,7 @@ code {
   /* Preload */
 
   .preload{
+    display: none;
        animation:  preloadAnimation 0.5s forwards linear 1.5s 1 alternate; 
 
   }
@@ -2710,12 +2713,19 @@ code {
 
 
 @keyframes preloadAnimation {
-  from {
+  0% {
     opacity: 1;
   }
-  to {
+  99.99% {
     opacity: 0;
   }
+  100% {
+    display: none;
+  }
+}
+
+
+.transition-animation {
 }
 
 .preload-cover-animation {
@@ -2725,9 +2735,77 @@ code {
     position: absolute;
 }
 
+/* Transition-animation */
+
+.transition-animation {
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 12;
+}
+
+.transition-animation-container {
+  width: 100%;
+  height: 100%;
+background-color: none;}
+
+.transition-animation-container>div{
+  width: 100%;
+  height: 50%;
+  background-color: #fff;
+  position: relative;
+}
+
+.transition-animation-top {
+  top: 0px;
+}
+
+.transition-animation-bottom {
+  bottom: 0px;
+}
+
+.transition-display-anim{
+  animation:  displayNone 0.7s forwards linear 0s 1 alternate;
+}
+
+.transition-animation-top-anim{
+  animation:  toTop 0.4s forwards linear 0s 1 alternate;
+}
 
 
+.transition-animation-bottom-anim{
+  animation:  toBottom 0.4s forwards linear 0s 1 alternate;
+}
 
+@keyframes toTop {
+  from {
+    top: 0px;
+    opacity: 1;
+  }
+  to {
+    top: -400px;
+    opacity: 0.5;
+  }
+}
 
+@keyframes toBottom {
+  from {
+    bottom: 0px;
+    opacity: 1;
+  }
+  to {
+    bottom: -400px;
+    opacity: 0.5;
+  }
+}
 
+@keyframes displayNone {
+  from {
+    opacity: 1;
+  }
+  to {
+    display: 0;
+  }
+}
     /*  background-image: linear-gradient(to left, #6489f7, #d53a9d, #6489f7); */
