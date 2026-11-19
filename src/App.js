@@ -54,7 +54,12 @@ function Main() {
       <PrototypeDetails />
       <PreviewService />
       <div ref={mainPage} className="page">
-        <MainHeader data={data["app-name"]} />
+        <MainHeader
+          data={data["app-name"]}
+          transitionAnimation={transitionAnimation}
+          transitionAnimationTop={transitionAnimationTop}
+          transitionAnimationBottom={transitionAnimationBottom}
+        />
         <div className="box-size-height"></div>
         <Avatar />
         <MainBody
@@ -68,8 +73,13 @@ function Main() {
           transitionAnimationTop={transitionAnimationTop}
           transitionAnimationBottom={transitionAnimationBottom}
           screenState={window.innerWidth > 1100 ? false : true}
+          animNavBar={false}
         />
-        <NavBarAnimation />
+        <NavBarAnimation
+          transitionAnimation={transitionAnimation}
+          transitionAnimationTop={transitionAnimationTop}
+          transitionAnimationBottom={transitionAnimationBottom}
+        />
       </div>
     </div>
   );

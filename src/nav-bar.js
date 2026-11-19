@@ -2,10 +2,11 @@ import navbarIcon from "./assets/images/icons/work.png";
 
 import { navBarOff } from "./MainHeader";
 import navBarData from "./data/nav-bar.json";
+//import NavBar from "./component/NavBar.js";
 
 import { useEffect, useState } from "react";
 
-function NavBar({ navBarMove, screenState, navList, navbarId, contentBody }) {
+function NavBar({ navBarMove, screenState, navList, navbarId }) {
   const [navbarStyle, setNavbarStyle] = useState({ display: "flex" });
 
   useEffect(() => {

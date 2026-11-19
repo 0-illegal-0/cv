@@ -10,12 +10,12 @@ import github from "./assets/images/icons/github.png";
 import react from "./assets/images/icons/react.png";
 import mysql from "./assets/images/icons/my-sql.png";
 import firbase from "./assets/images/icons/firebase.png";
-
 import About from "./pages/about/About.js";
 import Resume from "./pages/resume/Resume.js";
 import Portofolio from "./pages/portofolio/Portofolio.js";
 import Services from "./pages/services/Services.js";
 import Contact from "./pages/contact/Contact.js";
+import TransitionAnimation from "./transitionAnimation.js";
 
 // main Icon
 
@@ -55,24 +55,11 @@ function MainBody({
   const contentBody = useRef();
   return (
     <div id="main-content-body" className="main-content-body">
-      <div
-        className="transition-animation"
-        id="transition-animation"
-        ref={transitionAnimation}
-      >
-        <div className="transition-animation-container">
-          <div
-            className="transition-animation-top"
-            id="transition-animation-top"
-            ref={transitionAnimationTop}
-          ></div>
-          <div
-            className="transition-animation-bottom"
-            id="transition-animation-bottom"
-            ref={transitionAnimationBottom}
-          ></div>
-        </div>
-      </div>
+      <TransitionAnimation
+        transitionAnimation={transitionAnimation}
+        transitionAnimationBottom={transitionAnimationBottom}
+        transitionAnimationTop={transitionAnimationTop}
+      />
       <div className="about-box" id="content-body-list">
         <About contentBody={contentBody} />
         <Resume id="resume" />

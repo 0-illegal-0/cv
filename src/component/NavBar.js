@@ -1,10 +1,10 @@
 import navbarIcon from "../assets/images/icons/work.png";
-import about from "../assets/images/icons/about-2.png";
-import resume from "../assets/images/icons/resume.png";
-import portfolio from "../assets/images/icons/portfolio.png";
-import service from "../assets/images/icons/service.png";
-import contact from "../assets/images/icons/contact.png";
+import navBarData from "../data/nav-bar.json";
+import { navBarOff } from "../MainHeader";
+import { navOut } from "./NavBarAnimation";
+
 import { useEffect, useState } from "react";
+
 function NavBar({
   navBarMove,
   screenState,
@@ -13,6 +13,8 @@ function NavBar({
   transitionAnimation,
   transitionAnimationBottom,
   transitionAnimationTop,
+  animNavBar,
+  mediamScreen,
 }) {
   const [navbarStyle, setNavbarStyle] = useState({ display: "flex" });
 
@@ -24,45 +26,6 @@ function NavBar({
     document.getElementById("about-content").style.display = "flex";
   }, []);
 
-  async function chooseSection(idName) {
-    list = document
-      .getElementById("content-body-list")
-      .querySelectorAll(".section");
-    document.getElementById("about-content").style.display = "flex";
-    for (let index = 0; index < list.length; index++) {
-      list[index].style.opacity = 0;
-      list[index].style.zIndex = "unset";
-      document.getElementById(idName).style.display = "none";
-    }
-    document.getElementById(idName).style.opacity = "1";
-    document.getElementById(idName).style.display = "flex";
-    document.getElementById(idName).style.zIndex = "5";
-
-    transitionAnimation.current.classList.add("transition-display-anim");
-
-    transitionAnimationBottom.current.classList.add(
-      "transition-animation-bottom-anim",
-    );
-
-    transitionAnimationTop.current.classList.add(
-      "transition-animation-top-anim",
-    );
-
-    const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-
-    await delay(500); //
-
-    document
-      .getElementById("transition-animation")
-      .classList.remove("transition-display-anim");
-    document
-      .getElementById("transition-animation-bottom")
-      .classList.remove("transition-animation-bottom-anim");
-    document
-      .getElementById("transition-animation-top")
-      .classList.remove("transition-animation-top-anim");
-  }
-
   return (
     <>
       <div className="nav-bar" style={navbarStyle} ref={navbarId}>
@@ -70,54 +33,76 @@ function NavBar({
           <img src={navbarIcon} alt=" " />
         </div>
         <ul className="nav-list" ref={navList}>
-          <li
-            onClick={() => {
-              chooseSection("about-content");
-            }}
-          >
-            <img src={about} alt="" />
-            <span>About</span>
-          </li>
-          <li
-            onClick={() => {
-              chooseSection("resume");
-            }}
-          >
-            <img src={resume} alt="" />
-
-            <span>Resume</span>
-          </li>
-          <li
-            onClick={() => {
-              chooseSection("portofolio");
-            }}
-          >
-            <img src={portfolio} alt="" />
-
-            <span>Portfolio</span>
-          </li>
-          <li
-            onClick={() => {
-              chooseSection("services");
-            }}
-          >
-            <img src={service} alt="" />
-
-            <span>Services</span>
-          </li>
-          <li
-            onClick={() => {
-              chooseSection("contact");
-            }}
-          >
-            <img src={contact} alt="" />
-
-            <span>Contact</span>
-          </li>
+          {navBarData["nav-bar-design"].map((navBarDesin, index) => (
+            <li
+              onClick={() => {
+                chooseSection(
+                  navBarDesin["id"],
+                  list,
+                  transitionAnimation,
+                  transitionAnimationBottom,
+                  transitionAnimationTop,
+                );
+                if (animNavBar) {
+                  if (mediamScreen) {
+                    navOut(navbarId);
+                  } else {
+                    navBarOff(navList, navbarId);
+                  }
+                  console.log("aim work");
+                }
+              }}
+            >
+              <img src={navBarDesin["icon"]} alt="" />
+              <span>{navBarDesin["title"]}</span>
+            </li>
+          ))}
         </ul>
       </div>
     </>
   );
 }
 
+export async function chooseSection(
+  idName,
+  list,
+  transitionAnimation,
+  transitionAnimationBottom,
+  transitionAnimationTop,
+) {
+  list = document
+    .getElementById("content-body-list")
+    .querySelectorAll(".section");
+  document.getElementById("about-content").style.display = "flex";
+  for (let index = 0; index < list.length; index++) {
+    list[index].style.opacity = 0;
+    list[index].style.zIndex = "unset";
+    list[index].style.display = "none";
+
+    document.getElementById(idName).style.display = "none";
+  }
+  document.getElementById(idName).style.opacity = "1";
+  document.getElementById(idName).style.display = "flex";
+  document.getElementById(idName).style.zIndex = "5";
+
+  transitionAnimation.current.classList.add("transition-display-anim");
+
+  transitionAnimationBottom.current.classList.add(
+    "transition-animation-bottom-anim",
+  );
+
+  transitionAnimationTop.current.classList.add("transition-animation-top-anim");
+
+  const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+  await delay(500); //
+
+  transitionAnimation.current.classList.remove("transition-display-anim");
+  transitionAnimationBottom.current.classList.remove(
+    "transition-animation-bottom-anim",
+  );
+  transitionAnimationTop.current.classList.remove(
+    "transition-animation-top-anim",
+  );
+}
 export default NavBar;

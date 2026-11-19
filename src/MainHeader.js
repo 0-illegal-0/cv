@@ -1,6 +1,7 @@
 import NavBarIcon from "./assets/images/icons/nav-bar.png";
 import { useRef, useEffect, useState } from "react";
-import NavBar from "./nav-bar.js";
+//import NavBar from "./nav-bar.js";
+import NavBar from "./component/NavBar.js";
 
 let navbarState = false;
 let navbarStateProccessing = false;
@@ -12,13 +13,18 @@ export async function navBarOff(navListId, navbarId) {
   navListId.current.classList.add("navbar-header-off");
   navListId.current.style.marginRight = "-100px";
   const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-  await delay(1000); //
+  await delay(500); //
 
   navbarId.current.style.zIndex = "-1";
   navbarStateProccessing = false;
 }
 
-function MainHeader({ data }) {
+function MainHeader({
+  data,
+  transitionAnimation,
+  transitionAnimationBottom,
+  transitionAnimationTop,
+}) {
   const navListId = useRef();
   const navbarId = useRef();
 
@@ -46,6 +52,11 @@ function MainHeader({ data }) {
         navList={navListId}
         screenState={window.innerWidth < 901 ? false : true}
         navbarId={navbarId}
+        animNavBar={true}
+        transitionAnimation={transitionAnimation}
+        transitionAnimationTop={transitionAnimationTop}
+        transitionAnimationBottom={transitionAnimationBottom}
+        mediamScreen={false}
       />
     </>
   );

@@ -5,8 +5,22 @@ import NavBar from "./NavBar.js";
 let navbarState = false;
 let navbarStateProccessing = false;
 
-function NavBarAnimation() {
+export function navOut(navbarId) {
+  navbarStateProccessing = true;
+  navbarState = false;
+  navbarId.current.classList.remove("navbar-move-on");
+  navbarId.current.classList.add("navbar-move-off");
+  navbarId.current.style.marginLeft = "101%";
+  navbarStateProccessing = false;
+}
+
+function NavBarAnimation({
+  transitionAnimation,
+  transitionAnimationBottom,
+  transitionAnimationTop,
+}) {
   const navbarId = useRef();
+  const navListId = useRef();
 
   useEffect(() => {
     navbarId.current.style.marginLeft = "101%";
@@ -14,12 +28,7 @@ function NavBarAnimation() {
 
   function navBarMove() {
     if (!navbarStateProccessing && navbarState) {
-      navbarStateProccessing = true;
-      navbarState = false;
-      navbarId.current.classList.remove("navbar-move-on");
-      navbarId.current.classList.add("navbar-move-off");
-      navbarId.current.style.marginLeft = "101%";
-      navbarStateProccessing = false;
+      navOut(navbarId);
     } else if (!navbarStateProccessing && !navbarState) {
       navbarStateProccessing = true;
       navbarState = true;
@@ -33,6 +42,14 @@ function NavBarAnimation() {
   return (
     <div ref={navbarId} className="navbar-small-screen">
       <NavBar
+        transitionAnimation={transitionAnimation}
+        transitionAnimationBottom={transitionAnimationBottom}
+        transitionAnimationTop={transitionAnimationTop}
+        screenState={false}
+        navList={navListId}
+        navbarId={navbarId}
+        animNavBar={true}
+        mediamScreen={true}
         navBarMove={() => {
           navBarMove();
         }}
