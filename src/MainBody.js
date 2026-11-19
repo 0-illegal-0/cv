@@ -46,19 +46,30 @@ function MainIcon({ contentBody, innerHeight }) {
 
 //content-body
 
-function MainBody({ innerHeight }) {
+function MainBody({
+  innerHeight,
+  transitionAnimation,
+  transitionAnimationBottom,
+  transitionAnimationTop,
+}) {
   const contentBody = useRef();
   return (
     <div id="main-content-body" className="main-content-body">
-      <div className="transition-animation" id="transition-animation">
+      <div
+        className="transition-animation"
+        id="transition-animation"
+        ref={transitionAnimation}
+      >
         <div className="transition-animation-container">
           <div
             className="transition-animation-top"
             id="transition-animation-top"
+            ref={transitionAnimationTop}
           ></div>
           <div
             className="transition-animation-bottom"
             id="transition-animation-bottom"
+            ref={transitionAnimationBottom}
           ></div>
         </div>
       </div>

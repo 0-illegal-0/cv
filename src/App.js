@@ -28,6 +28,10 @@ function App() {
 
 function Main() {
   const mainPage = useRef();
+  const transitionAnimation = useRef();
+  const transitionAnimationTop = useRef();
+  const transitionAnimationBottom = useRef();
+
   const [getTest, setTest] = useState("Wing");
 
   function setMainElementHeight() {
@@ -53,8 +57,18 @@ function Main() {
         <MainHeader data={data["app-name"]} />
         <div className="box-size-height"></div>
         <Avatar />
-        <MainBody innerHeight={window.innerHeight} />
-        <NavBar screenState={window.innerWidth > 1100 ? false : true} />
+        <MainBody
+          innerHeight={window.innerHeight}
+          transitionAnimation={transitionAnimation}
+          transitionAnimationTop={transitionAnimationTop}
+          transitionAnimationBottom={transitionAnimationBottom}
+        />
+        <NavBar
+          transitionAnimation={transitionAnimation}
+          transitionAnimationTop={transitionAnimationTop}
+          transitionAnimationBottom={transitionAnimationBottom}
+          screenState={window.innerWidth > 1100 ? false : true}
+        />
         <NavBarAnimation />
       </div>
     </div>
