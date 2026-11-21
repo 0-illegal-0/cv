@@ -16,26 +16,34 @@ function Contact() {
         </div>
       </div>
       <div className="contact-body">
-        <div className="contact-fields-left-side">
-          <div className="contact-field">
-            {" "}
-            <input type="text" name="" placeholder="Your Name" />
-          </div>
-          <div className="contact-field">
-            {" "}
-            <input type="phone" name="" placeholder="Your Phone" />
-          </div>
+        <div className="contact-body-form-section">
+          <form>
+            <div className="contact-fields-left-side">
+              <div className="contact-field">
+                {" "}
+                <input type="text" name="" placeholder="Your Name" />
+              </div>
+              <div className="contact-field">
+                {" "}
+                <input type="phone" name="" placeholder="Your Phone" />
+              </div>
 
-          <div className="contact-field">
-            {" "}
-            <input type="text" name="" placeholder="Your Email" />
-          </div>
+              <div className="contact-field">
+                {" "}
+                <input type="text" name="" placeholder="Your Email" />
+              </div>
+            </div>
+
+            <div className="text-area">
+              {" "}
+              <textarea type="text" name="" placeholder="Message" />
+            </div>
+            <div className="conttact-button">
+              <span>Send Message</span>
+            </div>
+          </form>
         </div>
 
-        <div className="text-area">
-          {" "}
-          <textarea type="text" name="" placeholder="Message" />
-        </div>
         <div className="contact-method">
           <div className="contact-icons">
             <div>

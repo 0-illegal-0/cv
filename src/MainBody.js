@@ -74,12 +74,13 @@ function MainBody({
   );
 }
 
-let listWidth = 0;
 let bottomSectionWidthState = false;
 
-function Icons({ contentBodyWidth, contentBodyHeight }) {
+function Icons({ contentBodyWidth }) {
+  const listWidth = 1265;
+
   const [firstElementState, setFirstElementState] = useState(0);
-  const [secondElementState, setSecondElementState] = useState(1265);
+  const [secondElementState, setSecondElementState] = useState(listWidth);
 
   const firstElement = useRef();
   const secondElement = useRef();
@@ -104,7 +105,7 @@ function Icons({ contentBodyWidth, contentBodyHeight }) {
     }
   }
 
-  getBottomSection();
+  //getBottomSection();
 
   function IconsAnimation() {
     setTimeout(() => {
