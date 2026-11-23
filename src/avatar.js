@@ -26,7 +26,7 @@ function Avatar() {
 
           <div className="personal-data">
             <div>
-              <b>Adress: </b>
+              <b>Address: </b>
               <span>Cairo, Helwan, Egypt</span>
             </div>
             <div>

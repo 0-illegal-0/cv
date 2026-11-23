@@ -36,35 +36,60 @@ CSS TABLE OF CONTENTS
   --main-gap: 25px;
   --skill-circle-size: calc(75%);
   --gap-size: calc(2%);
+  
+    /* font color */
+  --paragraph-fc:#4e535a;
+    /* Font Sizes */
+  --fs-xs: 0.8125rem; /* 13px */
+  --fs-sm: 0.875rem;  /* 14px */
+  --fs-base: 1rem;    /* 16px */
+  --fs-lg: 1.125rem;  /* 18px */
+  --fs-xl: 1.25rem;   /* 20px */
+  --fs-2xl: 1.5rem;   /* 24px */
+  --fs-3xl: 2rem;     /* 32px */
+  --fs-4xl: 2.5rem;   /* 40px */
+
+      /* Font Family */
+  --paragraph-fm:"Roboto", " sans-serif";
+
+    /* Font Weights */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* Line Heights */
+  --lh-tight: 1.2;
+  --lh-normal: 1.5;
+  --lh-relaxed: 1.7;
 }
 /* mediumslateblue 1e90ff 7b68ee*/
 
-@font-face {
-  font-family: "Radio_Canada";
-  src: url("./assets/fonts/Radio_Canada/RadioCanada-VariableFont_wdth,wght.ttf");
-}
-
-@font-face {
-  font-family: "Radio_Canada_italic";
-  src: url("./assets/fonts/Radio_Canada/RadioCanada-Italic-VariableFont_wdth,wght.ttf");
-}
-
-@font-face {
-  font-family: "SedanSC";
-  src: url("./assets/fonts/Sedan_SC/SedanSC-Regular.ttf");
-}
 
 @font-face {
   font-family: "Rubik";
   src: url("./assets/fonts/Rubik/Rubik-VariableFont_wght.ttf");
 }
+
+@font-face {
+  font-family: "Roboto";
+  src: url("./assets/fonts/Roboto/Roboto-VariableFont_wdth,wght.ttf");
+}
+
+
+
 .about-content h1 {
   /* font-family: "Radio_Canada";*/
   color: var(--primary);
 }
 
-* {
+h1,h2,h3,h5,h6 {
   font-family: Calibri, sans-serif;
+
+}
+
+* {
+  font-family: var(--paragraph-fm), sans-serif;
   margin: 0px;
   padding: 0px;
   border: none;
@@ -151,8 +176,8 @@ code {
   justify-content: space-between;
   align-items: center;
   padding: 5px 5px;
-  font-size: 15px;
-  font-weight: bold;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
   border-radius: 3px;
   box-shadow: 0 0 3px 1px #c6d7e9;
   margin: 10px auto;
@@ -345,22 +370,28 @@ code {
 
 .personal-informations {
   width: 100%;
-  margin: 0 0 auto 0 !important;
+  margin: 32px auto auto auto !important;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   text-align: center;
-  border-bottom: 2px dashed #832c74;
-  padding-bottom: 10px;
+ /* border-bottom: 2px dashed #832c74;*/
   padding: 0 10px;
-  padding-bottom: 5px;
+  max-width: 850px;
+}
+
+.personal-informations .owner-name {
+  font-size: var(--fs-base);
+  font-weight: 600;
+
 }
 
 .personal-informations > p {
-  font-size: 18px;
-  line-height: 1.7;
-  font-family: "Rubik", "Calibri", " sans-serif";
-  margin-top: 10px;
+  font-size: var(--fs-lg);
+  line-height: 1.6;
+  color: var(--paragraph-fc);
+  font-family:  var(--paragraph-fm);
+  /* "Calibri",*/
 }
 
 /* {ABOUT} Bottom Section */
@@ -567,8 +598,9 @@ code {
 
 /* all sections */
 
-.section > h2 {
-  font-size: 38px;
+.section .section-name {
+  font-size: var(--fs-3xl);
+  font-weight: bolder;
 }
 
 /* resume */
@@ -625,9 +657,7 @@ code {
     font-weight: bold;
   }
 
-  .personal-informations > p {
-    font-size: 15px;
-  }
+
   .about-content .contact-data {
     font-size: 13.5px;
   }
@@ -796,8 +826,9 @@ code {
     font-size: 28px;
   }
   .personal-informations > p {
-    font-size: 14.5px;
   }
+
+
 
   .handled-projects {
     justify-content: space-around;
@@ -2174,7 +2205,7 @@ code {
 .contact-field > input {
   width: 100%;
   height: 100% !important;
-  font-size: 20px;
+  font-size: 18px;
   padding: 5px 5px;
   border: 1px solid #5e65f14a;
   border-radius: 8px;
@@ -2242,15 +2273,21 @@ code {
 }
 
 .conttact-button {
-  width: 250px;
+    width: 220px;
     padding: 10px 50px;
     color: #fff;
     background-color: var(--primary);
     border-radius: 10px;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     letter-spacing: 0.5px;
     text-align: center;
+}
+
+@media (max-width: 1200px) {
+    .contact-body-form-section form{
+    width: 90%;
+  }
 }
 
 @media (max-width: 992px) {
@@ -2318,7 +2355,7 @@ code {
 .achievements {
   display: flex;
   justify-content: space-around;
-  margin:40px 0 !important;
+  margin:50px 0 !important;
   text-align: center;
 }
 
@@ -2335,10 +2372,28 @@ code {
   align-content: center;
 }
 
+.skill-card:hover{
+  animation:  skill-card-anim  0.2s forwards linear 0s 1 alternate; 
+  border: 2px solid #b196f0;
+}
+
+
+@keyframes skill-card-anim {
+  from {
+    margin-top: 0px;
+  }
+  to {
+    margin-top: -8px;
+
+  }
+}
+
+
 
 .achievements *{
   position: relative;
-  display: block;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .achievements .skill-card-design-green, .achievements .skill-card-design-blue, .achievements .skill-card-design-purple {
@@ -2358,15 +2413,17 @@ code {
 }
 
 .skill-card-num {
-  margin-top: 28px;
+  margin-top: 18px;
   font-weight: bold;
-  font-size: 17px;
+  font-size: var(--fs-xl);
+  color: var(--primary);
 }
 
 .skill-card-title{
   margin-top: 4px;
   font-weight: bold;
-  font-size: 17px;
+  font-size: var(--fs-base);
+  font-weight: var(--fw-medium);
 }
 
 .skill-card-purple{
@@ -2439,7 +2496,7 @@ code {
 }
   .customer-review h2{
     text-align: center;
-    margin-bottom:8px;
+    margin-bottom:12px;
   }
 .customer-review .viewport {
   width: 96%;

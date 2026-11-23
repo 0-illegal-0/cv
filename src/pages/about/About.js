@@ -70,7 +70,6 @@ function Achievements({ title, number, color, image }) {
       </div>
       <span className={`skill-card-design-${color}`}></span>
       <span
-        style={{ color: "#000" }}
         className={`skill-card-num skill-card-num-${color}`}
       >{` +${number}`}</span>
       <span
@@ -98,12 +97,13 @@ function ViewAchcontent({}) {
 function About({ contentBody, jobName }) {
   return (
     <div id="about-content" className="about-content section" ref={contentBody}>
-      <h2>About</h2>
+      <span className="section-name">About</span>
       <div className="personal-informations">
-        <h2>I'm {aboutData["name"]}</h2>
+        <span className="owner-name">I'm {aboutData["name"]}</span>
         <JobNameAnimation />
         <p>
-          I am a <b>{aboutData["job-title"]}</b> {aboutData["summary"]}
+          A skilled <strong>{aboutData["job-title"]}</strong>{" "}
+          {aboutData["summary"]}
         </p>
       </div>
       <div className="achievements">
