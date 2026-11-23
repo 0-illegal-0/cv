@@ -2489,7 +2489,6 @@ code {
   --accent: #0f766e;
   margin: 0 auto;
   box-sizing: border-box;
-  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
   display:flex;
   flex-direction: column;
 
@@ -2497,14 +2496,15 @@ code {
   .customer-review h2{
     text-align: center;
     margin-bottom:12px;
+
   }
 .customer-review .viewport {
   width: 96%;
   overflow: hidden;
   border-radius: 12px;
-  height: 270px;
+  height: 240px;
   margin: 0 auto;
-   box-shadow: 0 0 3px 1px #c6d7e9;
+  box-shadow: 0 0 3px 1px #c6d7e9;
 }
 .customer-review .track {
   display: flex;
@@ -2522,8 +2522,9 @@ code {
 }
 
 .customer-review p  {
-  font-family: "calibri" sans-serif;
-  font-size: 22px;
+  font-size: var(--fs-base);
+  color: var(--paragraph-fc);
+  line-height: 1.6;
 
 }
 
@@ -2539,6 +2540,12 @@ code {
 .customer-review .slide-star-rate {
   display: flex;
   margin-top: -4px;
+}
+
+
+.customer-review span, .customer-review b {
+  font-size: var(--fs-base);
+  color: var(--paragraph-fc);
 }
 
 .customer-review .slide-star-rate .star-orange {
