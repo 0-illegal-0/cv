@@ -72,10 +72,7 @@ function Achievements({ title, number, color, image }) {
       <span
         className={`skill-card-num skill-card-num-${color}`}
       >{` +${number}`}</span>
-      <span
-        style={{ color: "#000" }}
-        className={`skill-card-title skill-card-title-${color}`}
-      >
+      <span className={`skill-card-title skill-card-title-${color}`}>
         {title}
       </span>
     </div>

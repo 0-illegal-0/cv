@@ -14,15 +14,15 @@
   ],
   "client-review": [ 
   { "content": "I would like to thank those responsible for the completion of these projects, they understand the true value of time and possess genuine expertise in understanding their clients.",
-   "alt": "Mountain ridge at dawn", "label": "","client-name": "John Doe","title": "Software Engineer", "image-src": "/images/about/testimonials/pexels-duygugungor.jpg" ,
+   "alt": "Mountain ridge at dawn", "label": "","client-name": "John Doe","title": "Software Engineer", "image-src": "/images/about/testimonials/pexels-vlada-karpovich-7433906.jpg" ,
    "star-rate": 3,"task": "Web Development" ,"date": "2023-05-15","duration": "13 days"},
 
-  {"content": "I'm extremely happy with the website design service.The team understood exactly what I needed.The final result was modern, professional, and responsive.I highly recommend their services to everyone!",
+  {"content": "I'm extremely happy with the website design service.The team understood exactly what I needed.The final result was modern, professional, and responsive.",
    "alt": "Sunset over the ocean", "label": "","client-name": "Jane Smith", "title": "Project Manager", "image-src": "/images/about/testimonials/pexels-omransoliman97.jpg" ,
     "star-rate": 4,"task": "Project Management","date": "2023-06-20","duration": "2 weeks"},
 
   { "content": "Working with this development team was amazing. They delivered exactly what we were looking for. The quality of work was outstanding. I would definitely work with them again!",
-   "alt": "Quiet shoreline", "label": "","client-name": "Bob Johnson", "title": "Designer", "image-src": "/images/about/testimonials/pexels-aysegul-aytoren.jpg" ,
+   "alt": "Quiet shoreline", "label": "","client-name": "Bob Johnson", "title": "Designer", "image-src": "/images/about/testimonials/pexels-pavel-danilyuk-7869052.jpg" ,
     "star-rate": 3,"task": "UI/UX Design","date": "2023-07-10","duration": "3 weeks","date-icon": "/images/about/testimonials/date-icon.png"}
   ]
 }
