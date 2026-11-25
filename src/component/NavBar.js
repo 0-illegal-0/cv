@@ -3,7 +3,7 @@ import navBarData from "../data/nav-bar.json";
 import { navBarOff } from "../MainHeader";
 import { navOut } from "./NavBarAnimation";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 function NavBar({
   navBarMove,
@@ -17,6 +17,8 @@ function NavBar({
   mediamScreen,
 }) {
   const [navbarStyle, setNavbarStyle] = useState({ display: "flex" });
+  const navListDesktop = useRef();
+  let navListDesktopList;
 
   let list;
   useEffect(() => {
@@ -26,32 +28,52 @@ function NavBar({
     document.getElementById("about-content").style.display = "flex";
   }, []);
 
+  // nav bar hover
+
+  const handleClick = (index) => {
+    navListDesktopList = navListDesktop.current.querySelectorAll(".nav-btn");
+
+    navListDesktopList.forEach((element) => {
+      element.style.backgroundColor = "#fff";
+    });
+    navListDesktopList[index].style.backgroundColor = "#c8e1f7";
+  };
+
   return (
     <>
       <div className="nav-bar" style={navbarStyle} ref={navbarId}>
         <div className="navbar-icon" onClick={navBarMove}>
           <img src={navbarIcon} alt=" " />
         </div>
-        <ul className="nav-list" ref={navList}>
+        <ul
+          className="nav-list"
+          ref={!animNavBar ? navListDesktop : navList}
+          id="nav-list"
+        >
           {navBarData["nav-bar-design"].map((navBarDesin, index) => (
             <li
+              className="nav-btn"
               onClick={() => {
+                handleClick(index);
                 chooseSection(
                   navBarDesin["id"],
                   list,
                   transitionAnimation,
                   transitionAnimationBottom,
                   transitionAnimationTop,
+                  index,
+                  navList,
                 );
+
                 if (animNavBar) {
                   if (mediamScreen) {
                     navOut(navbarId);
                   } else {
                     navBarOff(navList, navbarId);
                   }
-                  console.log("aim work");
                 }
               }}
+              id={"nav-btn-" + index}
             >
               <img src={navBarDesin["icon"]} alt="" />
               <span>{navBarDesin["title"]}</span>
@@ -69,6 +91,8 @@ export async function chooseSection(
   transitionAnimation,
   transitionAnimationBottom,
   transitionAnimationTop,
+  index,
+  navList,
 ) {
   list = document
     .getElementById("content-body-list")
@@ -80,7 +104,9 @@ export async function chooseSection(
     list[index].style.display = "none";
 
     document.getElementById(idName).style.display = "none";
+    document.getElementById("nav-btn-" + index).style.backgroundColor = "blue";
   }
+
   document.getElementById(idName).style.opacity = "1";
   document.getElementById(idName).style.display = "flex";
   document.getElementById(idName).style.zIndex = "5";
@@ -104,5 +130,7 @@ export async function chooseSection(
   transitionAnimationTop.current.classList.remove(
     "transition-animation-top-anim",
   );
+
+  // Nav Bar Hover
 }
 export default NavBar;

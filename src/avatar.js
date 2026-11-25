@@ -13,15 +13,15 @@ function Avatar() {
             <img src={AvatarImage} alt="" />
           </div>
           <div className="avatar-personal-info">
-            <h3>Robin Oliver</h3>
-            <h3 className="job-description">Web Developer</h3>
+            <span>Robin Oliver</span>
+            <span className="job-description">Web Developer</span>
           </div>
 
           <div className="social-media-icons">
-            <img src={twitter} />
-            <img src={facebook} />
+            <img src={twitter} alt="" />
+            <img src={facebook} alt="" />
 
-            <img src={github} />
+            <img src={github} alt="" />
           </div>
 
           <div className="personal-data">
@@ -30,12 +30,12 @@ function Avatar() {
               <span>Cairo, Helwan, Egypt</span>
             </div>
             <div>
-              <b>Age: </b>
-              <span>32</span>
+              <b>Experience: </b>
+              <span>7 Years</span>
             </div>
           </div>
           <div className="download-vc">
-            <h3>DOWNLOAD CV</h3>
+            <span>DOWNLOAD CV</span>
           </div>
         </div>
       </div>

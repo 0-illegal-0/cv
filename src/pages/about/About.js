@@ -68,30 +68,14 @@ function Achievements({ title, number, color, image }) {
       <div className="skill-card-image">
         <img src={image} alt="" />
       </div>
-      <span className={`skill-card-design-${color}`}></span>
-      <span
-        className={`skill-card-num skill-card-num-${color}`}
-      >{` +${number}`}</span>
-      <span className={`skill-card-title skill-card-title-${color}`}>
-        {title}
-      </span>
+      <span className="skill-card-design-blue"></span>
+      <span className="skill-card-num skill-card-num-blue">{` +${number}`}</span>
+      <span className="skill-card-title skill-card-title-blue">{title}</span>
     </div>
   );
 }
 
-// view Achievements content
-
-function ViewAchcontent({}) {
-  return (
-    <div className="view-content-container">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  );
-}
-
-function About({ contentBody, jobName }) {
+function About({ contentBody }) {
   return (
     <div id="about-content" className="about-content section" ref={contentBody}>
       <span className="section-name">About</span>
@@ -109,7 +93,7 @@ function About({ contentBody, jobName }) {
             key={index}
             title={achievement["title"]}
             number={achievement["number"]}
-            color={achievement["color"]}
+            color={"blue"}
             image={achievement["img-src"]}
           />
         ))}
@@ -191,7 +175,7 @@ function Carousel() {
                   <p className="slide-content">{slide.content}</p>
                   <div className="client-review-bottom-section">
                     <div className="client-review-duration">
-                      <b>Task:&nbsp;</b>
+                      <b>Duration:&nbsp;</b>
 
                       <span> {slide.duration}</span>
                     </div>
@@ -222,17 +206,6 @@ function Carousel() {
       </section>
     </>
   );
-}
-
-{
-  /*<figure
-                className="slide"
-                key={slide.label}
-                aria-hidden={i !== index}
-                aria-label={`${i + 1} of ${SLIDES.length}`}
-              >
-                <img src={slide.src} alt={slide.alt} loading={i === 0 ? "eager" : "lazy"} />
-              </figure>*/
 }
 
 export default About;

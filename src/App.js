@@ -37,14 +37,14 @@ function Main() {
   function setMainElementHeight() {
     setTimeout(() => {
       if (window.innerHeight) {
-        mainPage.current.style.height = window.innerHeight - 1 + "px"; // window.innerHeight 739 + "px";
-        //  setMainElementHeight();
+        mainPage.current.style.height = window.innerHeight - 1 + "px";
       } else {
         setMainElementHeight();
       }
     }, 10);
 
     console.log("window.innerWidth", window.innerWidth);
+    console.log("window.innerHeight", window.innerHeight);
   }
   setMainElementHeight();
 

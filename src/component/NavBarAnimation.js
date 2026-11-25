@@ -20,7 +20,6 @@ function NavBarAnimation({
   transitionAnimationTop,
 }) {
   const navbarId = useRef();
-  const navListId = useRef();
 
   useEffect(() => {
     navbarId.current.style.marginLeft = "101%";
@@ -46,7 +45,6 @@ function NavBarAnimation({
         transitionAnimationBottom={transitionAnimationBottom}
         transitionAnimationTop={transitionAnimationTop}
         screenState={false}
-        navList={navListId}
         navbarId={navbarId}
         animNavBar={true}
         mediamScreen={true}
