@@ -6,12 +6,12 @@ function Resume() {
 
   return (
     <div className="resume section" id="resume">
-      <h2>Resume</h2>
+      <span className="section-name">Resume</span>
       <div className="resume-main" ref={resumeMain} id="resume-main">
         <div className="education">
           <div className="education-head">
             <span className="education-head-line"></span>
-            <h3> Education </h3>
+            <h2> Education </h2>
             <span className="education-head-line"></span>
           </div>
           {aboutData["education"].map((v) => {
@@ -28,7 +28,7 @@ function Resume() {
         <div className="experience">
           <div className="education-head">
             <span className="education-head-line"></span>
-            <h3> Experience </h3>
+            <h2> Experience </h2>
             <span className="education-head-line"></span>
           </div>
           {aboutData["education"].map((v) => {
@@ -52,7 +52,7 @@ function EducationSection({ qualification, university, date, description }) {
   return (
     <div className="education-section-main">
       <div className="education-section">
-        <h3 className="qualification">{qualification}</h3>
+        <h4 className="qualification">{qualification}</h4>
         <div className="line-style">
           <span className="line"></span>
         </div>
@@ -126,7 +126,7 @@ function SkillValue({ value, skillName }) {
             canvasWidth / 2,
             canvasWidth / 2 - 7,
             0,
-            circleValue
+            circleValue,
           );
           canvasCtx[index].lineWidth = 6;
           canvasCtx[index].strokeStyle = canvasColor;
