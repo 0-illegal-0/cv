@@ -10,9 +10,7 @@ function Resume() {
       <div className="resume-main" ref={resumeMain} id="resume-main">
         <div className="education">
           <div className="education-head">
-            <span className="education-head-line"></span>
             <h2> Education </h2>
-            <span className="education-head-line"></span>
           </div>
           {aboutData["education"].map((v) => {
             return (
@@ -27,9 +25,7 @@ function Resume() {
         </div>
         <div className="experience">
           <div className="education-head">
-            <span className="education-head-line"></span>
             <h2> Experience </h2>
-            <span className="education-head-line"></span>
           </div>
           {aboutData["education"].map((v) => {
             return (
@@ -54,11 +50,11 @@ function EducationSection({ qualification, university, date, description }) {
       <div className="education-section">
         <h4 className="qualification">{qualification}</h4>
         <div className="line-style">
-          <span className="line"></span>
+          <div className="line"></div>
         </div>
         <h4 className="university">{university}</h4>
         <div className="line-style">
-          <span className="line"></span>
+          <div className="line"></div>
         </div>
         <span className="date-education"> {date}</span>
       </div>
@@ -70,7 +66,7 @@ function EducationSection({ qualification, university, date, description }) {
 function Skills() {
   return (
     <div className="skills">
-      <h3>Skills</h3>
+      <h2>Skills</h2>
       <div className="skills-container">
         {aboutData["skills"].map((count) => {
           return (
@@ -86,7 +82,6 @@ function Skills() {
 }
 // SkillValue function
 
-let ctx;
 let canvas = [];
 let canvasCtx = [];
 let canvasId = "";
@@ -156,10 +151,10 @@ function SkillValue({ value, skillName }) {
           width={canvasWidth}
         ></canvas>
         <div className="skill-circle">
-          <h3>{value}%</h3>
+          <span>{value}%</span>
         </div>
       </div>
-      <h3 className="title">{skillName}</h3>
+      <span className="title">{skillName}</span>
     </div>
   );
 }

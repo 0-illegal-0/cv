@@ -54,7 +54,9 @@ function NavBar({
             <li
               className="nav-btn"
               onClick={() => {
-                handleClick(index);
+                if (!animNavBar) {
+                  handleClick(index);
+                }
                 chooseSection(
                   navBarDesin["id"],
                   list,
@@ -104,7 +106,6 @@ export async function chooseSection(
     list[index].style.display = "none";
 
     document.getElementById(idName).style.display = "none";
-    document.getElementById("nav-btn-" + index).style.backgroundColor = "blue";
   }
 
   document.getElementById(idName).style.opacity = "1";

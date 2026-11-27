@@ -32,7 +32,7 @@ CSS TABLE OF CONTENTS
 :root {
   --primary: #7b68ee;
   --background-color-secondary: #fff;
-  --background-color: #f1f4f7;
+  --background-color: #fff;
   --main-gap: 25px;
   --skill-circle-size: calc(75%);
   --gap-size: calc(2%);
@@ -89,7 +89,6 @@ CSS TABLE OF CONTENTS
 }
 
 
-
 .about-content h1 {
   /* font-family: "Radio_Canada";*/
   color: var(--primary);
@@ -117,6 +116,9 @@ p{
   line-height: inherit;
   box-sizing: border-box;
   list-style: none;
+  scrollbar-color: rebeccapurple transparent;
+  /*   scrollbar-color: #c3bbfe #edebf9; */
+  scrollbar-width: thin
 }
 
 body {
@@ -167,7 +169,11 @@ code {
   align-items: center;
   border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-}
+    border: none;
+    border-top: 2px solid rgba(112, 92, 200, 0.5);
+
+
+  }
 
 .nav-bar {
   width: fit-content;
@@ -268,7 +274,7 @@ box-shadow: 0 0 20px rgba(130, 100, 240, 0.22);
 }
 
 .avatar-personal-info {
-  margin-top:8px 
+  margin:8px 0 auto 0
 }
 
 @media (min-width: 1500px) {
@@ -297,7 +303,7 @@ box-shadow: 0 0 20px rgba(130, 100, 240, 0.22);
 }
 
 .avatar-personal-info > span:last-child {
-  margin: 4px 0;
+  margin-top: 4px;
 }
 
 .avatar-personal-info .job-description {
@@ -375,7 +381,7 @@ box-shadow: 0 0 20px rgba(130, 100, 240, 0.22);
 
 .about-content {
   z-index: 5;
-  background-image: linear-gradient(to top, #ffffff, #ffffff, #f1d8f1);
+
 }
 
 .about-content,
@@ -392,6 +398,8 @@ box-shadow: 0 0 20px rgba(130, 100, 240, 0.22);
   padding-bottom: 5px;
   width: 100%;
   height: 100%;
+    background-image: linear-gradient(to top, #ffffff, #ffffff, #f2e6f7
+);
 }
 
 .about-content > div {
@@ -411,7 +419,7 @@ box-shadow: 0 0 20px rgba(130, 100, 240, 0.22);
 
 .personal-informations {
   width: 100%;
-  margin: 48px auto auto auto !important;
+  margin: 56px auto auto auto !important;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -644,6 +652,7 @@ box-shadow: 0 0 20px rgba(130, 100, 240, 0.22);
   font-weight: bolder;
   line-height: 0;
   margin-top: 15px;
+  margin-left: 5px;
 }
 
 /* resume */
@@ -653,10 +662,7 @@ box-shadow: 0 0 20px rgba(130, 100, 240, 0.22);
   justify-content: space-between;
   overflow-y: visible;
 }
-.resume-main > div {
-  border-radius: 15px;
-  margin-top: 20px;
-}
+
 
 /* customer-review */
 
@@ -837,16 +843,6 @@ box-shadow: 0 0 20px rgba(130, 100, 240, 0.22);
 }
 
 
-
-
-@media (min-width: 1100px) and (max-height: 680px) {
-  .about-content > div {
-  /*  margin-bottom: 55px !important; */
-  }
-  .about-content > div:last-child {
-    margin-bottom: unset !important;
-  }
-}
 
 /* media 1100 */
 
@@ -1304,20 +1300,23 @@ box-shadow: 0 0 20px rgba(130, 100, 240, 0.22);
 /* Resume */
 
 /* education */
+
+.resume-main>div:first-child {
+  margin-top: 56px;
+}
+
 .education-head {
   display: flex;
   align-items: center;
   justify-content: center;
-    margin-top: 48px;
-
+  margin-bottom: 8px;
+  margin-top: 32px;
 }
 
-.education-head > h3,
-.skills > h3 {
-  margin: 0 15px;
-  font-size: 30px;
-  letter-spacing: 4px;
+.education .education-head {
+  margin-top: 0;
 }
+
 
 .education-head .education-head-line {
   width: 170px;
@@ -1325,42 +1324,48 @@ box-shadow: 0 0 20px rgba(130, 100, 240, 0.22);
   background-color: #010101;
 }
 
-.education-head h2 {  
-  margin: 0 30px;
-}
+
 
 .education-section-main {
-  border: 2px dashed #666565;
+  width: 100%;
+  border: 1px solid rgba(112, 92, 200, 0.15);
+  box-shadow: 0 4px 15px rgba(112, 92, 200, 0.12);  padding: 10px;
   padding: 10px;
-  margin-top: 40px;
+  margin: 0 auto 20px auto;
   border-radius: 7px;
+}
+
+.education-section-main:last-child{
+  margin: 0 auto 0px auto;
 }
 
 .education-section {
   display: flex;
-  align-items: center;
-  background-color: #dee8f1;
-  width: max-content;
-  padding: 0 10px;
-  margin-top: -20px;
+    background: #f1edff;
+    padding: 4px 12px;
+    border-radius: 5px;
+    color: #222;
+    font-size: 17px;
+    font-weight: 600;
 }
 
 .education-section > h3,
 .education-section > h4,
 .education-section span {
   display: inline-block;
-  font-weight: bold;
+  font-weight: 500;
   text-align: center;
   color: #000;
 }
 .education-section .line-style {
   display: inline-flex;
   height: 100%;
+  margin: auto 0;
 }
 
 .education-section .line {
   margin: auto 7px;
-  width: 40px;
+  width: 20px;
   height: 2px;
   background-color: #616060;
   /* background-color: #c13aa9;*/
@@ -1368,7 +1373,7 @@ box-shadow: 0 0 20px rgba(130, 100, 240, 0.22);
 
 .education-section-paragraph {
   font-size: var(--fs-base);
-  margin-top: 10px;
+  margin-top: 12px;
   text-align: center;
   line-height: 1.7;
 }
@@ -1376,23 +1381,25 @@ box-shadow: 0 0 20px rgba(130, 100, 240, 0.22);
 .education,
 .experience {
   padding: 0 15px;
-  margin-top: 10px !important;
-}
-
-.experience {
-  margin-top: 50px !important;
 }
 
 
 
 .date-education {
-  color: #c13aa9 !important;
+  color: #7b68ee !important;
 }
 
 /* skills */
 
 .skills {
   width: 100%;
+  margin-top: 32px;
+}
+
+.skills h2 {
+  width: min-content;
+  margin: 0 auto;
+  margin-bottom: 28px;
 }
 
 .skills-container {
@@ -1401,7 +1408,6 @@ box-shadow: 0 0 20px rgba(130, 100, 240, 0.22);
   margin-left: auto;
   margin-right: auto;
   flex-wrap: wrap;
-  margin-top: 30px;
 }
 
 .main-circle-container {
@@ -1437,13 +1443,18 @@ box-shadow: 0 0 20px rgba(130, 100, 240, 0.22);
   transform: rotate(-90deg);
 }
 
-.skill-circle > h3 {
-  font-size: 28px;
+.skill-circle > span {
+  font-size: var(--fs-lg);
+  font-weight: bold;
   color: #080002d9;
 }
 
 .main-circle-container .title {
+  font-size: var(--fs-base);
+  color: var(--paragraph-fc);
+  display: block;
   text-align: center;
+  font-weight: 500;
   margin-top: 5px;
 }
 @media (max-width: 1300px) {
@@ -1457,7 +1468,6 @@ box-shadow: 0 0 20px rgba(130, 100, 240, 0.22);
   .education-section .university,
   .date-education,
   .education-section .qualification {
-    font-size: 19px;
   }
 
   .education,
@@ -1476,19 +1486,13 @@ box-shadow: 0 0 20px rgba(130, 100, 240, 0.22);
 
 @media (max-width: 992px) {
   .experience {
-    margin-top: 30px !important;
   }
-  .education-section .university,
-  .date-education,
-  .education-section .qualification {
-    font-size: 21px;
-  }
+
   .about-content,
   .section {
     padding: 12px;
   }
   .education-section-main {
-    margin-top: 40px;
   }
   .education-head > h3,
   .skills > h3 {
@@ -1497,7 +1501,6 @@ box-shadow: 0 0 20px rgba(130, 100, 240, 0.22);
   .skills-container {
     width: 80%;
     min-width: 630px;
-    margin-top: 0;
   }
 }
 @media (max-width: 768px) {
@@ -1512,7 +1515,6 @@ box-shadow: 0 0 20px rgba(130, 100, 240, 0.22);
     margin-top: -50px;
   }
 
-  
   .line-style {
     display: none !important;
   }
@@ -1520,8 +1522,6 @@ box-shadow: 0 0 20px rgba(130, 100, 240, 0.22);
   .education-section .university,
   .date-education,
   .education-section .qualification {
-    text-decoration: underline solid #000 2px;
-    font-size: 21px;
 
     margin-top: 5px;
   }
@@ -1531,10 +1531,6 @@ box-shadow: 0 0 20px rgba(130, 100, 240, 0.22);
     padding: unset;
   }
 
-  .education-section-main {
-    margin-top: 60px;
-    border-top: unset;
-  }
 
   .section {
     padding: 10px;
@@ -1546,23 +1542,45 @@ box-shadow: 0 0 20px rgba(130, 100, 240, 0.22);
   }
 
   .main-circle-container {
-    width: calc(100% / 2);
+    width: calc(100% / 3);
     margin-bottom: 20px;
   }
+
+  .education-head {
+    margin-bottom: 58px;
+  }
+
+   .education-section-main {
+    margin-bottom: 56px;
+    border-top: unset;
+  }
+
+     .education-section-main:last-child {
+    margin-bottom: unset;
+  }
+
+  .skills-container {
+    margin-top: 20px;
+  }
+
 }
 
 @media (max-width: 576px) {
+    .skills-container {
+    width: 98%;
+    min-width: unset;
+  }
  .about-content, .section{
   padding: 2.8%;
  }
 
-}
-@media (max-width: 400px) {
-  .skills-container {
-    width: 98%;
-    min-width: unset;
+   .main-circle-container {
+    width: calc(100% / 2);
+    margin-bottom: 20px;
   }
+
 }
+
 
 /* Portofolio */
 .projects {
@@ -2599,26 +2617,42 @@ box-shadow: 0 0 20px rgba(130, 100, 240, 0.22);
   }
 }
 
-/* width */
+/* width *//*
 ::-webkit-scrollbar {
-  width: 7px;
-}
+  width: 10px;
+  padding: 5px;
+}*/
 
 /* Track */
+/*
 ::-webkit-scrollbar-track {
-  background: #dee8f1;
+  background: #f0e8fcb0;
+    border-radius: 5px;
+
+  border-top: none;
+  border-bottom: none;
+  background-image: linear-gradient(to top, #ffffff, #f0e8fcb0, #fff);
+
 }
 
-/* Handle */
+::-webkit-scrollbar-button:vertical:decrement {
+  background-image: url("./assets/images/icons/cross.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Handle *//*
 ::-webkit-scrollbar-thumb {
-  background: #5a88b3; /*5a88b3*/
-}
+  background: #dbbce9e0; /*5a88b3*/
+ /* border-radius: 5px;
 
-/* Handle on hover */
+}*/
+
+/* Handle on hover *//*
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
-
+*/
 
 /* achievements */
 
@@ -2690,7 +2724,6 @@ box-shadow: 0 0 20px rgba(130, 100, 240, 0.22);
   font-size: var(--fs-xl);
   color: var(--primary);
 }
-
 .skill-card-title{
   margin-top: 4px;
   font-weight: bold;
@@ -2706,7 +2739,7 @@ box-shadow: 0 0 20px rgba(130, 100, 240, 0.22);
 }
 .achievements .skill-card-design-blue {
     background: linear-gradient(to top, #7b68ee,#d671f0);
-    opacity: 0.25;
+    opacity: 0.20;
 }
 
 
